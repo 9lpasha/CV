@@ -96,20 +96,24 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
           pageForContent % 2 === 0 ?
             <>
               <div className="main">
-                <div className="main_info">
-                  <Row>
-                    <Col style={{width: '100%'}}>
-                      <Card title="Frontend-разработчик React" bordered={false} hoverable>
-                        <span className='common-text'>
-                          22 года <br/>
-                          8-917-284-54-36 <br/>
-                          131313pasha@mail.ru <br/>
-                          <a href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
-                        </span>
-                      </Card>
-                    </Col>
-                  </Row>
-                </div>
+                {
+                  windowWidth < 500 ?
+                    null :
+                    <div className="main_info">
+                      <Row>
+                        <Col style={{width: '100%'}}>
+                          <Card title="Frontend-разработчик React" bordered={false} hoverable>
+                            <span className='common-text'>
+                              22 года <br/>
+                              8-917-284-54-36 <br/>
+                              131313pasha@mail.ru <br/>
+                              <a href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                            </span>
+                          </Card>
+                        </Col>
+                      </Row>
+                    </div>
+                }
                 <div className="main_photo">
                   <Card
                     hoverable
@@ -117,7 +121,16 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                     style={{ width: 'fit-content' }}
                     cover={<img alt="example" src={photo} />}
                   >
-                    <Meta title="Чураков Павел Сергеевич" style={{width: 'fit-content'}} />
+                    <Meta title="Чураков Павел Сергеевич" style={{width: 'fit-content'}}/>
+                    {
+                      windowWidth < 500 ?
+                        <>22 года <br/>
+                          8-917-284-54-36 <br/>
+                          131313pasha@mail.ru <br/>
+                          <a href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                        </> :
+                        null
+                    }
                   </Card>
                 </div>
               </div>
@@ -135,12 +148,11 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                               label: '2020-09',
                               children: (
                                 <div>
-                                  <h2 className='mb10'><b >ISS</b></h2>
-                                  <span className='common-text'>Написание нового функционала на фронте (react redux),
-                                    работа с чатом приложения (websockets на фронте и на node.js сервере),
-                                    замена текстового редактора в приложении, переписывание целого
-                                    раздела системы на typescript + redux-toolkit + tailwind (feature-sliced design).
-                                    Перенос проекта с webpack и javascript на vite, typescript и шаблон MUI.</span>
+                                  <h2 className='mb10'><b>Учебно-исследовательская лаборатория функциональной безопасности
+                                    космических аппаратов и систем МИЭМ</b></h2>
+                                  <span className='common-text'>Переписывание фронта на react + three.js, работа с grpc.
+                                    Главная фишка - симулятор полёта спутника вокруг земли (вычисления на бэке с++
+                                    и передача данных на фронт по gRPC, фронт на React + three.js)</span>
                                 </div>
                               ),
                             },
@@ -159,11 +171,12 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                               label: '2023-02',
                               children: (
                                 <div>
-                                  <h2 className='mb10'><b>Учебно-исследовательская лаборатория функциональной безопасности
-                                    космических аппаратов и систем МИЭМ</b></h2>
-                                  <span className='common-text'>Переписывание фронта на react + three.js, работа с grpc.
-                                    Главная фишка - симулятор полёта спутника вокруг земли (вычисления на бэке с++
-                                    и передача данных на фронт по gRPC, фронт на React + three.js)</span>
+                                  <h2 className='mb10'><b >ISS</b></h2>
+                                  <span className='common-text'>Написание нового функционала на фронте (react redux),
+                                    работа с чатом приложения (websockets на фронте и на node.js сервере),
+                                    замена текстового редактора в приложении, переписывание целого
+                                    раздела системы на typescript + redux-toolkit + tailwind (feature-sliced design).
+                                    Перенос проекта с webpack и javascript на vite, typescript и шаблон MUI.</span>
                                 </div>
                               ),
                             },
@@ -237,11 +250,12 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                                       }
                                     </Carousel> :
                                     item.picture ?
-                                    <img src={item.picture} style={{width: '30px'}} /> :
-                                <div style={{width: '30px'}}/>}
-                                  title={<a>{item.name}</a>}
-                                  description={item.description}
-                                />
+                                      <img src={item.picture} style={{width: '30px'}} /> :
+                                      <div style={{width: '30px', height: '30px', borderRadius: '50%', background: '#ebebeb'}}/>
+                                }
+                                    title={<a>{item.name}</a>}
+                                    description={item.description}
+                                  />
                             </List.Item>
                           )}
                         />
