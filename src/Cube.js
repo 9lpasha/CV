@@ -18,7 +18,7 @@ const listSkills = [
   description: ' - 10/10'},
   {picture: [muiIcon, 'https://tailwindcss.com/favicons/favicon.ico?v=3'],
     name: 'Material UI, Tailwind, CCS Modules',
-    description: 'Использую разные способы использования стилей'},
+    description: 'Разные способы использования стилей'},
   {picture: reactIcon,
     name: 'функциональный React v18',
     description: 'опыт 3 года'},
