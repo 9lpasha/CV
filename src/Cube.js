@@ -1,18 +1,90 @@
-import React, {useMemo} from 'react';
+import React from 'react';
 import photo from './images/photo_2023-01-28_20-50-21.jpg';
+import {Card, Carousel, Col, List, Row, Timeline} from "antd";
+
+import muiIcon from './images/icons/mui.svg';
+import htmlIcon from './images/icons/icons8-html-50.png';
+import jsIcon from './images/icons/icons8-js-50.png';
+import tsIcon from './images/icons/icons8-typescript-50.png';
+import cssIcon from './images/icons/icons8-css-50.png';
+import reactIcon from './images/icons/icons8-react-a-javascript-library-for-building-user-interfaces-24.png';
+import reduxIcon from './images/icons/icons8-redux-an-open-source-javascript-library-for-managing-application-state-24.png';
+
+const { Meta } = Card;
+
+const listSkills = [
+  {picture: [htmlIcon, jsIcon, cssIcon],
+  name: 'html, css (scss, less) и js',
+  description: ' - 10/10'},
+  {picture: [muiIcon, 'https://tailwindcss.com/favicons/favicon.ico?v=3'],
+    name: 'Material UI, Tailwind, CCS Modules',
+    description: 'Использую разные способы использования стилей'},
+  {picture: reactIcon,
+    name: 'функциональный React v18',
+    description: 'опыт 3 года'},
+  {picture: tsIcon,
+    name: 'typescript',
+    description: 'опыт больше года'},
+  {picture: reduxIcon,
+    name: 'redux, redux-toolkit',
+    description: 'опыт 3 года'},
+  {picture: 'https://threejs.org/files/favicon.ico',
+    name: 'threeJS',
+    description: '3D в браузере'},
+  {picture: 'https://storybook.js.org/favicon.svg?v=eac3ed5255c5d69cad47bb7ed6ce3dbf',
+    name: 'storybook',
+    description: 'писал свою небольшую библиотеку компонентов'},
+  {picture: 'https://testing-library.com/img/octopus-32x32.png',
+    name: 'jest и react-testing-library',
+    description: ''},
+  {picture: ['https://webpack.js.org/favicon.a3dd58d3142f7566.ico', 'https://vitejs.dev/logo.svg'],
+    name: 'webpack и vite',
+    description: 'Есть практический опыт'},
+  {picture: 'https://graphql.org/favicon.ico',
+    name: 'GraphQL',
+    description: 'Не только rest'},
+  {picture: 'https://github.githubassets.com/favicons/favicon.png',
+    name: 'git',
+    description: 'Понимаю git-flow, знаю много команд git'},
+  {picture: 'https://jwt.io/img/favicon/favicon-32x32.png',
+    name: 'JWT',
+    description: 'Понимаю процесс авторизации по JWT'},
+  {picture: 'https://static.tildacdn.com/tild6431-3463-4161-b339-613661656231/swagger.png',
+    name: 'swagger',
+    description: 'Умею работать со swagger'},
+  {picture: 'https://nodejs.org/static/images/favicons/favicon.png',
+    name: 'node.js, nest, typeorm',
+    description: 'опыт год'},
+  {picture: 'https://www.docker.com/wp-content/uploads/2023/04/cropped-Docker-favicon-32x32.png',
+    name: 'docker, docker-compose',
+    description: 'На уровне использования контейнеров'},
+  {picture: 'https://nginx.org/favicon.ico',
+    name: 'nginx',
+    description: 'Настраивал на одной работе'},
+  {picture: 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png',
+    name: 'Linux',
+    description: 'На уровне редактирования файлов с vim и установки пакетов, docker и тд.'},
+  {picture: '',
+    name: 'Websockets',
+    description: 'Опыт как со стороны backend, так и со стороны frontend'},
+  {picture: '',
+    name: 'API',
+    description: 'Работал с разными API, например GAPI (google)'},
+  {picture: '',
+    name: 'Backend и инфраструктура',
+    description: 'Разбираюсь не только во frontend, но и в backend и инфраструктурных вещах'},
+  {picture: '',
+    name: 'Отладка кода',
+    description: 'Умею отлаживать код и находить баги'},
+]
 
 export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff}) => {
-  const minSide = useMemo(() => {
-    let value = windowWidth < windowHeight ? windowWidth : windowHeight;
-    return value < 1000 ? value - 100 : value * 0.9;
-  }, [windowWidth, windowHeight]);
-
   return (
     <div
       className={`cube ${page % 2 === 0 ? 'forward' : 'reverse'}`}
       style={{
-        width: minSide + 'px',
-        height: minSide + 'px',
+        width: windowWidth - 50 > 800 ? 800 : windowWidth - 50,
+        height: windowHeight - 100 + 'px',
       }}
       ref={reff}
     >
@@ -25,333 +97,183 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
             <>
               <div className="main">
                 <div className="main_info">
-                  <div className="main_info1">
-                    Чураков Павел Сергеевич
-                  </div>
-                  <div className="main_info2">
-                    22 года (12.01.2001)
-                  </div>
-                  <div style={{fontSize: "16px"}} className="main_info2">
-                    8-904-668-50-31
-                  </div>
-                  <div style={{fontSize: "16px"}} className="main_info2">
-                    131313pasha@mail.ru
-                  </div>
-                  <div style={{fontSize: "16px"}} className="main_info2">
-                    <a href="https://t.me/pashac13">Telegram</a> - предпочитаемый способ связи
-                  </div>
+                  <Row>
+                    <Col style={{width: '100%'}}>
+                      <Card title="Frontend-разработчик React" bordered={false} hoverable>
+                        <span className='common-text'>
+                          22 года <br/>
+                          8-917-284-54-36 <br/>
+                          131313pasha@mail.ru <br/>
+                          <a href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                        </span>
+                      </Card>
+                    </Col>
+                  </Row>
                 </div>
                 <div className="main_photo">
-                  <img src={photo} alt=""/>
+                  <Card
+                    hoverable
+                    bordered={false}
+                    style={{ width: 'fit-content' }}
+                    cover={<img alt="example" src={photo} />}
+                  >
+                    <Meta title="Чураков Павел Сергеевич" style={{width: 'fit-content'}} />
+                  </Card>
                 </div>
               </div>
-              <div className="developer">
-                <div className="developer_main" style={{fontSize: "22px"}}>
-                  Frontend-разработчик React  <span className="developer_dop">150 - 180 т.р.</span>
-                </div>
-                <div className="developer_dop">
-                  Полная занятость, 40 часов
-                </div>
-              </div>
+
+
               <div className="performance">
-                <span className="performance_main1">
-                  Опыт
-                </span>
+                <Row>
+                  <Col style={{width: '100%'}}>
+                    <Card title="Опыт" bordered={false} hoverable>
+                      <div className="performance_flex">
+                        <Timeline
+                          mode='left'
+                          items={[
+                            {
+                              label: '2020-09',
+                              children: (
+                                <div>
+                                  <h2 className='mb10'><b >ISS</b></h2>
+                                  <span className='common-text'>Написание нового функционала на фронте (react redux),
+                                    работа с чатом приложения (websockets на фронте и на node.js сервере),
+                                    замена текстового редактора в приложении, переписывание целого
+                                    раздела системы на typescript + redux-toolkit + tailwind (feature-sliced design).
+                                    Перенос проекта с webpack и javascript на vite, typescript и шаблон MUI.</span>
+                                </div>
+                              ),
+                            },
+                            {
+                              label: '2021-06',
+                              children: (
+                                <div>
+                                  <h2 className='mb10'><b>ООО ЭРА</b></h2>
+                                  <span className='common-text'>Написание API - монолит (nest, typeorm, postgres), компонентов на фронте
+                                    (react, typescript, redux, storybook), развёртывание проекта (nginx, docker).
+                                    Запустили систему в продакшн и дорабатывали функциональность.</span>
+                                </div>
+                              ),
+                            },
+                            {
+                              label: '2023-02',
+                              children: (
+                                <div>
+                                  <h2 className='mb10'><b>Учебно-исследовательская лаборатория функциональной безопасности
+                                    космических аппаратов и систем МИЭМ</b></h2>
+                                  <span className='common-text'>Переписывание фронта на react + three.js, работа с grpc.
+                                    Главная фишка - симулятор полёта спутника вокруг земли (вычисления на бэке с++
+                                    и передача данных на фронт по gRPC, фронт на React + three.js)</span>
+                                </div>
+                              ),
+                            },
+                          ]}
+                        />
+                      </div> <br/>
 
-                <div className="performance_flex">
-                  <div className="performance_time">
-                    <br/>
-                  </div>
-                  <div className="performance_basic">
-                    Работаю 2 года Frontend - разработчиком.<br/><br/>
-                    На первой работе разрабатывали корпоративную систему для строительной компании. Сначала был React на JS, а потом перешли на React + redux-toolkit (typescript). Писал интерфейс со сложной бизнес-логикой, свою библиотеку компонентов.
-                    Были уведомления по WS, такие разделы, как свой чат, лента (как instagram), корпоративный маркетплейс, работа со складом. Писал анимацию на canvas и через css (transform).<br/><br/>
-                    Потом перешёл на вторую работу, проекту было лет 5-6, там стэк был подревнее, React redux axios (JS), мы переписываем этот проект на TS, redux-toolkit.
-                    Было много апишек, интернационализация, шаблон INSPINIA, переписывали на MUI.
-                  </div>
-                </div> <br/>
+                      <div className="performance_flex">
+                        <div className="performance_basic">
+                          <b>- Pet-проект</b> <br/>
+                            <span className='common-text mt10'>Веб-приложение (frontend) торрент-каталога, включающее в
+                              себя работу с пользователями и валидацию
+                              всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
+                              применялся storybook:&nbsp;
+                              <a href="https://sectorrent.site">sectorrent.site</a>.
+                            </span><br/><br/>
+                        </div>
+                      </div>
 
-                <div className="performance_flex">
-                  <div className="performance_time">
-                    <br/>
-                  </div>
-                  <div className="performance_basic">
-                    А также в моём арсенале был опыт с такими проектами:<br/><br/>
-                    - Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и валидацию
-                    всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux, применялся storybook:
-                    <a href="https://sectorrent.site">sectorrent.site</a>. <br/><br/>
-                  </div>
-                </div>
-
-                <div className="performance_flex">
-                  <div className="performance_time">
-                    <br/>
-                  </div>
-                  <div className="performance_basic">
-                    - Проект для лаборатории проектирования малых космических аппаратов.
-                    Главная фишка - симулятор полёта спутника вокруг земли (вычисления на бэке с++ и передача данных на фронт по gRPC, фронт на React + three.js).
-                    Я получал данные по gRPC и rest, работал со swagger:
-                    <a href="https://space.miem.hse.ru">space.miem.hse.ru</a>. <br/> <br/>
-                  </div>
-                </div>
-
-                <div className="performance_flex">
-                  <div className="performance_time">
-                    <br/>
-                  </div>
-                  <div className="performance_basic">
-                    Стажировался (3 месяца) full-stack-ом.<br/>
-                    Получил хороший опыт на react + typescript + graphQL + docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
-                  </div>
-                </div>
-
-                <div className="performance_flex">
-                  <div className="performance_time">
-                    <br/>
-                  </div>
-                  <div className="performance_basic">
-                    Примеры тестовых заданий: <br/>
-                    - <a href="https://9lpasha.github.io/miniGame-React-Redux/">Мини-игра на react/redux-toolkit/ts</a> <br/>
-                    - <a href="https://9lpasha.github.io/outside-digital/">Кусок простого интерфейса с небольшой логикой</a>
-                  </div>
-                </div>
-
+                      <div className="performance_flex">
+                        <div className="performance_basic">
+                          <b>- Стажировался (3 месяца) full-stack-ом</b><br/>
+                          <span className='common-text mt10'>Получил хороший опыт на react + typescript + graphQL +
+                            docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
+                          </span>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
               </div>
+
+
               <div className="edu">
-                <div className="edu_main">
-                  Образование
-                </div>
-                <div className="edu_flex">
-                  <div className="edu_type">
-                    Высшее образование (4 курс)<br/>Дневная/Очная
-                  </div>
-                  <div className="edu_name">
-                    <div className="edu_name1">
-                      Национальный Исследовательский Университет Высшая Школа Экономики
-                    </div>
-                    <div className="edu_name2">
-                      Специальность: Информатика и вычислительная техника
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="knowledge">
-                <div className="know_main">
-                  Знания и навыки
-                </div>
-                <div className="know_basic">
-                  - html, css (scss) и js (нативные особенности, BOM, DOM, web api и тд.) - уровень специалист;<br/>
-                  - адаптивная верстка любой сложности;<br/>
-                  - figma;<br/>
-                  - react-Bootstrap, React Material UI;<br/>
-                  - базовые алгоритмы и структуры данных (нарешал много задач на LeetCode);<br/>
-                  - функциональный React v18 (react-router, hooks, понимание рендера компонентов, оптимальный рендер);<br/>
-                  - typescript (опыт год, хорошее знание interfaces, types, generics, typing of functions);<br/>
-                  - redux(redux-toolkit);<br/>
-                  - threeJS (3D в браузере);<br/>
-                  - storybook;<br/>
-                  - знаком с jest и react-testing-library;<br/>
-                  - настраивал webpack на одном из проектов;<br/>
-                  - rest, GraphQL;<br/>
-                  - git;<br/>
-                  - авторизация по JWT;<br/>
-                  - swagger;<br/>
-                  - docker, docker-compose;<br/>
-                  - node.js, nest, typeorm (опыт год);<br/>
-                  - elasticsearch;<br/>
-                  - nginx;<br/>
-                  - linux (на уровне редактирования файлов с vim и установки пакетов, docker и тд.);<br/>
-                  - websockets;<br/>
-                  - работа с файлами (передача по http); <br/>
-                  - сейчас изучаю паттерны проектирования, SOLID, сложные моменты typescript, смтрю в сторону web3; <br/>
-                  - работал с разными API, например GAPI (google);<br/>
-                  - разбираюсь в инфраструктуре, развёртывании и смежных с ним процессах.<br/>
-                  - умею держать в голове продукт, блок, приложение целиком;<br/>
-                  - умею искать и исправлять ошибки, довожу до конца.<br/>
-                </div>
-              </div>
-              <div className="projects">
-                <div className="know_main">
-                  Личные качества
-                </div>
-                <div className="know_basic">
-                  - ищу крутую команду, где смогу реализовать свой потенциал; <br/>
-                  - умею составлять план работы и устанавливать корректные сроки; <br/>
-                  - был ведущим разработчиком в команде из 4 человек; <br/>
-                  - отзывчивость; <br/>
-                  - многозадачность; <br/>
-                  - сконцентрированность во время работы; <br/>
-                  - быстро реагирую на ситуацию; <br/>
-                  - энергичен; <br/>
-                  - активно развиваю хард-скиллы; <br/>
-                  - стараюсь писать чистый, переиспользуемый, понятный код. <br/>
-                </div>
+                <Row>
+                  <Col style={{width: '100%'}}>
+                    <Card title="Образование" bordered={false} hoverable>
+                      <div className="edu_flex">
+                          <div className="edu_name2 common-text">
+                            Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
+                          </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
               </div>
             </> :
           <>
-            <div className="main">
-              <div className="main_info">
-                <div className="main_info1">
-                  Чураков Павел Сергеевич
-                </div>
-                <div className="main_info2">
-                  22 года (12.01.2001)
-                </div>
-                <div style={{fontSize: "16px"}} className="main_info2">
-                  8-904-668-50-31
-                </div>
-                <div style={{fontSize: "16px"}} className="main_info2">
-                  131313pasha@mail.ru
-                </div>
-                <div style={{fontSize: "16px"}} className="main_info2">
-                  <a href="https://t.me/pashac13">Telegram</a> - предпочитаемый способ связи
-                </div>
-              </div>
-              <div className="main_photo">
-                <img src={photo} alt=""/>
-              </div>
-            </div>
-            <div className="developer">
-              <div className="developer_main" style={{fontSize: "22px"}}>
-                Frontend-разработчик React  <span className="developer_dop">150 - 180 т.р.</span>
-              </div>
-              <div className="developer_dop">
-                Полная занятость, 40 часов
-              </div>
-            </div>
-            <div className="performance">
-                <span className="performance_main1">
-                  Опыт
-                </span>
-
-              <div className="performance_flex">
-                <div className="performance_time">
-                  <br/>
-                </div>
-                <div className="performance_basic">
-                  Работаю 2 года Frontend - разработчиком.<br/><br/>
-                  На первой работе разрабатывали корпоративную систему для строительной компании. Сначала был React на JS, а потом перешли на React + redux-toolkit (typescript). Писал интерфейс со сложной бизнес-логикой, свою библиотеку компонентов.
-                  Были уведомления по WS, такие разделы, как свой чат, лента (как instagram), корпоративный маркетплейс, работа со складом. Писал анимацию на canvas и через css (transform).<br/><br/>
-                  Потом перешёл на вторую работу, проекту было лет 5-6, там стэк был подревнее, React redux axios (JS), мы переписываем этот проект на TS, redux-toolkit.
-                  Было много апишек, интернационализация, шаблон INSPINIA, переписывали на MUI.
-                </div>
-              </div> <br/>
-
-              <div className="performance_flex">
-                <div className="performance_time">
-                  <br/>
-                </div>
-                <div className="performance_basic">
-                  А также в моём арсенале был опыт с такими проектами:<br/><br/>
-                  - Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и валидацию
-                  всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux, применялся storybook:
-                  <a href="https://sectorrent.site">sectorrent.site</a>. <br/><br/>
-                </div>
-              </div>
-
-              <div className="performance_flex">
-                <div className="performance_time">
-                  <br/>
-                </div>
-                <div className="performance_basic">
-                  - Проект для лаборатории проектирования малых космических аппаратов.
-                  Главная фишка - симулятор полёта спутника вокруг земли (вычисления на бэке с++ и передача данных на фронт по gRPC, фронт на React + three.js).
-                  Я получал данные по gRPC и rest, работал со swagger:
-                  <a href="https://space.miem.hse.ru">space.miem.hse.ru</a>. <br/> <br/>
-                </div>
-              </div>
-
-              <div className="performance_flex">
-                <div className="performance_time">
-                  <br/>
-                </div>
-                <div className="performance_basic">
-                  Стажировался (3 месяца) full-stack-ом.<br/>
-                  Получил хороший опыт на react + typescript + graphQL + docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
-                </div>
-              </div>
-
-              <div className="performance_flex">
-                <div className="performance_time">
-                  <br/>
-                </div>
-                <div className="performance_basic">
-                  Примеры тестовых заданий: <br/>
-                  - <a href="https://9lpasha.github.io/miniGame-React-Redux/">Мини-игра на react/redux-toolkit/ts</a> <br/>
-                  - <a href="https://9lpasha.github.io/outside-digital/">Кусок простого интерфейса с небольшой логикой</a>
-                </div>
-              </div>
-
-            </div>
-            <div className="edu">
-              <div className="edu_main">
-                Образование
-              </div>
-              <div className="edu_flex">
-                <div className="edu_type">
-                  Высшее образование (4 курс)<br/>Дневная/Очная
-                </div>
-                <div className="edu_name">
-                  <div className="edu_name1">
-                    Национальный Исследовательский Университет Высшая Школа Экономики
-                  </div>
-                  <div className="edu_name2">
-                    Специальность: Информатика и вычислительная техника
-                  </div>
-                </div>
-              </div>
-            </div>
             <div className="knowledge">
-              <div className="know_main">
-                Знания и навыки
-              </div>
-              <div className="know_basic">
-                - html, css (scss) и js (нативные особенности, BOM, DOM, web api и тд.) - уровень специалист;<br/>
-                - адаптивная верстка любой сложности;<br/>
-                - figma;<br/>
-                - react-Bootstrap, React Material UI;<br/>
-                - базовые алгоритмы и структуры данных (нарешал много задач на LeetCode);<br/>
-                - функциональный React v18 (react-router, hooks, понимание рендера компонентов, оптимальный рендер);<br/>
-                - typescript (опыт год, хорошее знание interfaces, types, generics, typing of functions);<br/>
-                - redux(redux-toolkit);<br/>
-                - threeJS (3D в браузере);<br/>
-                - storybook;<br/>
-                - знаком с jest и react-testing-library;<br/>
-                - настраивал webpack на одном из проектов;<br/>
-                - rest, GraphQL;<br/>
-                - git;<br/>
-                - авторизация по JWT;<br/>
-                - swagger;<br/>
-                - docker, docker-compose;<br/>
-                - node.js, nest, typeorm (опыт год);<br/>
-                - elasticsearch;<br/>
-                - nginx;<br/>
-                - linux (на уровне редактирования файлов с vim и установки пакетов, docker и тд.);<br/>
-                - websockets;<br/>
-                - работа с файлами (передача по http); <br/>
-                - сейчас изучаю паттерны проектирования, SOLID, сложные моменты typescript, смтрю в сторону web3; <br/>
-                - работал с разными API, например GAPI (google);<br/>
-                - разбираюсь в инфраструктуре, развёртывании и смежных с ним процессах.<br/>
-                - умею держать в голове продукт, блок, приложение целиком;<br/>
-                - умею искать и исправлять ошибки, довожу до конца.<br/>
-              </div>
+              <Row>
+                <Col style={{width: '100%'}}>
+                  <Card title="Знания и навыки" bordered={false} hoverable>
+                    <div className="edu_flex">
+                      <div style={{width: '100%'}} className="common-text">
+                        <List
+                          className="demo-loadmore-list"
+                          itemLayout="horizontal"
+                          dataSource={listSkills}
+                          renderItem={(item) => (
+                            <List.Item>
+                                <List.Item.Meta
+                                  avatar={
+                                  Array.isArray(item.picture) ?
+                                    <Carousel effect="fade" autoplay style={{height: '30px', width: '30px'}}>
+                                      {
+                                        item.picture.map(el => (
+                                          <div>
+                                            <img style={{width: '30px'}} src={el} alt=""/>
+                                          </div>
+                                        ))
+                                      }
+                                    </Carousel> :
+                                    item.picture ?
+                                    <img src={item.picture} style={{width: '30px'}} /> :
+                                <div style={{width: '30px'}}/>}
+                                  title={<a>{item.name}</a>}
+                                  description={item.description}
+                                />
+                            </List.Item>
+                          )}
+                        />
+                      </div>
+                    </div>
+                  </Card>
+                </Col>
+              </Row>
             </div>
+
+
             <div className="projects">
-              <div className="know_main">
-                Личные качества
-              </div>
-              <div className="know_basic">
-                - ищу крутую команду, где смогу реализовать свой потенциал; <br/>
-                - умею составлять план работы и устанавливать корректные сроки; <br/>
-                - был ведущим разработчиком в команде из 4 человек; <br/>
-                - отзывчивость; <br/>
-                - многозадачность; <br/>
-                - сконцентрированность во время работы; <br/>
-                - быстро реагирую на ситуацию; <br/>
-                - энергичен; <br/>
-                - активно развиваю хард-скиллы; <br/>
-                - стараюсь писать чистый, переиспользуемый, понятный код. <br/>
-              </div>
+              <Row>
+                <Col style={{width: '100%'}}>
+                  <Card title="Личные качества" bordered={false} hoverable>
+                    <div className="edu_flex">
+                      <div className="edu_name2 common-text">
+                        - ищу крутую команду, где смогу реализовать свой потенциал; <br/>
+                        - умею составлять план работы и устанавливать корректные сроки; <br/>
+                        - был ведущим разработчиком в команде из 4 человек; <br/>
+                        - отзывчивость; <br/>
+                        - многозадачность; <br/>
+                        - сконцентрированность во время работы; <br/>
+                        - быстро реагирую на ситуацию; <br/>
+                        - энергичен; <br/>
+                        - активно развиваю хард-скиллы; <br/>
+                        - стараюсь писать чистый, переиспользуемый, понятный код. <br/>
+                      </div>
+                    </div>
+                  </Card>
+                </Col>
+              </Row>
             </div>
           </>
         }

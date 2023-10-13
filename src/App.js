@@ -1,8 +1,8 @@
 import {Cube} from "./Cube";
 import {useEffect, useRef, useState} from "react";
 import './style.css';
-import {Button} from "antd";
 import React from "react";
+import {makeShadow} from "./utils";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -10,6 +10,7 @@ function App() {
   const [page, setPage] = useState(0);
   const [pageForContent, setPageForContent] = useState(0);
   const [visible, setVisible] = useState(1);
+  const [scrolledDown, setScrolledDown] = useState(false);
   const cubeContentRef = useRef(null);
 
   useEffect(() => {
@@ -25,30 +26,55 @@ function App() {
     }
   }, []);
 
-  const leftButtonClick = () => {
-    setTimeout(() => {
-      setVisible(0);
-      setPage(prev => prev - 1);
-    }, 0);
-    setTimeout(() => {
-      setVisible(1);
-      setPageForContent(prev => prev - 1);
-    }, 1000);
+  const leftButtonClick = (e) => {
+    makeShadow(e);
+
+    if (pageForContent % 2 === 1) {
+      setTimeout(() => {
+        setVisible(0);
+        setPage(prev => prev - 1);
+      }, 0);
+      setTimeout(() => {
+        setVisible(1);
+        setPageForContent(prev => prev - 1);
+        cubeContentRef.current.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+        setScrolledDown(false);
+      }, 1000);
+    }
   }
 
-  const rightButtonClick = () => {
-    setTimeout(() => {
-      setVisible(0);
-      setPage(prev => prev + 1);
-    }, 0);
-    setTimeout(() => {
-      setVisible(1);
-      setPageForContent(prev => prev + 1);
-    }, 1000);
+  const rightButtonClick = (e) => {
+    makeShadow(e);
+
+    if (pageForContent % 2 === 0) {
+      setTimeout(() => {
+        setVisible(0);
+        setPage(prev => prev + 1);
+      }, 0);
+      setTimeout(() => {
+        setVisible(1);
+        setPageForContent(prev => prev + 1);
+        cubeContentRef.current.scroll({
+          top: 0,
+          left: 0,
+          behavior: 'smooth'
+        });
+        setScrolledDown(false);
+      }, 1000);
+    }
   }
 
   const cubeScroll = (e) => {
     cubeContentRef.current.scrollBy(0, e.deltaY);
+    if (cubeContentRef.current.scrollTop !== 0) {
+      setScrolledDown(true);
+    } else {
+      setScrolledDown(false);
+    }
   }
 
   return (
@@ -56,20 +82,25 @@ function App() {
       className="App"
       onWheel={cubeScroll}
     >
-      <Button
-        onClick={() => {
-          pageForContent % 2 === 0 ? leftButtonClick() : rightButtonClick()
-        }}
-        type="primary"
-        shape="round"
-        size="large"
-        style={{
-          background: 'rgb(165 165 165)'
-        }}
-      >
-
-        {pageForContent % 2 === 0 ? 2 : 1}
-      </Button>
+      <div style={{display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '20px'}}>
+        <div className={'selected' + (page % 2 === 1 ? ' not-selected' : '')} onClick={leftButtonClick}>
+          {page % 2 === 0 ? 1 : null}
+        </div>
+        <div style={{width: '20px', height: '1px', background: 'rgb(165, 165, 165)'}}/>
+        <div className={'selected' + (page % 2 === 0 ? ' not-selected' : '')} onClick={rightButtonClick}>
+          {page % 2 === 1 ? 2 : null}
+        </div>
+      </div>
+          <div onClick={() => {
+            setScrolledDown(false);
+            cubeContentRef.current.scroll({
+              top: 0,
+              left: 0,
+              behavior: 'smooth'
+            });
+          }} className='selected scroll-circle' style={{opacity: scrolledDown ? 1 : 0}}>
+            <div className='arrow arrow-bottom'/>
+          </div>
 
       <Cube
         windowWidth={windowWidth}

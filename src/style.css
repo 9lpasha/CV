@@ -1,6 +1,6 @@
 @charset "UTF-8";
 /*Обнуление*/
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@300;400;500&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 * {
   padding: 0;
   margin: 0;
@@ -9,6 +9,10 @@
 
 *, *:before, *:after {
   box-sizing: border-box;
+}
+
+*::selection {
+  background: #afa4a4; /* Safari */
 }
 
 :focus, :active {
@@ -73,7 +77,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------*/
 
 body > div {
-  font-family: "Noto Sans Mono", monospace;
+  font-family: "Open sans", sans-serif;
   font-weight: 300;
 }
 
@@ -81,11 +85,13 @@ body > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 25px;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
   border-radius: 15px;
   font-weight: 300;
+  margin: 25px;
 }
 
 .main_info {
@@ -96,7 +102,7 @@ body > div {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin: 40px 40px;
+  width: 100%;
 }
 
 .main_info1 {
@@ -110,10 +116,10 @@ body > div {
   margin-bottom: 10px;
 }
 
-.main_photo > img {
-  width: 172px;
-  height: 230px;
-  margin: 40px 40px;
+.main_photo img {
+  width: 240px!important;
+  height: auto;
+  border-radius: 5px;
 }
 
 .developer {
@@ -121,18 +127,18 @@ body > div {
 }
 
 .developer_main {
-  margin: 0 40px;
+  margin: 25px 0 10px;
   font-size: 30px;
   font-weight: 500;
 }
 
 .developer_dop {
-  margin: 10px 40px 0 40px;
+  margin: 0;
   font-size: 20px;
 }
 
 .performance {
-  margin: 60px 40px;
+  margin: 25px 25px;
 }
 
 .performance_main1 {
@@ -149,21 +155,10 @@ body > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin: 10px 0;
-}
-
-.performance_time {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 200px;
-  line-height: 18px;
 }
 
 .performance_basic {
-  margin-left: 40px;
   font-size: 15px;
-  width: 600px;
   line-height: 18px;
 }
 
@@ -173,7 +168,7 @@ body > div {
 }
 
 .edu {
-  margin: 60px 40px;
+  margin: 25px;
 }
 
 .edu_main {
@@ -186,6 +181,7 @@ body > div {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  gap: 25px;
 }
 
 .edu_type {
@@ -195,7 +191,6 @@ body > div {
 
 .edu_name {
   width: 600px;
-  margin-left: 40px;
 }
 
 .edu_name1 {
@@ -208,7 +203,7 @@ body > div {
 }
 
 .knowledge {
-  margin: 60px 40px;
+  margin: 25px 25px;
 }
 
 .know_main {
@@ -224,7 +219,7 @@ body > div {
 }
 
 .projects {
-  margin: 60px 40px;
+  margin: 25px;
 }
 
 .screenshots{
@@ -233,11 +228,15 @@ body > div {
 
 .photos{
   width: 100%;
-  margin: 20px 0 40px 0;
+  margin: 20px 0 25px 0;
   display: flex;
   justify-content: space-between;
 }
 
 .photos>img{
   box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.4);
+}
+
+.ant-card-body, .ant-card-head {
+  padding: 20px!important;
 }
