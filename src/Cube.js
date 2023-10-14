@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import photo from './images/photo_2023-01-28_20-50-21.jpg';
 import {Card, Carousel, Col, List, Row, Timeline} from "antd";
 
@@ -78,7 +78,31 @@ const listSkills = [
     description: 'Умею отлаживать код и находить баги'},
 ]
 
+const getYearsName = (years) => {
+  if (years >= 5 && years <= 20) return 'лет';
+  if (years % 10 === 1) return 'год';
+  if (years % 10 < 5) return 'года';
+  return 'лет'
+}
+
+const getMonthsName = (months) => {
+  if (months >= 5 && months <= 20) return 'месяцев';
+  if (months % 10 === 1) return 'месяц';
+  if (months % 10 < 5) return 'месяца';
+  return 'месяцев'
+}
+
 export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff}) => {
+
+  const timePerformance = useMemo(() => {
+    const diff = new Date() - new Date(2020, 8, 1, 0, 0, 0, 0);
+const days = diff / 1000 / 60 / 60 / 24;
+    return {
+      years: Math.floor(days / 365),
+      months: Math.floor((days / 365) % 1 * 12)
+    }
+  }, []);
+
   return (
     <div
       className={`cube ${page % 2 === 0 ? 'forward' : 'reverse'}`}
@@ -112,6 +136,14 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                           </Card>
                         </Col>
                       </Row>
+                      {
+                        windowWidth >= 650 &&
+                          <img
+                            src="http://studiopixel.in/wp-content/uploads/2017/11/senior-front-end-developer-openings-1.gif"
+                            alt=""
+                            style={{height: '175px', width: 'fit-content', alignSelf: 'center', marginTop: '25px'}}
+                          />
+                      }
                     </div>
                 }
                 <div className="main_photo">
@@ -139,7 +171,7 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
               <div className="performance">
                 <Row>
                   <Col style={{width: '100%'}}>
-                    <Card title="Опыт" bordered={false} hoverable>
+                    <Card title={`Опыт ${timePerformance.years} ${getYearsName(timePerformance.years)} ${timePerformance.months} ${getMonthsName(timePerformance.months)}`} bordered={false} hoverable>
                       <div className="performance_flex">
                         <Timeline
                           mode='left'
