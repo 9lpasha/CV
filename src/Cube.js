@@ -137,12 +137,12 @@ const days = diff / 1000 / 60 / 60 / 24;
                         </Col>
                       </Row>
                       {
-                        windowWidth >= 650 &&
+                        /*windowWidth >= 650 &&
                           <img
                             src="http://studiopixel.in/wp-content/uploads/2017/11/senior-front-end-developer-openings-1.gif"
                             alt=""
                             style={{height: '175px', width: 'fit-content', alignSelf: 'center', marginTop: '25px'}}
-                          />
+                          />*/
                       }
                     </div>
                 }
