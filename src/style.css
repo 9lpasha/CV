@@ -91,7 +91,7 @@ body > div {
           justify-content: space-between;
   border-radius: 15px;
   font-weight: 300;
-  margin: 25px;
+  padding: 25px;
 }
 
 .main_info {
@@ -138,7 +138,7 @@ body > div {
 }
 
 .performance {
-  margin: 25px 25px;
+  padding: 0 25px 25px;
 }
 
 .performance_main1 {
@@ -168,7 +168,7 @@ body > div {
 }
 
 .edu {
-  margin: 25px;
+  padding: 0 25px 25px;
 }
 
 .edu_main {
@@ -203,7 +203,7 @@ body > div {
 }
 
 .knowledge {
-  margin: 25px 25px;
+  padding: 25px;
 }
 
 .know_main {
@@ -219,7 +219,7 @@ body > div {
 }
 
 .projects {
-  margin: 25px;
+  padding: 0 25px 25px;
 }
 
 .screenshots{
@@ -239,6 +239,10 @@ body > div {
 
 .ant-card-body, .ant-card-head {
   padding: 20px!important;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid #005316!important;
 }
 
 @media (max-width: 650px) {
@@ -285,8 +289,7 @@ body > div {
   }
 
   .cubeContent > div {
-    margin: 15px;
-    padding: 0;
+    padding: 15px;
   }
 
   .cubeContent .ant-card-head, .cubeContent .ant-card-body {
@@ -308,4 +311,53 @@ body > div {
   .ant-timeline-item-content {
     width: calc(100% - 63px) !important;
   }
+}
+
+.cube {
+  background: rgb(26 42 19);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.33), 0 1px 6px -1px rgba(0, 0, 0, 0.32), 0 2px 4px 4px rgba(0, 0, 0, 0.32) !important;
+}
+
+.ant-card {
+  background: rgb(12, 19, 9);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.33), 0 1px 6px -1px rgba(0, 0, 0, 0.32), 0 2px 4px 4px rgba(0, 0, 0, 0.32) !important;
+}
+
+.ant-card * {
+  color: #00a600!important;
+  text-shadow: 0 3px 30px #229534;
+}
+
+.ant-list-item-meta a:hover {
+  text-decoration: unset!important;
+}
+
+.ant-list-item {
+  background: #076807a8;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  padding: 10px!important;
+}
+
+.selected, .not-selected {
+  background: rgb(81 122 62);
+  color: black;
+}
+
+.ant-timeline-item-tail {
+  background: #007700;
+}
+
+.ant-timeline-item-head-blue {
+  background-color: rgba(0, 119, 0, 0.13) !important;
+  border-color: #007700!important;
+}
+
+.ant-card {
+  transition: all .3s ease;
+}
+
+.ant-card:hover {
+  transform: scale(1.02, 1);
+  z-index: 100;
 }

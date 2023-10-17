@@ -1,5 +1,4 @@
 import React, {useMemo} from 'react';
-import photo from './images/CV-avatar.jpg';
 import {Card, Carousel, Col, List, Row, Timeline} from "antd";
 
 import muiIcon from './images/icons/mui.svg';
@@ -9,7 +8,9 @@ import tsIcon from './images/icons/icons8-typescript-50.png';
 import cssIcon from './images/icons/icons8-css-50.png';
 import reactIcon from './images/icons/icons8-react-a-javascript-library-for-building-user-interfaces-24.png';
 import reduxIcon from './images/icons/icons8-redux-an-open-source-javascript-library-for-managing-application-state-24.png';
-import backgroundImage from "./images/background.jpg";
+
+import backgroundImage from "./images/green_code.png";
+import photo from './images/CV-avatar.jpg';
 
 const { Meta } = Card;
 
@@ -93,7 +94,7 @@ const getMonthsName = (months) => {
   return 'месяцев'
 }
 
-export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff, onScroll}) => {
+export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff, onScroll, setPageLoaded}) => {
 
   const timePerformance = useMemo(() => {
     const diff = new Date() - new Date(2020, 8, 1, 0, 0, 0, 0);
@@ -127,9 +128,10 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
       >
         <div style={{
           width: '100%', height: '100%',
-          background: `center / contain url('${backgroundImage}')`, opacity: '0.4',
+          background: `center / contain url('${backgroundImage}')`,
           position: 'fixed',
-          zIndex: '-1'
+          zIndex: '-1',
+          opacity: '0.3'
         }}/>
         {
           pageForContent % 2 === 0 ?
@@ -151,14 +153,6 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                           </Card>
                         </Col>
                       </Row>
-                      {
-                        /*windowWidth >= 650 &&
-                          <img
-                            src="http://studiopixel.in/wp-content/uploads/2017/11/senior-front-end-developer-openings-1.gif"
-                            alt=""
-                            style={{height: '175px', width: 'fit-content', alignSelf: 'center', marginTop: '25px'}}
-                          />*/
-                      }
                     </div>
                 }
                 <div className="main_photo">
@@ -166,7 +160,7 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                     hoverable
                     bordered={false}
                     style={{ width: 'fit-content' }}
-                    cover={<img alt="example" src={photo} />}
+                    cover={<img alt="example" src={photo} onLoad={setPageLoaded} />}
                   >
                     <Meta title="Чураков Павел Сергеевич" style={{width: 'fit-content'}}/>
                     {
@@ -313,7 +307,7 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                                     </Carousel> :
                                     item.picture ?
                                       <img src={item.picture} style={{width: '30px'}} /> :
-                                      <div style={{width: '30px', height: '30px', borderRadius: '50%', background: '#ebebeb'}}/>
+                                      <div style={{width: '30px', height: '30px', borderRadius: '50%', background: 'rgb(81 122 62)'}}/>
                                 }
                                     title={<a>{item.name}</a>}
                                     description={item.description}
