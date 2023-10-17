@@ -94,7 +94,7 @@ const getMonthsName = (months) => {
   return 'месяцев'
 }
 
-export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff, onScroll, setPageLoaded}) => {
+export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, onScroll, setPageLoaded, reffSlider}) => {
 
   const timePerformance = useMemo(() => {
     const diff = new Date() - new Date(2020, 8, 1, 0, 0, 0, 0);
@@ -114,28 +114,22 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
 
   return (
     <div
-      className={`cube ${page % 2 === 0 ? 'forward' : 'reverse'}`}
+      className={`cube forward`}
       style={{
         width: windowWidth - 50 > 800 ? 800 : (windowWidth - (windowWidth < 500 ? 30 : 50)),
         height: windowHeight - 100 + 'px',
       }}
-      ref={reff}
-      onScroll={onScroll}
     >
-      <div
-        className={`cubeContent ${pageForContent % 2 === 0 ? 'forward' : 'reverse'}`}
-        style={{opacity: visible}}
-      >
-        <div style={{
-          width: '100%', height: '100%',
-          background: `center / contain url('${backgroundImage}')`,
-          position: 'fixed',
-          zIndex: '-1',
-          opacity: '0.3'
-        }}/>
-        {
-          pageForContent % 2 === 0 ?
-            <>
+      <div className={`cubeContent forward`}>
+        <div
+          className='flex200'
+          style={{transform: `translateX(${pageForContent % 2 === 0 ? 0 : -50}%) translateY(0)`}} ref={reffSlider}
+        >
+          <div style={{width: '50%', height: '100%'}} className='container-page' ref={reff} onScroll={onScroll}>
+            <div style={{position: 'relative'}}>
+
+              <div style={{background: `center / contain url('${backgroundImage}')`}} className='local-background'/>
+
               <div className="main">
                 {
                   windowWidth < 500 ?
@@ -144,12 +138,12 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                       <Row>
                         <Col style={{width: '100%'}}>
                           <Card title="Frontend-разработчик React" bordered={false} hoverable>
-                            <span className='common-text'>
-                              {age} {getYearsName(age)} <br/>
-                              8-917-284-54-36 <br/>
-                              131313pasha@mail.ru <br/>
-                              <a target='_blank' href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
-                            </span>
+                              <span className='common-text'>
+                                {age} {getYearsName(age)} <br/>
+                                8-917-284-54-36 <br/>
+                                131313pasha@mail.ru <br/>
+                                <a target='_blank' href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                              </span>
                           </Card>
                         </Col>
                       </Row>
@@ -176,7 +170,6 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                 </div>
               </div>
 
-
               <div className="edu">
                 <Row>
                   <Col style={{width: '100%'}}>
@@ -190,7 +183,6 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                   </Col>
                 </Row>
               </div>
-
 
               <div className="performance">
                 <Row>
@@ -208,10 +200,10 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                                     космических аппаратов и систем МИЭМ</b></h2>
                                   <a target='_blank' href="https://space.miem.hse.ru/">Виртуальный космос</a><br/>
                                   <span className='common-text'>
-                                    Веб-приложение для визуализации полёта спутника и расчётов. <br/>
-                                    <b>Что делал:</b> переписывал фронт на react + three.js. <br/>
-                                    <b>Главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, по grpc и рисовал
-                                    картинку в реальном времени с помощью three.js</span> <br/>
+                                      Веб-приложение для визуализации полёта спутника и расчётов. <br/>
+                                      <b>Что делал:</b> переписывал фронт на react + three.js. <br/>
+                                      <b>Главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, по grpc и рисовал
+                                      картинку в реальном времени с помощью three.js</span> <br/>
                                 </div>
                               ),
                             },
@@ -221,12 +213,12 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                                 <div>
                                   <h2 className='mb10'><b>ООО ЭРА</b></h2>
                                   <span className='common-text'>
-                                    Корпоративная IT система для строительной компании. <br/>
-                                    <b>Что делал:</b> участвовал в написании API - монолит (nest, typeorm, postgres),
-                                    участвовал в разработке архитектуры фронта и писал несколько разделов сайта,
-                                    таких как "согласования", "склад", "маркетплейс"
-                                    (react, typescript, redux, storybook), разворачивал проект (nginx, docker).
-                                  </span>
+                                      Корпоративная IT система для строительной компании. <br/>
+                                      <b>Что делал:</b> участвовал в написании API - монолит (nest, typeorm, postgres),
+                                      участвовал в разработке архитектуры фронта и писал несколько разделов сайта,
+                                      таких как "согласования", "склад", "маркетплейс"
+                                      (react, typescript, redux, storybook), разворачивал проект (nginx, docker).
+                                    </span>
                                 </div>
                               ),
                             },
@@ -236,17 +228,17 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                                 <div>
                                   <h2 className='mb10'><b >ISS</b></h2>
                                   <span className='common-text'>
-                                    <a target='_blank' href="https://happydesk.ru/">HappyDesk</a><br/>
-                                    Helpdesk-система для поддержки клиентов и сотрудников. <br/>
-                                    <b>Что делал:</b> писал новый функционал на фронте (typescript, react, redux, react-hook-form, vite, mui): <br/>
-                                     - редактор статей базы знаний + замена компонента "Текстовый редактор", использовал этот <a
+                                      <a target='_blank' href="https://happydesk.ru/">HappyDesk</a><br/>
+                                      Helpdesk-система для поддержки клиентов и сотрудников. <br/>
+                                      <b>Что делал:</b> писал новый функционал на фронте (typescript, react, redux, react-hook-form, vite, mui): <br/>
+                                       - редактор статей базы знаний + замена компонента "Текстовый редактор", использовал этот <a
                                     target='_blank' href="https://www.tiny.cloud/">tinymce</a>, <br/>
-                                     - раздел базы знаний и отдельный проект
-                                    для <a target='_blank' href="https://support.portal.happydesk.ru/knowledge">Базы Знаний</a> на
-                                    react + ts + rtk + tailwind (FSD), <br/>
-                                     - писал компонент, обёрнутый в iframe, и логику для общения с основным окном, <br/>
-                                     - работал с чатом приложения (websockets на фронте и на node.js сервере),
-                                     - участвовал в переносе проекта с webpack и javascript на vite, typescript и шаблон MUI.</span> <br/>
+                                       - раздел базы знаний и отдельный проект
+                                      для <a target='_blank' href="https://support.portal.happydesk.ru/knowledge">Базы Знаний</a> на
+                                      react + ts + rtk + tailwind (FSD), <br/>
+                                       - писал компонент, обёрнутый в iframe, и логику для общения с основным окном, <br/>
+                                       - работал с чатом приложения (websockets на фронте и на node.js сервере),
+                                       - участвовал в переносе проекта с webpack и javascript на vite, typescript и шаблон MUI.</span> <br/>
                                 </div>
                               ),
                             },
@@ -257,12 +249,12 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                       <div className="performance_flex">
                         <div className="performance_basic">
                           <b>- Pet-проект</b> <br/>
-                            <span className='common-text mt10'>Веб-приложение (frontend) торрент-каталога, включающее в
-                              себя работу с пользователями и валидацию
-                              всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
-                              применялся storybook:&nbsp;
-                              <a target='_blank' href="https://sectorrent.site">sectorrent.site</a>
-                            </span><br/><br/>
+                          <span className='common-text mt10'>Веб-приложение (frontend) торрент-каталога, включающее в
+                                себя работу с пользователями и валидацию
+                                всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
+                                применялся storybook:&nbsp;
+                            <a target='_blank' href="https://sectorrent.site">sectorrent.site</a>
+                              </span><br/><br/>
                         </div>
                       </div>
 
@@ -270,8 +262,8 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                         <div className="performance_basic">
                           <b>- Стажировался (3 месяца) full-stack-ом</b><br/>
                           <span className='common-text mt10'>Получил хороший опыт на react + typescript + graphQL +
-                            docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
-                          </span>
+                              docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
+                            </span>
                         </div>
                       </div>
                     </Card>
@@ -279,69 +271,76 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                 </Row>
               </div>
 
-            </> :
-          <>
-            <div className="knowledge">
-              <Row>
-                <Col style={{width: '100%'}}>
-                  <Card title="Знания и навыки" bordered={false} hoverable>
-                    <div className="edu_flex">
-                      <div style={{width: '100%'}} className="common-text">
-                        <List
-                          className="demo-loadmore-list"
-                          itemLayout="horizontal"
-                          dataSource={listSkills}
-                          renderItem={(item) => (
-                            <List.Item>
+            </div>
+
+          </div>
+          <div style={{width: '50%', height: '100%'}} className='container-page' ref={reff2} onScroll={onScroll}>
+            <div style={{position: 'relative'}}>
+
+              <div style={{background: `center / contain url('${backgroundImage}')`}} className='local-background'/>
+
+              <div className="knowledge">
+                <Row>
+                  <Col style={{width: '100%'}}>
+                    <Card title="Знания и навыки" bordered={false} hoverable>
+                      <div className="edu_flex">
+                        <div style={{width: '100%'}} className="common-text">
+                          <List
+                            className="demo-loadmore-list"
+                            itemLayout="horizontal"
+                            dataSource={listSkills}
+                            renderItem={(item) => (
+                              <List.Item>
                                 <List.Item.Meta
                                   avatar={
-                                  Array.isArray(item.picture) ?
-                                    <Carousel effect="fade" autoplay style={{height: '30px', width: '30px'}}>
-                                      {
-                                        item.picture.map(el => (
-                                          <div>
-                                            <img style={{width: '30px'}} src={el} alt=""/>
-                                          </div>
-                                        ))
-                                      }
-                                    </Carousel> :
-                                    item.picture ?
-                                      <img src={item.picture} style={{width: '30px'}} /> :
-                                      <div style={{width: '30px', height: '30px', borderRadius: '50%', background: 'rgb(81 122 62)'}}/>
-                                }
-                                    title={<a>{item.name}</a>}
-                                    description={item.description}
-                                  />
-                            </List.Item>
-                          )}
-                        />
+                                    Array.isArray(item.picture) ?
+                                      <Carousel effect="fade" autoplay style={{height: '30px', width: '30px'}}>
+                                        {
+                                          item.picture.map(el => (
+                                            <div>
+                                              <img style={{width: '30px'}} src={el} alt=""/>
+                                            </div>
+                                          ))
+                                        }
+                                      </Carousel> :
+                                      item.picture ?
+                                        <img src={item.picture} style={{width: '30px'}} /> :
+                                        <div style={{width: '30px', height: '30px', borderRadius: '50%', background: 'rgb(81 122 62)'}}/>
+                                  }
+                                  title={<a>{item.name}</a>}
+                                  description={item.description}
+                                />
+                              </List.Item>
+                            )}
+                          />
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </Col>
-              </Row>
-            </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
 
-
-            <div className="projects">
-              <Row>
-                <Col style={{width: '100%'}}>
-                  <Card title="О себе" bordered={false} hoverable>
-                    <div className="edu_flex">
-                      <div className="edu_name2 common-text">
-                        - ищу крутую команду, где смогу реализовать свой потенциал; <br/>
-                        - я за чистый, переиспользуемый, понятный код и развитие продукта; <br/>
-                        - быстро отвечаю и помогаю коллегам; <br/>
-                        - энергичен, положительно отношусь к тяжёлым задачам; <br/>
-                        - готов учиться и изучать необходимые технологии. <br/>
+              <div className="projects">
+                <Row>
+                  <Col style={{width: '100%'}}>
+                    <Card title="О себе" bordered={false} hoverable>
+                      <div className="edu_flex">
+                        <div className="edu_name2 common-text">
+                          - ищу крутую команду, где смогу реализовать свой потенциал; <br/>
+                          - я за чистый, переиспользуемый, понятный код и развитие продукта; <br/>
+                          - быстро отвечаю и помогаю коллегам; <br/>
+                          - энергичен, положительно отношусь к тяжёлым задачам; <br/>
+                          - готов учиться и изучать необходимые технологии. <br/>
+                        </div>
                       </div>
-                    </div>
-                  </Card>
-                </Col>
-              </Row>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
+
             </div>
-          </>
-        }
+          </div>
+        </div>
       </div>
     </div>
   );

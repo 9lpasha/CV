@@ -11,14 +11,17 @@ import {Spin} from "antd";
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-  const [page, setPage] = useState(0);
   const [pageForContent, setPageForContent] = useState(0);
-  const [visible, setVisible] = useState(1);
-  const [scrolledDown, setScrolledDown] = useState(false);
+  const [scrolledDownLeft, setScrolledDownLeft] = useState(false);
+  const [scrolledDownRight, setScrolledDownRight] = useState(false);
   const [pageLoaded, setPageLoaded] = useState(false);
 
-  const cubeContentRef = useRef(null);
+  const cubeContentLeftRef = useRef(null);
+  const cubeContentRightRef = useRef(null);
   const loaderRef = useRef(null);
+  const reffSlider = useRef(null);
+
+  const ifFirstPage = pageForContent % 2 === 0;
 
   useEffect(() => {
     const onResize = (e) => {
@@ -36,53 +39,29 @@ function App() {
   const leftButtonClick = (e) => {
     makeShadow(e);
 
-    if (pageForContent % 2 === 1) {
-      setTimeout(() => {
-        setVisible(0);
-        setPage(prev => prev - 1);
-      }, 0);
-      setTimeout(() => {
-        setVisible(1);
-        setPageForContent(prev => prev - 1);
-        cubeContentRef.current.scroll({
-          top: 0,
-          left: 0,
-          behavior: 'auto'
-        });
-        setScrolledDown(false);
-      }, 1000);
+    if (!ifFirstPage) {
+      setPageForContent(prev => prev - 1);
     }
   }
 
   const rightButtonClick = (e) => {
     makeShadow(e);
 
-    if (pageForContent % 2 === 0) {
-      setTimeout(() => {
-        setVisible(0);
-        setPage(prev => prev + 1);
-      }, 0);
-      setTimeout(() => {
-        setVisible(1);
-        setPageForContent(prev => prev + 1);
-        cubeContentRef.current.scroll({
-          top: 0,
-          left: 0,
-          behavior: 'auto'
-        });
-        setScrolledDown(false);
-      }, 1000);
+    if (ifFirstPage) {
+      setPageForContent(prev => prev + 1);
     }
   }
 
   const cubeScroll = (e, ifTouch = false) => {
+    let tempRef = ifFirstPage ? cubeContentLeftRef : cubeContentRightRef;
+
     if (!ifTouch) {
-      cubeContentRef.current.scrollBy(0, e.deltaY);
+      tempRef.current.scrollBy(0, e.deltaY);
     }
-    if (cubeContentRef.current.scrollTop !== 0) {
-      setScrolledDown(true);
+    if (tempRef.current.scrollTop !== 0) {
+      ifFirstPage ? setScrolledDownLeft(true) : setScrolledDownRight(true);
     } else {
-      setScrolledDown(false);
+      ifFirstPage ? setScrolledDownLeft(false) : setScrolledDownRight(false);
     }
   }
 
@@ -101,33 +80,35 @@ function App() {
         position: 'fixed',
         zIndex: '-1'
       }}/>
-      <div style={{display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '20px'}}>
-        <div className={'selected' + (page % 2 === 1 ? ' not-selected' : '')} onClick={leftButtonClick}>
-          {page % 2 === 0 ? 1 : null}
+      <div style={{display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '20px', height: '40px'}}>
+        <div className={'selected' + (!ifFirstPage ? ' not-selected' : '')} onClick={leftButtonClick}>
+          {ifFirstPage ? 1 : null}
         </div>
         <div style={{width: '20px', height: '1px', background: 'rgb(81 122 62)'}}/>
-        <div className={'selected' + (page % 2 === 0 ? ' not-selected' : '')} onClick={rightButtonClick}>
-          {page % 2 === 1 ? 2 : null}
+        <div className={'selected' + (ifFirstPage ? ' not-selected' : '')} onClick={rightButtonClick}>
+          {!ifFirstPage ? 2 : null}
         </div>
       </div>
           <div onClick={() => {
-            setScrolledDown(false);
-            cubeContentRef.current.scroll({
+            ifFirstPage ? setScrolledDownLeft(false) : setScrolledDownRight(false);
+            let tempRef = ifFirstPage ? cubeContentLeftRef : cubeContentRightRef;
+            tempRef.current.scroll({
               top: 0,
               left: 0,
               behavior: 'smooth'
             });
-          }} className='selected scroll-circle' style={{opacity: scrolledDown ? 1 : 0}}>
+          }} className='selected scroll-circle'
+               style={{opacity: ifFirstPage ? (scrolledDownLeft ? 1 : 0) : (scrolledDownRight ? 1 : 0)}}>
             <div className='arrow arrow-bottom'/>
           </div>
 
       <Cube
         windowWidth={windowWidth}
         windowHeight={windowHeight}
-        page={page}
-        visible={visible}
         pageForContent={pageForContent}
-        reff={cubeContentRef}
+        reff={cubeContentLeftRef}
+        reff2={cubeContentRightRef}
+        reffSlider={reffSlider}
         onScroll={(e) => cubeScroll(e, true)}
         setPageLoaded={() => {
           setTimeout(() => {

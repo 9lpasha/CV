@@ -12,7 +12,7 @@
 }
 
 *::selection {
-  background: #afa4a4; /* Safari */
+  background: rgba(17, 75, 23, 0.49); /* Safari */
 }
 
 :focus, :active {
@@ -288,7 +288,7 @@ body > div {
     margin-bottom: 10px!important;
   }
 
-  .cubeContent > div {
+  .main, .edu, .performance, .knowledge, .projects {
     padding: 15px;
   }
 
