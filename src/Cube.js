@@ -9,7 +9,7 @@ import cssIcon from './images/icons/icons8-css-50.png';
 import reactIcon from './images/icons/icons8-react-a-javascript-library-for-building-user-interfaces-24.png';
 import reduxIcon from './images/icons/icons8-redux-an-open-source-javascript-library-for-managing-application-state-24.png';
 
-import backgroundImage from "./images/green_code.png";
+import backgroundImage from "./images/background.jpg";
 import photo from './images/CV-avatar.jpg';
 
 const { Meta } = Card;
@@ -305,7 +305,7 @@ export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, on
                                       </Carousel> :
                                       item.picture ?
                                         <img src={item.picture} style={{width: '30px'}} /> :
-                                        <div style={{width: '30px', height: '30px', borderRadius: '50%', background: 'rgb(81 122 62)'}}/>
+                                        <div style={{width: '30px', height: '30px', borderRadius: '50%', background: 'rgba(189, 189, 189, 0.6)'}}/>
                                   }
                                   title={<a>{item.name}</a>}
                                   description={item.description}

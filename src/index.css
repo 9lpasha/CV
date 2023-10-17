@@ -101,8 +101,8 @@ a:hover {
 .arrow {
   width: 12px;
   height: 12px;
-  border-top: 2px solid black;
-  border-right: 2px solid black;
+  border-top: 2px solid white;
+  border-right: 2px solid white;
 }
 
 .arrow-bottom {
@@ -110,7 +110,7 @@ a:hover {
 }
 
 .scroll-circle {
-  background: #0e0e0e;
+  background: rgb(189, 189, 189);
   position: fixed;
   bottom: 20px;
   right: 20px;

@@ -1,12 +1,13 @@
 import {useEffect, useRef, useState} from "react";
 import React from "react";
 import { LoadingOutlined } from '@ant-design/icons';
+import {Spin} from "antd";
 
 import {Cube} from "./Cube";
 import './style.css';
 import {makeShadow} from "./utils";
-import backgroundImage from './images/green_background.jpg';
-import {Spin} from "antd";
+import backgroundImage from './images/background.jpg';
+
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);

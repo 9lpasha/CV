@@ -241,10 +241,6 @@ body > div {
   padding: 20px!important;
 }
 
-.ant-card-head {
-  border-bottom: 1px solid #005316!important;
-}
-
 @media (max-width: 650px) {
   .main_photo img {
     width: 100% !important;
@@ -313,44 +309,8 @@ body > div {
   }
 }
 
-.cube {
-  background: rgb(26 42 19);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.33), 0 1px 6px -1px rgba(0, 0, 0, 0.32), 0 2px 4px 4px rgba(0, 0, 0, 0.32) !important;
-}
-
-.ant-card {
-  background: rgb(12, 19, 9);
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.33), 0 1px 6px -1px rgba(0, 0, 0, 0.32), 0 2px 4px 4px rgba(0, 0, 0, 0.32) !important;
-}
-
-.ant-card * {
-  color: #00a600!important;
-  text-shadow: 0 3px 30px #229534;
-}
-
 .ant-list-item-meta a:hover {
   text-decoration: unset!important;
-}
-
-.ant-list-item {
-  background: #076807a8;
-  border-radius: 10px;
-  margin-bottom: 10px;
-  padding: 10px!important;
-}
-
-.selected, .not-selected {
-  background: rgb(81 122 62);
-  color: black;
-}
-
-.ant-timeline-item-tail {
-  background: #007700;
-}
-
-.ant-timeline-item-head-blue {
-  background-color: rgba(0, 119, 0, 0.13) !important;
-  border-color: #007700!important;
 }
 
 .ant-card {
