@@ -1,5 +1,5 @@
 import React, {useMemo} from 'react';
-import photo from './images/photo_2023-01-28_20-50-21.jpg';
+import photo from './images/CV-avatar.jpg';
 import {Card, Carousel, Col, List, Row, Timeline} from "antd";
 
 import muiIcon from './images/icons/mui.svg';
@@ -9,6 +9,7 @@ import tsIcon from './images/icons/icons8-typescript-50.png';
 import cssIcon from './images/icons/icons8-css-50.png';
 import reactIcon from './images/icons/icons8-react-a-javascript-library-for-building-user-interfaces-24.png';
 import reduxIcon from './images/icons/icons8-redux-an-open-source-javascript-library-for-managing-application-state-24.png';
+import backgroundImage from "./images/background.jpg";
 
 const { Meta } = Card;
 
@@ -30,7 +31,7 @@ const listSkills = [
     description: 'опыт 3 года'},
   {picture: 'https://threejs.org/files/favicon.ico',
     name: 'threeJS',
-    description: '3D в браузере'},
+    description: '3D в браузере (писал визуализацию полёта спутника по околоземной орбите)'},
   {picture: 'https://storybook.js.org/favicon.svg?v=eac3ed5255c5d69cad47bb7ed6ce3dbf',
     name: 'storybook',
     description: 'писал свою небольшую библиотеку компонентов'},
@@ -45,7 +46,7 @@ const listSkills = [
     description: 'Не только rest'},
   {picture: 'https://github.githubassets.com/favicons/favicon.png',
     name: 'git',
-    description: 'Понимаю git-flow, знаю много команд git'},
+    description: 'Понимаю git-flow, знаю основные необходимые команды git'},
   {picture: 'https://jwt.io/img/favicon/favicon-32x32.png',
     name: 'JWT',
     description: 'Понимаю процесс авторизации по JWT'},
@@ -60,7 +61,7 @@ const listSkills = [
     description: 'На уровне использования контейнеров'},
   {picture: 'https://nginx.org/favicon.ico',
     name: 'nginx',
-    description: 'Настраивал на одной работе'},
+    description: 'Использовал для обработки входящих запросов к статическим файлам'},
   {picture: 'https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png',
     name: 'Linux',
     description: 'На уровне редактирования файлов с vim и установки пакетов, docker и тд.'},
@@ -72,7 +73,7 @@ const listSkills = [
     description: 'Работал с разными API, например GAPI (google)'},
   {picture: '',
     name: 'Backend и инфраструктура',
-    description: 'Разбираюсь не только во frontend, но и в backend и инфраструктурных вещах'},
+    description: 'Разбираюсь не только во frontend, но и в backend и инфраструктуре'},
   {picture: '',
     name: 'Отладка кода',
     description: 'Умею отлаживать код и находить баги'},
@@ -92,30 +93,44 @@ const getMonthsName = (months) => {
   return 'месяцев'
 }
 
-export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff}) => {
+export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, reff, onScroll}) => {
 
   const timePerformance = useMemo(() => {
     const diff = new Date() - new Date(2020, 8, 1, 0, 0, 0, 0);
-const days = diff / 1000 / 60 / 60 / 24;
+    const days = diff / 1000 / 60 / 60 / 24;
+
     return {
       years: Math.floor(days / 365),
       months: Math.floor((days / 365) % 1 * 12)
     }
   }, []);
 
+  const age = useMemo(() => {
+    const diff = new Date() - new Date(2001, 0, 12, 0, 0, 0, 0);
+
+    return Math.floor(diff / 1000 / 60 / 60 / 24 / 365);
+  }, []);
+
   return (
     <div
       className={`cube ${page % 2 === 0 ? 'forward' : 'reverse'}`}
       style={{
-        width: windowWidth - 50 > 800 ? 800 : windowWidth - 50,
+        width: windowWidth - 50 > 800 ? 800 : (windowWidth - (windowWidth < 500 ? 30 : 50)),
         height: windowHeight - 100 + 'px',
       }}
       ref={reff}
+      onScroll={onScroll}
     >
       <div
         className={`cubeContent ${pageForContent % 2 === 0 ? 'forward' : 'reverse'}`}
         style={{opacity: visible}}
       >
+        <div style={{
+          width: '100%', height: '100%',
+          background: `center / contain url('${backgroundImage}')`, opacity: '0.4',
+          position: 'fixed',
+          zIndex: '-1'
+        }}/>
         {
           pageForContent % 2 === 0 ?
             <>
@@ -128,10 +143,10 @@ const days = diff / 1000 / 60 / 60 / 24;
                         <Col style={{width: '100%'}}>
                           <Card title="Frontend-разработчик React" bordered={false} hoverable>
                             <span className='common-text'>
-                              22 года <br/>
+                              {age} {getYearsName(age)} <br/>
                               8-917-284-54-36 <br/>
                               131313pasha@mail.ru <br/>
-                              <a href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                              <a target='_blank' href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
                             </span>
                           </Card>
                         </Col>
@@ -156,15 +171,30 @@ const days = diff / 1000 / 60 / 60 / 24;
                     <Meta title="Чураков Павел Сергеевич" style={{width: 'fit-content'}}/>
                     {
                       windowWidth < 500 ?
-                        <>22 года <br/>
+                        <>{age} {getYearsName(age)} <br/>
                           8-917-284-54-36 <br/>
                           131313pasha@mail.ru <br/>
-                          <a href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                          <a target='_blank' href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
                         </> :
                         null
                     }
                   </Card>
                 </div>
+              </div>
+
+
+              <div className="edu">
+                <Row>
+                  <Col style={{width: '100%'}}>
+                    <Card title="Образование" bordered={false} hoverable>
+                      <div className="edu_flex">
+                        <div className="edu_name2 common-text">
+                          Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
               </div>
 
 
@@ -182,9 +212,12 @@ const days = diff / 1000 / 60 / 60 / 24;
                                 <div>
                                   <h2 className='mb10'><b>Учебно-исследовательская лаборатория функциональной безопасности
                                     космических аппаратов и систем МИЭМ</b></h2>
-                                  <span className='common-text'>Переписывание фронта на react + three.js, работа с grpc.
-                                    Главная фишка - симулятор полёта спутника вокруг земли (вычисления на бэке с++
-                                    и передача данных на фронт по gRPC, фронт на React + three.js)</span>
+                                  <a target='_blank' href="https://space.miem.hse.ru/">Виртуальный космос</a><br/>
+                                  <span className='common-text'>
+                                    Веб-приложение для визуализации полёта спутника и расчётов. <br/>
+                                    <b>Что делал:</b> переписывал фронт на react + three.js. <br/>
+                                    <b>Главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, по grpc и рисовал
+                                    картинку в реальном времени с помощью three.js</span> <br/>
                                 </div>
                               ),
                             },
@@ -193,9 +226,13 @@ const days = diff / 1000 / 60 / 60 / 24;
                               children: (
                                 <div>
                                   <h2 className='mb10'><b>ООО ЭРА</b></h2>
-                                  <span className='common-text'>Написание API - монолит (nest, typeorm, postgres), компонентов на фронте
-                                    (react, typescript, redux, storybook), развёртывание проекта (nginx, docker).
-                                    Запустили систему в продакшн и дорабатывали функциональность.</span>
+                                  <span className='common-text'>
+                                    Корпоративная IT система для строительной компании. <br/>
+                                    <b>Что делал:</b> участвовал в написании API - монолит (nest, typeorm, postgres),
+                                    участвовал в разработке архитектуры фронта и писал несколько разделов сайта,
+                                    таких как "согласования", "склад", "маркетплейс"
+                                    (react, typescript, redux, storybook), разворачивал проект (nginx, docker).
+                                  </span>
                                 </div>
                               ),
                             },
@@ -204,11 +241,18 @@ const days = diff / 1000 / 60 / 60 / 24;
                               children: (
                                 <div>
                                   <h2 className='mb10'><b >ISS</b></h2>
-                                  <span className='common-text'>Написание нового функционала на фронте (react redux),
-                                    работа с чатом приложения (websockets на фронте и на node.js сервере),
-                                    замена текстового редактора в приложении, переписывание целого
-                                    раздела системы на typescript + redux-toolkit + tailwind (feature-sliced design).
-                                    Перенос проекта с webpack и javascript на vite, typescript и шаблон MUI.</span>
+                                  <span className='common-text'>
+                                    <a target='_blank' href="https://happydesk.ru/">HappyDesk</a><br/>
+                                    Helpdesk-система для поддержки клиентов и сотрудников. <br/>
+                                    <b>Что делал:</b> писал новый функционал на фронте (typescript, react, redux, react-hook-form, vite, mui): <br/>
+                                     - редактор статей базы знаний + замена компонента "Текстовый редактор", использовал этот <a
+                                    target='_blank' href="https://www.tiny.cloud/">tinymce</a>, <br/>
+                                     - раздел базы знаний и отдельный проект
+                                    для <a target='_blank' href="https://support.portal.happydesk.ru/knowledge">Базы Знаний</a> на
+                                    react + ts + rtk + tailwind (FSD), <br/>
+                                     - писал компонент, обёрнутый в iframe, и логику для общения с основным окном, <br/>
+                                     - работал с чатом приложения (websockets на фронте и на node.js сервере),
+                                     - участвовал в переносе проекта с webpack и javascript на vite, typescript и шаблон MUI.</span> <br/>
                                 </div>
                               ),
                             },
@@ -223,7 +267,7 @@ const days = diff / 1000 / 60 / 60 / 24;
                               себя работу с пользователями и валидацию
                               всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
                               применялся storybook:&nbsp;
-                              <a href="https://sectorrent.site">sectorrent.site</a>.
+                              <a target='_blank' href="https://sectorrent.site">sectorrent.site</a>
                             </span><br/><br/>
                         </div>
                       </div>
@@ -241,20 +285,6 @@ const days = diff / 1000 / 60 / 60 / 24;
                 </Row>
               </div>
 
-
-              <div className="edu">
-                <Row>
-                  <Col style={{width: '100%'}}>
-                    <Card title="Образование" bordered={false} hoverable>
-                      <div className="edu_flex">
-                          <div className="edu_name2 common-text">
-                            Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
-                          </div>
-                      </div>
-                    </Card>
-                  </Col>
-                </Row>
-              </div>
             </> :
           <>
             <div className="knowledge">
@@ -302,19 +332,13 @@ const days = diff / 1000 / 60 / 60 / 24;
             <div className="projects">
               <Row>
                 <Col style={{width: '100%'}}>
-                  <Card title="Личные качества" bordered={false} hoverable>
+                  <Card title="О себе" bordered={false} hoverable>
                     <div className="edu_flex">
                       <div className="edu_name2 common-text">
                         - ищу крутую команду, где смогу реализовать свой потенциал; <br/>
-                        - умею составлять план работы и устанавливать корректные сроки; <br/>
-                        - был ведущим разработчиком в команде из 4 человек; <br/>
-                        - отзывчивость; <br/>
-                        - многозадачность; <br/>
-                        - сконцентрированность во время работы; <br/>
-                        - быстро реагирую на ситуацию; <br/>
-                        - энергичен; <br/>
-                        - активно развиваю хард-скиллы; <br/>
-                        - стараюсь писать чистый, переиспользуемый, понятный код. <br/>
+                        - я за чистый, переиспользуемый, понятный код и развитие продукта; <br/>
+                        - быстро отвечаю и помогаю коллегам; <br/>
+                        - энергичен, положительно отношусь к тяжёлым задачам. <br/>
                       </div>
                     </div>
                   </Card>

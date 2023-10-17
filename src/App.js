@@ -1,8 +1,10 @@
-import {Cube} from "./Cube";
 import {useEffect, useRef, useState} from "react";
-import './style.css';
 import React from "react";
+
+import {Cube} from "./Cube";
+import './style.css';
 import {makeShadow} from "./utils";
+import backgroundImage from './images/background.jpg';
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -68,8 +70,10 @@ function App() {
     }
   }
 
-  const cubeScroll = (e) => {
-    cubeContentRef.current.scrollBy(0, e.deltaY);
+  const cubeScroll = (e, ifTouch = false) => {
+    if (!ifTouch) {
+      cubeContentRef.current.scrollBy(0, e.deltaY);
+    }
     if (cubeContentRef.current.scrollTop !== 0) {
       setScrolledDown(true);
     } else {
@@ -78,10 +82,8 @@ function App() {
   }
 
   return (
-    <div
-      className="App"
-      onWheel={cubeScroll}
-    >
+    <div className="App" onWheel={cubeScroll}>
+
       <div style={{display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '20px'}}>
         <div className={'selected' + (page % 2 === 1 ? ' not-selected' : '')} onClick={leftButtonClick}>
           {page % 2 === 0 ? 1 : null}
@@ -109,6 +111,7 @@ function App() {
         visible={visible}
         pageForContent={pageForContent}
         reff={cubeContentRef}
+        onScroll={(e) => cubeScroll(e, true)}
       />
     </div>
   );
