@@ -47,7 +47,7 @@ function App() {
         cubeContentRef.current.scroll({
           top: 0,
           left: 0,
-          behavior: 'smooth'
+          behavior: 'auto'
         });
         setScrolledDown(false);
       }, 1000);
@@ -68,7 +68,7 @@ function App() {
         cubeContentRef.current.scroll({
           top: 0,
           left: 0,
-          behavior: 'smooth'
+          behavior: 'auto'
         });
         setScrolledDown(false);
       }, 1000);
