@@ -83,7 +83,12 @@ function App() {
 
   return (
     <div className="App" onWheel={cubeScroll}>
-
+      <div style={{
+        width: '100%', height: '100%',
+        background: `center / contain url('${backgroundImage}')`, opacity: '0.4',
+        position: 'fixed',
+        zIndex: '-1'
+      }}/>
       <div style={{display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '20px'}}>
         <div className={'selected' + (page % 2 === 1 ? ' not-selected' : '')} onClick={leftButtonClick}>
           {page % 2 === 0 ? 1 : null}
