@@ -138,12 +138,9 @@ export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, on
                       <Row>
                         <Col style={{width: '100%'}}>
                           <Card title="Frontend-разработчик React" bordered={false} hoverable>
-                              <span className='common-text'>
-                                {age} {getYearsName(age)} <br/>
-                                8-917-284-54-36 <br/>
-                                131313pasha@mail.ru <br/>
-                                <a target='_blank' href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
-                              </span>
+                            <span className='common-text'>
+                              <a target='_blank' href="https://t.me/pashac13">telegram</a> - предпочитаемый способ связи
+                            </span>
                           </Card>
                         </Col>
                       </Row>
@@ -170,19 +167,6 @@ export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, on
                 </div>
               </div>
 
-              <div className="edu">
-                <Row>
-                  <Col style={{width: '100%'}}>
-                    <Card title="Образование" bordered={false} hoverable>
-                      <div className="edu_flex">
-                        <div className="edu_name2 common-text">
-                          Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
-                        </div>
-                      </div>
-                    </Card>
-                  </Col>
-                </Row>
-              </div>
 
               <div className="performance">
                 <Row>
@@ -190,60 +174,87 @@ export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, on
                     <Card title={`Опыт ${timePerformance.years} ${getYearsName(timePerformance.years)} ${timePerformance.months} ${getMonthsName(timePerformance.months)}`} bordered={false} hoverable>
                       <div className="performance_flex">
                         <Timeline
-                          mode='left'
-                          items={[
-                            {
-                              label: '2020-09',
-                              children: (
-                                <div>
-                                  <h2 className='mb10'><b>Учебно-исследовательская лаборатория функциональной безопасности
-                                    космических аппаратов и систем МИЭМ</b></h2>
-                                  <a target='_blank' href="https://space.miem.hse.ru/">Виртуальный космос</a><br/>
-                                  <span className='common-text'>
-                                      Веб-приложение для визуализации полёта спутника и расчётов. <br/>
-                                      <b>Что делал:</b> переписывал фронт на react + three.js. <br/>
-                                      <b>Главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, по grpc и рисовал
-                                      картинку в реальном времени с помощью three.js</span> <br/>
-                                </div>
-                              ),
-                            },
-                            {
-                              label: '2021-06',
-                              children: (
-                                <div>
-                                  <h2 className='mb10'><b>ООО ЭРА</b></h2>
-                                  <span className='common-text'>
-                                      Корпоративная IT система для строительной компании. <br/>
-                                      <b>Что делал:</b> участвовал в написании API - монолит (nest, typeorm, postgres),
-                                      участвовал в разработке архитектуры фронта и писал несколько разделов сайта,
-                                      таких как "согласования", "склад", "маркетплейс"
-                                      (react, typescript, redux, storybook), разворачивал проект (nginx, docker).
-                                    </span>
-                                </div>
-                              ),
-                            },
-                            {
-                              label: '2023-02',
-                              children: (
-                                <div>
-                                  <h2 className='mb10'><b >ISS</b></h2>
-                                  <span className='common-text'>
-                                      <a target='_blank' href="https://happydesk.ru/">HappyDesk</a><br/>
-                                      Helpdesk-система для поддержки клиентов и сотрудников. <br/>
-                                      <b>Что делал:</b> писал новый функционал на фронте (typescript, react, redux, react-hook-form, vite, mui): <br/>
-                                       - редактор статей базы знаний + замена компонента "Текстовый редактор", использовал этот <a
-                                    target='_blank' href="https://www.tiny.cloud/">tinymce</a>, <br/>
-                                       - раздел базы знаний и отдельный проект
-                                      для <a target='_blank' href="https://support.portal.happydesk.ru/knowledge">Базы Знаний</a> на
-                                      react + ts + rtk + tailwind (FSD), <br/>
-                                       - писал компонент, обёрнутый в iframe, и логику для общения с основным окном, <br/>
-                                       - работал с чатом приложения (websockets на фронте и на node.js сервере),
-                                       - участвовал в переносе проекта с webpack и javascript на vite, typescript и шаблон MUI.</span> <br/>
-                                </div>
-                              ),
-                            },
-                          ]}
-                        />
+      mode='left'
+      items={[
+        {
+          label: '2023-02',
+          children: (
+            <div>
+              <h2 className='mb10'>
+                <b>ISS</b>
+              </h2>
+              <span className='common-text'>
+                <a target='_blank' href='https://happydesk.ru/'>
+                  HappyDesk
+                </a>
+                <br />
+                Helpdesk-система для поддержки клиентов и сотрудников. <br />
+                <b>Что делал:</b> <br />- написал раздел "редактор статей базы знаний", что позволило повысить удобство
+                и временные показатели работы со статьями базы знаний + замена компонента "Текстовый редактор",
+                использовал этот{' '}
+                <a target='_blank' href='https://www.tiny.cloud/'>
+                  tinymce
+                </a>
+                , <br />- написание отдельного проекта для{' '}
+                <a target='_blank' href='https://support.portal.happydesk.ru/knowledge'>
+                  Базы Знаний
+                </a>
+                , <br />
+                - писал компонент, обёрнутый в iframe, и логику для общения с основным окном (postMessage), <br />-
+                работал с чатом приложения, <br />- участвовал в переносе проекта на более современный стэк с
+                сохранением старого кода.
+              </span>
+              <br />
+              <b>Стэк:</b> typescript, react, redux, react-hook-form, vite, mui, rtk + tailwind, FSD, websockets.
+            </div>
+          ),
+        },
+        {
+          label: '2021-06',
+          children: (
+            <div>
+              <h2 className='mb10'>
+                <b>ООО ЭРА</b>
+              </h2>
+              <span className='common-text'>
+                Корпоративная IT система для строительной компании. <br />
+                <b>Что делал:</b> создавал API с авторизацией и ролями (монолит), которое в процессе становилось на
+                замену некоторым модулям 1С, в основном CRUD операции с сортировками, фильтрацией и пагинацией, также
+                занимался разработкой фронтэнда, довёл до результата такие разделы как "согласования", "склад", "чат".
+                <br />
+                <b>Стэк:</b> front - react, typescript, redux, storybook; back - nest, typeorm, postgres, nginx, docker,
+                websockets.
+              </span>
+            </div>
+          ),
+        },
+        {
+          label: '2020-09',
+          children: (
+            <div>
+              <h2 className='mb10'>
+                <b>
+                  Учебно-исследовательская лаборатория функциональной безопасности космических аппаратов и систем МИЭМ
+                </b>
+              </h2>
+              <a target='_blank' href='https://space.miem.hse.ru/vsvs'>
+                Виртуальный космос
+              </a>
+              <br />
+              <span className='common-text'>
+                Веб-приложение для визуализации полёта космического аппарата и расчётов. <br />
+                <b>Что делал:</b> разрабатывал веб-приложение и фронтенд системы <br />
+                <b>Главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, и рисовал картинку в реальном
+                времени.
+                <br />
+                <b>Стэк:</b> react, three.js, grpc.
+              </span>{' '}
+              <br />
+            </div>
+          ),
+        },
+      ]}
+    />
                       </div> <br/>
 
                       <div className="performance_flex">
@@ -262,8 +273,8 @@ export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, on
                         <div className="performance_basic">
                           <b>- Стажировался (3 месяца) full-stack-ом</b><br/>
                           <span className='common-text mt10'>Получил хороший опыт на react + typescript + graphQL +
-                              docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
-                            </span>
+                            docker + nest + typeorm + postgres + авторизация по JWT.<br/><br/>
+                          </span>
                         </div>
                       </div>
                     </Card>
@@ -271,26 +282,36 @@ export const Cube = ({windowWidth, windowHeight, pageForContent, reff, reff2, on
                 </Row>
               </div>
 
-            </div>
 
-          </div>
-          <div style={{width: '50%', height: '100%'}} className='container-page' ref={reff2} onScroll={onScroll}>
-            <div style={{position: 'relative'}}>
-
-              <div style={{background: `center / contain url('${backgroundImage}')`}} className='local-background'/>
-
-              <div className="knowledge">
+              <div className="edu">
                 <Row>
                   <Col style={{width: '100%'}}>
-                    <Card title="Знания и навыки" bordered={false} hoverable>
+                    <Card title="Образование" bordered={false} hoverable>
                       <div className="edu_flex">
-                        <div style={{width: '100%'}} className="common-text">
-                          <List
-                            className="demo-loadmore-list"
-                            itemLayout="horizontal"
-                            dataSource={listSkills}
-                            renderItem={(item) => (
-                              <List.Item>
+                        <div className="edu_name2 common-text">
+                          Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
+
+
+            </> :
+          <>
+            <div className="knowledge">
+              <Row>
+                <Col style={{width: '100%'}}>
+                  <Card title="Знания и навыки" bordered={false} hoverable>
+                    <div className="edu_flex">
+                      <div style={{width: '100%'}} className="common-text">
+                        <List
+                          className="demo-loadmore-list"
+                          itemLayout="horizontal"
+                          dataSource={listSkills}
+                          renderItem={(item) => (
+                            <List.Item>
                                 <List.Item.Meta
                                   avatar={
                                     Array.isArray(item.picture) ?
