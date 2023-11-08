@@ -249,7 +249,7 @@ export const Cube = ({windowWidth, windowHeight, page, visible, pageForContent, 
                   Учебно-исследовательская лаборатория функциональной безопасности космических аппаратов и систем МИЭМ
                 </b>
               </h2>
-              <a target='_blank' href='https://space.miem.hse.ru/'>
+              <a target='_blank' href='https://space.miem.hse.ru/vsvs'>
                 Виртуальный космос
               </a>
               <br />
