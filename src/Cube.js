@@ -180,266 +180,265 @@ export const Cube = ({
             <div style={{ position: "relative" }}>
               <div style={{ background: `center / contain url('${backgroundImage}')` }} className="local-background" />
 
-              {pageForContent % 2 === 0 ? (
-                <>
-                  <div className="main">
-                    {windowWidth < 500 ? null : (
-                      <div className="main_info">
-                        <Row>
-                          <Col style={{ width: "100%" }}>
-                            <Card title="Frontend-разработчик React" bordered={false} hoverable>
-                              <span className="common-text">
-                                <a target="_blank" href="https://t.me/pashac13">
-                                  telegram
-                                </a>{" "}
-                                - предпочитаемый способ связи
-                              </span>
-                            </Card>
-                          </Col>
-                        </Row>
-                      </div>
-                    )}
-                    <div className="main_photo">
-                      <Card
-                        hoverable
-                        bordered={false}
-                        style={{ width: "fit-content" }}
-                        cover={<img alt="example" src={photo} onLoad={setPageLoaded} />}
-                      >
-                        <Meta title="Чураков Павел Сергеевич" style={{ width: "fit-content" }} />
-                        {windowWidth < 500 ? (
-                          <>
+              <div className="main">
+                {windowWidth < 500 ? null : (
+                  <div className="main_info">
+                    <Row>
+                      <Col style={{ width: "100%" }}>
+                        <Card title="Frontend-разработчик React" bordered={false} hoverable>
+                          <span className="common-text">
                             <a target="_blank" href="https://t.me/pashac13">
                               telegram
                             </a>{" "}
                             - предпочитаемый способ связи
-                          </>
-                        ) : null}
-                      </Card>
-                    </div>
+                          </span>
+                        </Card>
+                      </Col>
+                    </Row>
                   </div>
+                )}
+                <div className="main_photo">
+                  <Card
+                    hoverable
+                    bordered={false}
+                    style={{ width: "fit-content" }}
+                    cover={<img alt="example" src={photo} onLoad={setPageLoaded} />}
+                  >
+                    <Meta title="Чураков Павел Сергеевич" style={{ width: "fit-content" }} />
+                    {windowWidth < 500 ? (
+                      <>
+                        <a target="_blank" href="https://t.me/pashac13">
+                          telegram
+                        </a>{" "}
+                        - предпочитаемый способ связи
+                      </>
+                    ) : null}
+                  </Card>
+                </div>
+              </div>
 
-                  <div className="performance">
-                    <Row>
-                      <Col style={{ width: "100%" }}>
-                        <Card
-                          title={`Опыт ${timePerformance.years} ${getYearsName(timePerformance.years)} ${
-                            timePerformance.months
-                          } ${getMonthsName(timePerformance.months)}`}
-                          bordered={false}
-                          hoverable
-                        >
-                          <div className="performance_flex">
-                            <Timeline
-                              mode="left"
-                              items={[
-                                {
-                                  label: "2023-02",
-                                  children: (
-                                    <div>
-                                      <h2 className="mb10">
-                                        <b>ISS</b>
-                                      </h2>
-                                      <span className="common-text">
-                                        <a target="_blank" href="https://happydesk.ru/">
-                                          HappyDesk
-                                        </a>
-                                        <br />
-                                        Helpdesk-система для поддержки клиентов и сотрудников. <br />
-                                        <b>Что делал:</b> <br /> - разработал раздел "редактор статей базы знаний", что
-                                        позволило повысить удобство и временные показатели работы со статьями базы
-                                        знаний + заменил компонент "Текстовый редактор", использовал{" "}
-                                        <a target="_blank" href="https://www.tiny.cloud/">
-                                          tinymce
-                                        </a>
-                                        , <br /> - разработал отдельный проект для{" "}
-                                        <a target="_blank" href="https://support.portal.happydesk.ru/knowledge">
-                                          Базы Знаний
-                                        </a>
-                                        , <br /> - написал компонент, обёрнутый в iframe, и логику для общения с
-                                        основным окном (postMessage), <br /> - работал с чатом приложения, <br />-
-                                        участвовал в переносе проекта на более современный стэк с сохранением старого
-                                        кода.
-                                        <br />
-                                        <br />
-                                        <b>Стэк:</b> typescript, react, redux, react-hook-form, vite, mui, rtk +
-                                        tailwind, FSD, websockets.
-                                      </span>
-                                    </div>
-                                  ),
-                                },
+              <div className="performance">
+                <Row>
+                  <Col style={{ width: "100%" }}>
+                    <Card
+                      title={`Опыт ${timePerformance.years} ${getYearsName(timePerformance.years)} ${
+                        timePerformance.months
+                      } ${getMonthsName(timePerformance.months)}`}
+                      bordered={false}
+                      hoverable
+                    >
+                      <div className="performance_flex">
+                        <Timeline
+                          mode="left"
+                          items={[
+                            {
+                              label: "2023-02",
+                              children: (
+                                <div>
+                                  <h2 className="mb10">
+                                    <b>ISS</b>
+                                  </h2>
+                                  <span className="common-text">
+                                    <a target="_blank" href="https://happydesk.ru/">
+                                      HappyDesk
+                                    </a>
+                                    <br />
+                                    Helpdesk-система для поддержки клиентов и сотрудников. <br />
+                                    <b>Что делал:</b> <br /> - разработал раздел "редактор статей базы знаний", что
+                                    позволило повысить удобство и временные показатели работы со статьями базы знаний +
+                                    заменил компонент "Текстовый редактор", использовал{" "}
+                                    <a target="_blank" href="https://www.tiny.cloud/">
+                                      tinymce
+                                    </a>
+                                    , <br /> - разработал отдельный проект для{" "}
+                                    <a target="_blank" href="https://support.portal.happydesk.ru/knowledge">
+                                      Базы Знаний
+                                    </a>
+                                    , <br /> - написал компонент, обёрнутый в iframe, и логику для общения с основным
+                                    окном (postMessage), <br /> - работал с чатом приложения, <br />- участвовал в
+                                    переносе проекта на более современный стэк с сохранением старого кода.
+                                    <br />
+                                    <br />
+                                    <b>Стэк:</b> typescript, react, redux, react-hook-form, vite, mui, rtk + tailwind,
+                                    FSD, websockets.
+                                  </span>
+                                </div>
+                              ),
+                            },
 
-                                {
-                                  label: "2021-06",
-                                  children: (
-                                    <div>
-                                      <h2 className="mb10">
-                                        <b>ООО ЭРА</b>
-                                      </h2>
-                                      <span className="common-text">
-                                        Корпоративная IT система для строительной компании. <br />
-                                        <b>Что делал:</b>
-                                        <br /> - создавал API с авторизацией и ролями (монолит), которое в процессе
-                                        становилось на замену некоторым модулям 1С, в основном CRUD операции с
-                                        сортировками, фильтрацией и пагинацией, <br /> - занимался разработкой
-                                        фронтэнда, довёл до результата такие разделы как "согласования", "склад", "чат".
-                                        <br />
-                                        <br />
-                                        <b>Стэк:</b> front - react, typescript, redux, storybook; back - nest, typeorm,
-                                        postgres, nginx, docker, websockets.
-                                      </span>
-                                    </div>
-                                  ),
-                                },
-                                {
-                                  label: "2020-09",
-                                  children: (
-                                    <div>
-                                      <h2 className="mb10">
-                                        <b>
-                                          Учебно-исследовательская лаборатория функциональной безопасности космических
-                                          аппаратов и систем МИЭМ
-                                        </b>
-                                      </h2>
-                                      <a target="_blank" href="https://space.miem.hse.ru/vsvs">
-                                        Виртуальный космос
-                                      </a>
-                                      <br />
-                                      <span className="common-text">
-                                        Веб-приложение для визуализации полёта космического аппарата и расчётов. <br />
-                                        <b>Что делал:</b>
-                                        <br /> - разрабатывал веб-приложение и фронтенд системы, <br /> -{" "}
-                                        <b>главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, и
-                                        рисовал картинку в реальном времени.
-                                        <br />
-                                        <br />
-                                        <b>Стэк:</b> react, three.js, grpc.
-                                      </span>
-                                      <br />
-                                    </div>
-                                  ),
-                                },
-                              ]}
-                            />
-                          </div>
+                            {
+                              label: "2021-06",
+                              children: (
+                                <div>
+                                  <h2 className="mb10">
+                                    <b>ООО ЭРА</b>
+                                  </h2>
+                                  <span className="common-text">
+                                    Корпоративная IT система для строительной компании. <br />
+                                    <b>Что делал:</b>
+                                    <br /> - создавал API с авторизацией и ролями (монолит), которое в процессе
+                                    становилось на замену некоторым модулям 1С, в основном CRUD операции с сортировками,
+                                    фильтрацией и пагинацией, <br /> - занимался разработкой фронтэнда, довёл до
+                                    результата такие разделы как "согласования", "склад", "чат".
+                                    <br />
+                                    <br />
+                                    <b>Стэк:</b> front - react, typescript, redux, storybook; back - nest, typeorm,
+                                    postgres, nginx, docker, websockets.
+                                  </span>
+                                </div>
+                              ),
+                            },
+                            {
+                              label: "2020-09",
+                              children: (
+                                <div>
+                                  <h2 className="mb10">
+                                    <b>
+                                      Учебно-исследовательская лаборатория функциональной безопасности космических
+                                      аппаратов и систем МИЭМ
+                                    </b>
+                                  </h2>
+                                  <a target="_blank" href="https://space.miem.hse.ru/vsvs">
+                                    Виртуальный космос
+                                  </a>
+                                  <br />
+                                  <span className="common-text">
+                                    Веб-приложение для визуализации полёта космического аппарата и расчётов. <br />
+                                    <b>Что делал:</b>
+                                    <br /> - разрабатывал веб-приложение и фронтенд системы, <br /> -{" "}
+                                    <b>главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, и рисовал
+                                    картинку в реальном времени.
+                                    <br />
+                                    <br />
+                                    <b>Стэк:</b> react, three.js, grpc.
+                                  </span>
+                                  <br />
+                                </div>
+                              ),
+                            },
+                          ]}
+                        />
+                      </div>
+                      <br />
+
+                      <div className="performance_flex">
+                        <div className="performance_basic">
+                          <b>- Pet-проект</b> <br />
+                          <span className="common-text mt10">
+                            Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и
+                            валидацию всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
+                            применялся storybook:&nbsp;
+                            <a target="_blank" href="https://sectorrent.site">
+                              sectorrent.site
+                            </a>
+                          </span>
                           <br />
+                          <br />
+                        </div>
+                      </div>
 
-                          <div className="performance_flex">
-                            <div className="performance_basic">
-                              <b>- Pet-проект</b> <br />
-                              <span className="common-text mt10">
-                                Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и
-                                валидацию всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript +
-                                redux, применялся storybook:&nbsp;
-                                <a target="_blank" href="https://sectorrent.site">
-                                  sectorrent.site
-                                </a>
-                              </span>
-                              <br />
-                              <br />
-                            </div>
-                          </div>
+                      <div className="performance_flex">
+                        <div className="performance_basic">
+                          <b>- Стажировался (3 месяца) full-stack-ом</b>
+                          <br />
+                          <span className="common-text mt10">
+                            Получил хороший опыт на react + typescript + graphQL + docker + nest + typeorm + postgres +
+                            авторизация по JWT.
+                            <br />
+                            <br />
+                          </span>
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
 
-                          <div className="performance_flex">
-                            <div className="performance_basic">
-                              <b>- Стажировался (3 месяца) full-stack-ом</b>
-                              <br />
-                              <span className="common-text mt10">
-                                Получил хороший опыт на react + typescript + graphQL + docker + nest + typeorm +
-                                postgres + авторизация по JWT.
-                                <br />
-                                <br />
-                              </span>
-                            </div>
-                          </div>
-                        </Card>
-                      </Col>
-                    </Row>
-                  </div>
+              <div className="edu">
+                <Row>
+                  <Col style={{ width: "100%" }}>
+                    <Card title="Образование" bordered={false} hoverable>
+                      <div className="edu_flex">
+                        <div className="edu_name2 common-text">
+                          Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
+            </div>
+          </div>
 
-                  <div className="edu">
-                    <Row>
-                      <Col style={{ width: "100%" }}>
-                        <Card title="Образование" bordered={false} hoverable>
-                          <div className="edu_flex">
-                            <div className="edu_name2 common-text">
-                              Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
-                            </div>
-                          </div>
-                        </Card>
-                      </Col>
-                    </Row>
-                  </div>
-                </>
-              ) : (
-                <>
-                  <div className="knowledge">
-                    <Row>
-                      <Col style={{ width: "100%" }}>
-                        <Card title="Знания и навыки" bordered={false} hoverable>
-                          <div className="edu_flex">
-                            <div style={{ width: "100%" }} className="common-text">
-                              <List
-                                className="demo-loadmore-list"
-                                itemLayout="horizontal"
-                                dataSource={listSkills}
-                                renderItem={(item) => (
-                                  <List.Item>
-                                    <List.Item.Meta
-                                      avatar={
-                                        Array.isArray(item.picture) ? (
-                                          <Carousel effect="fade" autoplay style={{ height: "30px", width: "30px" }}>
-                                            {item.picture.map((el) => (
-                                              <div>
-                                                <img style={{ width: "30px" }} src={el} alt="" />
-                                              </div>
-                                            ))}
-                                          </Carousel>
-                                        ) : item.picture ? (
-                                          <img src={item.picture} style={{ width: "30px" }} />
-                                        ) : (
-                                          <div
-                                            style={{
-                                              width: "30px",
-                                              height: "30px",
-                                              borderRadius: "50%",
-                                              background: "rgba(189, 189, 189, 0.6)",
-                                            }}
-                                          />
-                                        )
-                                      }
-                                      title={<a>{item.name}</a>}
-                                      description={item.description}
-                                    />
-                                  </List.Item>
-                                )}
-                              />
-                            </div>
-                          </div>
-                        </Card>
-                      </Col>
-                    </Row>
-                  </div>
+          <div style={{ width: "50%", height: "100%" }} className="container-page" ref={reff2} onScroll={onScroll}>
+            <div style={{ position: "relative" }}>
+              <div style={{ background: `center / contain url('${backgroundImage}')` }} className="local-background" />
 
-                  <div className="projects">
-                    <Row>
-                      <Col style={{ width: "100%" }}>
-                        <Card title="О себе" bordered={false} hoverable>
-                          <div className="edu_flex">
-                            <div className="edu_name2 common-text">
-                              - ищу крутую команду, где смогу реализовать свой потенциал; <br />
-                              - я за чистый, переиспользуемый, понятный код и развитие продукта; <br />
-                              - быстро отвечаю и помогаю коллегам; <br />
-                              - энергичен, положительно отношусь к тяжёлым задачам; <br />
-                              - готов учиться и изучать необходимые технологии. <br />
-                            </div>
-                          </div>
-                        </Card>
-                      </Col>
-                    </Row>
-                  </div>
-                </>
-              )}
+              <div className="knowledge">
+                <Row>
+                  <Col style={{ width: "100%" }}>
+                    <Card title="Знания и навыки" bordered={false} hoverable>
+                      <div className="edu_flex">
+                        <div style={{ width: "100%" }} className="common-text">
+                          <List
+                            className="demo-loadmore-list"
+                            itemLayout="horizontal"
+                            dataSource={listSkills}
+                            renderItem={(item) => (
+                              <List.Item>
+                                <List.Item.Meta
+                                  avatar={
+                                    Array.isArray(item.picture) ? (
+                                      <Carousel effect="fade" autoplay style={{ height: "30px", width: "30px" }}>
+                                        {item.picture.map((el) => (
+                                          <div>
+                                            <img style={{ width: "30px" }} src={el} alt="" />
+                                          </div>
+                                        ))}
+                                      </Carousel>
+                                    ) : item.picture ? (
+                                      <img src={item.picture} style={{ width: "30px" }} />
+                                    ) : (
+                                      <div
+                                        style={{
+                                          width: "30px",
+                                          height: "30px",
+                                          borderRadius: "50%",
+                                          background: "rgba(189, 189, 189, 0.6)",
+                                        }}
+                                      />
+                                    )
+                                  }
+                                  title={<a>{item.name}</a>}
+                                  description={item.description}
+                                />
+                              </List.Item>
+                            )}
+                          />
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
+
+              <div className="projects">
+                <Row>
+                  <Col style={{ width: "100%" }}>
+                    <Card title="О себе" bordered={false} hoverable>
+                      <div className="edu_flex">
+                        <div className="edu_name2 common-text">
+                          - ищу крутую команду, где смогу реализовать свой потенциал; <br />
+                          - я за чистый, переиспользуемый, понятный код и развитие продукта; <br />
+                          - быстро отвечаю и помогаю коллегам; <br />
+                          - энергичен, положительно отношусь к тяжёлым задачам; <br />
+                          - готов учиться и изучать необходимые технологии. <br />
+                        </div>
+                      </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
             </div>
           </div>
         </div>
