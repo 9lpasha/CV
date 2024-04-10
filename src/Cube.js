@@ -187,7 +187,7 @@ export const Cube = ({
                       <Col style={{ width: "100%" }}>
                         <Card title="Frontend-разработчик React" bordered={false} hoverable>
                           <span className="common-text">
-                            <a target="_blank" href="https://t.me/pashac13">
+                            <a target="_blank" href="https://t.me/pashac13" rel="noreferrer">
                               telegram
                             </a>{" "}
                             - предпочитаемый способ связи
@@ -207,7 +207,7 @@ export const Cube = ({
                     <Meta title="Чураков Павел Сергеевич" style={{ width: "fit-content" }} />
                     {windowWidth < 500 ? (
                       <>
-                        <a target="_blank" href="https://t.me/pashac13">
+                        <a target="_blank" href="https://t.me/pashac13" rel="noreferrer">
                           telegram
                         </a>{" "}
                         - предпочитаемый способ связи
@@ -232,26 +232,50 @@ export const Cube = ({
                           mode="left"
                           items={[
                             {
+                              label: "2023-12",
+                              children: (
+                                <div>
+                                  <h2 className="mb10">
+                                    <b>Иннотех (ВТБ)</b>
+                                  </h2>
+                                  <span className="common-text">
+                                    <b>Что делал:</b> <br /> - переписывал монолитное банковское приложение на
+                                    микросервисное решение и встраивал в общее приложение, <br /> - много работы со
+                                    сложными формами на готовых UI компонентах, <br /> - также писал логику для
+                                    интеграции с монолитом.
+                                    <br />
+                                    <br />
+                                    <b>Стэк:</b> typescript, react, formik, yup, styled-components, webpack.
+                                  </span>
+                                </div>
+                              ),
+                            },
+                            {
                               label: "2023-02",
                               children: (
                                 <div>
                                   <h2 className="mb10">
                                     <b>ISS</b>
+                                    <br />
+                                    <a target="_blank" href="https://happydesk.ru/" rel="noreferrer">
+                                      HappyDesk
+                                    </a>{" "}
+                                    <br />
+                                    Helpdesk-система для поддержки клиентов и сотрудников.
                                   </h2>
                                   <span className="common-text">
-                                    <a target="_blank" href="https://happydesk.ru/">
-                                      HappyDesk
-                                    </a>
-                                    <br />
-                                    Helpdesk-система для поддержки клиентов и сотрудников. <br />
                                     <b>Что делал:</b> <br /> - разработал раздел "редактор статей базы знаний", что
                                     позволило повысить удобство и временные показатели работы со статьями базы знаний +
                                     заменил компонент "Текстовый редактор", использовал{" "}
-                                    <a target="_blank" href="https://www.tiny.cloud/">
+                                    <a target="_blank" href="https://www.tiny.cloud/" rel="noreferrer">
                                       tinymce
                                     </a>
                                     , <br /> - разработал отдельный проект для{" "}
-                                    <a target="_blank" href="https://support.portal.happydesk.ru/knowledge">
+                                    <a
+                                      target="_blank"
+                                      href="https://support.portal.happydesk.ru/knowledge"
+                                      rel="noreferrer"
+                                    >
                                       Базы Знаний
                                     </a>
                                     , <br /> - написал компонент, обёрнутый в iframe, и логику для общения с основным
@@ -265,16 +289,15 @@ export const Cube = ({
                                 </div>
                               ),
                             },
-
                             {
                               label: "2021-06",
                               children: (
                                 <div>
                                   <h2 className="mb10">
-                                    <b>ООО ЭРА</b>
+                                    <b>ООО ЭРА</b> <br />
+                                    Корпоративная IT система для строительной компании.
                                   </h2>
                                   <span className="common-text">
-                                    Корпоративная IT система для строительной компании. <br />
                                     <b>Что делал:</b>
                                     <br /> - создавал API с авторизацией и ролями (монолит), которое в процессе
                                     становилось на замену некоторым модулям 1С, в основном CRUD операции с сортировками,
@@ -296,14 +319,15 @@ export const Cube = ({
                                     <b>
                                       Учебно-исследовательская лаборатория функциональной безопасности космических
                                       аппаратов и систем МИЭМ
-                                    </b>
+                                    </b>{" "}
+                                    <br />
+                                    <a target="_blank" href="https://space.miem.hse.ru/vsvs" rel="noreferrer">
+                                      Виртуальный космос
+                                    </a>{" "}
+                                    <br />
+                                    Веб-приложение для визуализации полёта космического аппарата и расчётов.
                                   </h2>
-                                  <a target="_blank" href="https://space.miem.hse.ru/vsvs">
-                                    Виртуальный космос
-                                  </a>
-                                  <br />
                                   <span className="common-text">
-                                    Веб-приложение для визуализации полёта космического аппарата и расчётов. <br />
                                     <b>Что делал:</b>
                                     <br /> - разрабатывал веб-приложение и фронтенд системы, <br /> -{" "}
                                     <b>главная фича:</b> принимал данные, которые вычислялись на c++ сервисе, и рисовал
@@ -328,7 +352,7 @@ export const Cube = ({
                             Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и
                             валидацию всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
                             применялся storybook:&nbsp;
-                            <a target="_blank" href="https://sectorrent.site">
+                            <a target="_blank" href="https://sectorrent.site" rel="noreferrer">
                               sectorrent.site
                             </a>
                           </span>
