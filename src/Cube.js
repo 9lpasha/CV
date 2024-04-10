@@ -156,12 +156,6 @@ export const Cube = ({
     };
   }, []);
 
-  const age = useMemo(() => {
-    const diff = new Date() - new Date(2001, 0, 12, 0, 0, 0, 0);
-
-    return Math.floor(diff / 1000 / 60 / 60 / 24 / 365);
-  }, []);
-
   return (
     <div
       className={`cube forward`}
@@ -421,7 +415,7 @@ export const Cube = ({
                                         ))}
                                       </Carousel>
                                     ) : item.picture ? (
-                                      <img src={item.picture} style={{ width: "30px" }} />
+                                      <img src={item.picture} style={{ width: "30px" }} alt="" />
                                     ) : (
                                       <div
                                         style={{
@@ -433,7 +427,7 @@ export const Cube = ({
                                       />
                                     )
                                   }
-                                  title={<a>{item.name}</a>}
+                                  title={<div>{item.name}</div>}
                                   description={item.description}
                                 />
                               </List.Item>
