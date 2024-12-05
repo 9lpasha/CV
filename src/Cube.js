@@ -18,17 +18,17 @@ const listSkills = [
   {
     picture: [htmlIcon, jsIcon, cssIcon],
     name: "html, css (scss, less) и js",
-    description: " - 10/10",
+    description: "10/10",
   },
   {
-    picture: [muiIcon, "https://tailwindcss.com/favicons/favicon.ico?v=3"],
-    name: "Material UI, Tailwind, CCS Modules",
-    description: "Разные способы использования стилей",
+    picture: "https://nextjs.org/favicon.ico",
+    name: "next.js",
+    description: "Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG",
   },
   {
     picture: reactIcon,
     name: "функциональный React v18",
-    description: "опыт 3 года",
+    description: "опыт 4 года",
   },
   {
     picture: tsIcon,
@@ -38,7 +38,27 @@ const listSkills = [
   {
     picture: reduxIcon,
     name: "redux, redux-toolkit",
-    description: "опыт 3 года",
+    description: "опыт 4 года",
+  },
+  {
+    picture: ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
+    name: "webpack и vite",
+    description: "Есть практический опыт. Прошёл большой курс.",
+  },
+  {
+    picture: "",
+    name: "База: алгоритмы/структуры данных, архитектура",
+    description: "Прошел курс Computer Science во frontend'е",
+  },
+  {
+    picture: "",
+    name: "CI/CD",
+    description: "Прошел курс Инфраструктура frontend",
+  },
+  {
+    picture: [muiIcon, "https://tailwindcss.com/favicons/favicon.ico?v=3"],
+    name: "Material UI, Tailwind, CCS Modules, Ant Design, Styled Components",
+    description: "Разные способы стилизации",
   },
   {
     picture: "https://threejs.org/files/favicon.ico",
@@ -46,7 +66,7 @@ const listSkills = [
     description: "3D в браузере (писал визуализацию полёта спутника по околоземной орбите)",
   },
   {
-    picture: "https://storybook.js.org/favicon.svg?v=eac3ed5255c5d69cad47bb7ed6ce3dbf",
+    picture: "https://storybook.js.org/tutorials/icon-storybook.png",
     name: "storybook",
     description: "писал свою небольшую библиотеку компонентов",
   },
@@ -56,11 +76,6 @@ const listSkills = [
     description: "",
   },
   {
-    picture: ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
-    name: "webpack и vite",
-    description: "Есть практический опыт",
-  },
-  {
     picture: "https://graphql.org/favicon.ico",
     name: "GraphQL",
     description: "Не только rest",
@@ -68,7 +83,7 @@ const listSkills = [
   {
     picture: "https://github.githubassets.com/favicons/favicon.png",
     name: "git",
-    description: "Понимаю git-flow, знаю основные необходимые команды git",
+    description: "Понимаю git-flow, знаю основные необходимые команды git, cherry pick, stash, rebase, merge",
   },
   {
     picture: "https://jwt.io/img/favicon/favicon-32x32.png",
@@ -345,6 +360,24 @@ export const Cube = ({
 
                       <div className="performance_flex">
                         <div className="performance_basic">
+                          <b>- Свои проекты</b> <br />
+                          <span className="common-text mt10">
+                            - Библиотека для добавления задач, которые должны быть выполнены с заданным приоритетом;{" "}
+                            <br />
+                          </span>
+                          <span className="common-text mt10">
+                            - Небольшой стартап, пишу фронт на next.js; <br />
+                          </span>
+                          <span className="common-text mt10">
+                            - Сервис для разработки веб-приложений с помощью визуального программирования. <br />
+                          </span>
+                          <br />
+                          <br />
+                        </div>
+                      </div>
+
+                      <div className="performance_flex">
+                        <div className="performance_basic">
                           <b>- Pet-проект</b> <br />
                           <span className="common-text mt10">
                             Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и
@@ -452,7 +485,7 @@ export const Cube = ({
                         <div className="edu_name2 common-text">
                           - ищу крутую команду, где смогу реализовать свой потенциал; <br />
                           - я за чистый, переиспользуемый, понятный код и развитие продукта; <br />
-                          - быстро отвечаю и помогаю коллегам; <br />
+                          - быстро отвечаю и помогаю коллегам, со мной легко в коммуникации; <br />
                           - энергичен, положительно отношусь к тяжёлым задачам; <br />
                           - готов учиться и изучать необходимые технологии. <br />
                         </div>
