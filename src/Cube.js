@@ -365,48 +365,28 @@ export const Cube = ({
 
                       <div className="performance_flex">
                         <div className="performance_basic">
-                          <b>- Свои проекты</b> <br />
+                          - Свои проекты: <br />
                           <span className="common-text mt10">
-                            - Библиотека для добавления задач, которые должны быть выполнены с заданным приоритетом;{" "}
-                            <br />
-                          </span>
-                          <span className="common-text mt10">
-                            - Небольшой стартап, пишу фронт на next.js; <br />
-                          </span>
-                          <span className="common-text mt10">
-                            - Сервис для разработки веб-приложений с помощью визуального программирования. <br />
-                          </span>
-                          <br />
-                          <br />
-                        </div>
-                      </div>
-
-                      <div className="performance_flex">
-                        <div className="performance_basic">
-                          <b>- Pet-проект</b> <br />
-                          <span className="common-text mt10">
-                            Веб-приложение (frontend) торрент-каталога, включающее в себя работу с пользователями и
-                            валидацию всех торрентов (мобильная и десктоп версии). Я писал фронт, на typescript + redux,
-                            применялся storybook:&nbsp;
-                            <a target="_blank" href="https://sectorrent.site" rel="noreferrer">
-                              sectorrent.site
+                            &nbsp;&nbsp;&nbsp;- Библиотека для добавления задач, которые должны быть выполнены в
+                            браузере с заданным приоритетом;{" "}
+                            <a target="_blank" href="https://github.com/9lpasha/taskman-lib" rel="noreferrer">
+                              Ссылка
                             </a>
+                            <br />
                           </span>
-                          <br />
-                          <br />
-                        </div>
-                      </div>
-
-                      <div className="performance_flex">
-                        <div className="performance_basic">
-                          <b>- Стажировался (3 месяца) full-stack-ом</b>
-                          <br />
                           <span className="common-text mt10">
-                            Получил хороший опыт на react + typescript + graphQL + docker + nest + typeorm + postgres +
-                            авторизация по JWT.
-                            <br />
-                            <br />
+                            &nbsp;&nbsp;&nbsp;- Стартап, пишу фронт на next.js; <br />
                           </span>
+                          <span className="common-text mt10">
+                            &nbsp;&nbsp;&nbsp;- Сервис для разработки веб-приложений с помощью визуального
+                            программирования (canvas + генерация кода).{" "}
+                            <a target="_blank" href="https://github.com/9lpasha/web-pilot" rel="noreferrer">
+                              Ссылка
+                            </a>
+                            <br />{" "}
+                          </span>
+                          <br />
+                          <br />
                         </div>
                       </div>
                     </Card>
@@ -421,6 +401,12 @@ export const Cube = ({
                       <div className="edu_flex">
                         <div className="edu_name2 common-text">
                           Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника
+                        </div>
+                      </div>
+                      <br />
+                      <div className="edu_flex">
+                        <div className="edu_name2 common-text">
+                          Высшее образование (магистратура) - РУТ МИИТ - Програмная инженерия
                         </div>
                       </div>
                     </Card>
