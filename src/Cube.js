@@ -18,32 +18,32 @@ const listSkills = [
   {
     picture: [htmlIcon, jsIcon, cssIcon],
     name: "html, css (scss, less) и js",
-    description: "10/10",
+    description: "Стараюсь исследовать функционал новых версий ES и CSS",
   },
   {
     picture: "https://nextjs.org/favicon.ico",
     name: "next.js",
-    description: "Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG",
+    description: "Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG, ISR",
   },
   {
     picture: reactIcon,
-    name: "функциональный React v18",
-    description: "опыт 4 года",
+    name: "React",
+    description: "Опыт 5+ лет",
   },
   {
     picture: tsIcon,
     name: "typescript",
-    description: "опыт больше года",
+    description: "Опыт 3+ лет",
   },
   {
     picture: reduxIcon,
     name: "redux, redux-toolkit",
-    description: "опыт 4 года",
+    description: "Опыт 5+ лет",
   },
   {
     picture: ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
-    name: "webpack и vite",
-    description: "Есть практический опыт. Прошёл большой курс.",
+    name: "Сборка: webpack, rspack, vite, rollup",
+    description: "Есть практический опыт. Прошёл большой курс по сборке.",
   },
   {
     picture: "",
@@ -52,8 +52,9 @@ const listSkills = [
   },
   {
     picture: "",
-    name: "CI/CD",
-    description: "Прошел курс Инфраструктура frontend",
+    name: "Инфраструктура frontend",
+    description:
+      "Прошел курс Инфраструктура frontend: linux, git, пакетные менеджеры (npm, yarn, pnpm), линтеры, сборщики, gitlab CI, github actions, docker, kubernetes, nginx",
   },
   {
     picture: [muiIcon, "https://tailwindcss.com/favicons/favicon.ico?v=3"],
@@ -72,8 +73,8 @@ const listSkills = [
   },
   {
     picture: "https://testing-library.com/img/octopus-32x32.png",
-    name: "jest и react-testing-library",
-    description: "",
+    name: "playwright, jest и react-testing-library",
+    description: "Тестирование кода",
   },
   {
     picture: "https://graphql.org/favicon.ico",
@@ -91,29 +92,9 @@ const listSkills = [
     description: "Понимаю процесс авторизации по JWT",
   },
   {
-    picture: "https://static.tildacdn.com/tild6431-3463-4161-b339-613661656231/swagger.png",
-    name: "swagger",
-    description: "Умею работать со swagger",
-  },
-  {
     picture: "https://nodejs.org/static/images/favicons/favicon.png",
-    name: "node.js, nest, typeorm",
-    description: "опыт год",
-  },
-  {
-    picture: "https://www.docker.com/wp-content/uploads/2023/04/cropped-Docker-favicon-32x32.png",
-    name: "docker, docker-compose",
-    description: "На уровне использования контейнеров",
-  },
-  {
-    picture: "https://nginx.org/favicon.ico",
-    name: "nginx",
-    description: "Использовал для обработки входящих запросов к статическим файлам",
-  },
-  {
-    picture: "https://assets.ubuntu.com/v1/49a1a858-favicon-32x32.png",
-    name: "Linux",
-    description: "На уровне редактирования файлов с vim и установки пакетов, docker и тд.",
+    name: "Бэкэнд: node.js, nest, postgres, mySQL, JWT",
+    description: "Опыт более года",
   },
   {
     picture: "",
@@ -125,30 +106,31 @@ const listSkills = [
     name: "API",
     description: "Работал с разными API, например GAPI (google)",
   },
-  {
-    picture: "",
-    name: "Backend и инфраструктура",
-    description: "Разбираюсь не только во frontend, но и в backend и инфраструктуре",
-  },
-  {
-    picture: "",
-    name: "Отладка кода",
-    description: "Умею отлаживать код и находить баги",
-  },
 ];
 
 const getYearsName = (years) => {
-  if (years >= 5 && years <= 20) return "лет";
+  if ((years >= 5 && years <= 20) || years === 0) return "лет";
   if (years % 10 === 1) return "год";
   if (years % 10 < 5) return "года";
   return "лет";
 };
 
 const getMonthsName = (months) => {
-  if (months >= 5 && months <= 20) return "месяцев";
+  if ((months >= 5 && months <= 20) || months === 0) return "месяцев";
   if (months % 10 === 1) return "месяц";
   if (months % 10 < 5) return "месяца";
   return "месяцев";
+};
+
+const getTimePerformance = (year, month, yearEnd, monthEnd) => {
+  const endDate = yearEnd ? new Date(yearEnd, monthEnd, 1, 0, 0, 0, 0) : new Date();
+  const diff = endDate - new Date(year, month, 1, 0, 0, 0, 0);
+  const days = diff / 1000 / 60 / 60 / 24;
+
+  return {
+    years: Math.floor(days / 365),
+    months: Math.floor(((days / 365) % 1) * 12),
+  };
 };
 
 export const Cube = ({
@@ -161,15 +143,11 @@ export const Cube = ({
   setPageLoaded,
   reffSlider,
 }) => {
-  const timePerformance = useMemo(() => {
-    const diff = new Date() - new Date(2020, 8, 1, 0, 0, 0, 0);
-    const days = diff / 1000 / 60 / 60 / 24;
-
-    return {
-      years: Math.floor(days / 365),
-      months: Math.floor(((days / 365) % 1) * 12),
-    };
-  }, []);
+  const timePerformance = useMemo(() => getTimePerformance(2020, 9), []);
+  const timePerformance1 = useMemo(() => getTimePerformance(2020, 9, 2021, 6), []);
+  const timePerformance2 = useMemo(() => getTimePerformance(2021, 6, 2023, 2), []);
+  const timePerformance3 = useMemo(() => getTimePerformance(2023, 2, 2023, 12), []);
+  const timePerformance4 = useMemo(() => getTimePerformance(2023, 12), []);
 
   return (
     <div
@@ -241,7 +219,15 @@ export const Cube = ({
                           mode="left"
                           items={[
                             {
-                              label: "2023-12",
+                              label: (
+                                <div>
+                                  <b>2023-12</b>
+                                  <div>
+                                    {timePerformance4.years} {getYearsName(timePerformance4.years)}{" "}
+                                    {timePerformance4.months} {getMonthsName(timePerformance4.months)}
+                                  </div>
+                                </div>
+                              ),
                               children: (
                                 <div>
                                   <h2 className="mb10">
@@ -264,7 +250,15 @@ export const Cube = ({
                               ),
                             },
                             {
-                              label: "2023-02",
+                              label: (
+                                <div>
+                                  <b>2023-02</b>
+                                  <div>
+                                    {timePerformance3.years} {getYearsName(timePerformance3.years)}{" "}
+                                    {timePerformance3.months} {getMonthsName(timePerformance3.months)}
+                                  </div>
+                                </div>
+                              ),
                               children: (
                                 <div>
                                   <h2 className="mb10">
@@ -298,7 +292,7 @@ export const Cube = ({
                                     памяти в приложении, <br /> - написал компонент, обёрнутый в iframe, и логику для
                                     общения с основным окном (postMessage), <br /> - работал с чатом приложения, <br />-
                                     участвовал в переносе проекта на более современный стэк с сохранением старого кода,
-                                    <br />- решал проблемы с гидрацией SSR Next и Remix,
+                                    <br />- решал проблемы с гидрацией SSR Next и Remix.
                                     <br />
                                     <br />
                                     <b>Стэк:</b> typescript, react, next, remix, redux, react-hook-form, vite, mui, rtk
@@ -308,7 +302,15 @@ export const Cube = ({
                               ),
                             },
                             {
-                              label: "2021-06",
+                              label: (
+                                <div>
+                                  <b>2021-06</b>
+                                  <div>
+                                    {timePerformance2.years} {getYearsName(timePerformance2.years)}{" "}
+                                    {timePerformance2.months} {getMonthsName(timePerformance2.months)}
+                                  </div>
+                                </div>
+                              ),
                               children: (
                                 <div>
                                   <h2 className="mb10">
@@ -330,7 +332,15 @@ export const Cube = ({
                               ),
                             },
                             {
-                              label: "2020-09",
+                              label: (
+                                <div>
+                                  <b>2020-09</b>
+                                  <div>
+                                    {timePerformance1.years} {getYearsName(timePerformance1.years)}{" "}
+                                    {timePerformance1.months} {getMonthsName(timePerformance1.months)}
+                                  </div>
+                                </div>
+                              ),
                               children: (
                                 <div>
                                   <h2 className="mb10">
@@ -379,11 +389,15 @@ export const Cube = ({
                           </span>
                           <span className="common-text mt10">
                             &nbsp;&nbsp;&nbsp;- Сервис для разработки веб-приложений с помощью визуального
-                            программирования (canvas + генерация кода).{" "}
+                            программирования (canvas + генерация кода);{" "}
                             <a target="_blank" href="https://github.com/9lpasha/web-pilot" rel="noreferrer">
                               Ссылка
                             </a>
                             <br />{" "}
+                          </span>
+                          <span className="common-text mt10">
+                            &nbsp;&nbsp;&nbsp;- создал виджет, встраиваемый в любое веб-приложение с помощью{" "}
+                            {"<script />"} с кастомизацией, разными вариантами дизайна и функционала.
                           </span>
                           <br />
                           <br />
@@ -474,7 +488,7 @@ export const Cube = ({
                     <Card title="О себе" bordered={false} hoverable>
                       <div className="edu_flex">
                         <div className="edu_name2 common-text">
-                          - ищу крутую команду, где смогу реализовать свой потенциал; <br />
+                          - ищу проект и крутую команду, где смогу реализовать свой потенциал; <br />
                           - я за чистый, переиспользуемый, понятный код и развитие продукта; <br />
                           - быстро отвечаю и помогаю коллегам, со мной легко в коммуникации; <br />
                           - энергичен, положительно отношусь к тяжёлым задачам; <br />
