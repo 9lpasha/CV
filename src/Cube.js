@@ -201,7 +201,11 @@ export const Cube = ({
                     hoverable
                     bordered={false}
                     style={{ width: "fit-content" }}
-                    cover={<img alt="example" src={photo} onLoad={setPageLoaded} />}
+                    cover={
+                      <div style={{ display: "flex", width: "100%", justifyContent: "center" }}>
+                        <img alt="example" src={photo} onLoad={setPageLoaded} />
+                      </div>
+                    }
                   >
                     <Meta title="Чураков Павел Сергеевич" style={{ width: "fit-content" }} />
                     {windowWidth < 800 ? (
