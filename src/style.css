@@ -259,24 +259,27 @@ body > div {
   padding: 20px !important;
 }
 
-@media (max-width: 650px) {
+@media (max-width: 800px) {
   .main_photo img {
-    width: 100% !important;
-    height: auto;
-    border-radius: 5px;
+    justify-self: center;
+    border-radius: 5px !important;
+  }
+
+  .main_photo .ant-card-meta-title {
+    white-space: unset !important;
+    margin-bottom: 10px !important;
   }
 
   .main_photo {
-    width: 30% !important;
+    width: 100% !important;
+  }
+
+  .main_photo .ant-card {
+    padding-top: 16px;
   }
 
   .main_photo .ant-card {
     width: 100% !important;
-  }
-
-  .ant-card-meta-title {
-    font-size: 12px !important;
-    white-space: unset !important;
   }
 
   .main {
@@ -290,17 +293,8 @@ body > div {
 }
 
 @media (max-width: 500px) {
-  .main_photo {
-    width: 100% !important;
-    max-width: 300px !important;
-  }
-
   .main {
     justify-content: center !important;
-  }
-
-  .ant-card-meta-title {
-    margin-bottom: 10px !important;
   }
 
   .main,

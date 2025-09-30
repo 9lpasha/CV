@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { Card, Carousel, Col, List, Row, Timeline } from "antd";
+import { Card, Carousel, Col, List, Row, Space, Tag, Timeline } from "antd";
 
 import muiIcon from "./images/icons/mui.svg";
 import htmlIcon from "./images/icons/icons8-html-50.png";
@@ -11,6 +11,7 @@ import reduxIcon from "./images/icons/icons8-redux-an-open-source-javascript-lib
 
 import backgroundImage from "./images/background.jpg";
 import photo from "./images/CV-avatar.jpg";
+import { FaTelegram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 const { Meta } = Card;
 
@@ -18,27 +19,27 @@ const listSkills = [
   {
     picture: [htmlIcon, jsIcon, cssIcon],
     name: "html, css (scss, less) и js",
-    description: "Стараюсь исследовать функционал новых версий ES и CSS",
+    description: "Стараюсь исследовать функционал новых версий ES и CSS.",
   },
   {
     picture: "https://nextjs.org/favicon.ico",
-    name: "next.js",
-    description: "Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG, ISR",
+    name: <Tag color="purple">Next.js</Tag>,
+    description: "Опыт 3+ года. Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG, ISR.",
   },
   {
     picture: reactIcon,
-    name: "React",
-    description: "Опыт 5+ лет",
+    name: <Tag color="blue">React</Tag>,
+    description: "Опыт 5+ лет.",
   },
   {
     picture: tsIcon,
-    name: "typescript",
-    description: "Опыт 3+ лет",
+    name: <Tag color="cyan">Typescript</Tag>,
+    description: "Опыт 3+ года.",
   },
   {
     picture: reduxIcon,
-    name: "redux, redux-toolkit",
-    description: "Опыт 5+ лет",
+    name: "Redux, redux-toolkit, mobx, zustand",
+    description: "Опыт 5+ лет.",
   },
   {
     picture: ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
@@ -48,63 +49,53 @@ const listSkills = [
   {
     picture: "",
     name: "База: алгоритмы/структуры данных, архитектура",
-    description: "Прошел курс Computer Science во frontend'е",
+    description: "Прошел курс Computer Science во frontend'е.",
   },
   {
     picture: "",
     name: "Инфраструктура frontend",
     description:
-      "Прошел курс Инфраструктура frontend: linux, git, пакетные менеджеры (npm, yarn, pnpm), линтеры, сборщики, gitlab CI, github actions, docker, kubernetes, nginx",
+      "Прошел курс Инфраструктура frontend: linux, git, пакетные менеджеры (npm, yarn, pnpm), линтеры, сборщики, gitlab CI, github actions, docker, kubernetes, nginx.",
   },
   {
     picture: [muiIcon, "https://tailwindcss.com/favicons/favicon.ico?v=3"],
     name: "Material UI, Tailwind, CCS Modules, Ant Design, Styled Components",
-    description: "Разные способы стилизации",
+    description: "Разные способы стилизации.",
   },
   {
     picture: "https://threejs.org/files/favicon.ico",
-    name: "threeJS",
-    description: "3D в браузере (писал визуализацию полёта спутника по околоземной орбите)",
+    name: "ThreeJS",
+    description: "3D в браузере (писал визуализацию полёта спутника по околоземной орбите).",
   },
   {
     picture: "https://storybook.js.org/tutorials/icon-storybook.png",
-    name: "storybook",
-    description: "писал свою небольшую библиотеку компонентов",
+    name: "Storybook",
+    description: "писал свою небольшую библиотеку компонентов.",
   },
   {
     picture: "https://testing-library.com/img/octopus-32x32.png",
-    name: "playwright, jest и react-testing-library",
-    description: "Тестирование кода",
+    name: "Playwright, jest и react-testing-library",
+    description: "Тестирование кода.",
   },
   {
     picture: "https://graphql.org/favicon.ico",
-    name: "GraphQL",
-    description: "Не только rest",
+    name: "GraphQL, Websockets",
+    description: "Опыт как со стороны backend, так и со стороны frontend.",
   },
   {
     picture: "https://github.githubassets.com/favicons/favicon.png",
-    name: "git",
-    description: "Понимаю git-flow, знаю основные необходимые команды git, cherry pick, stash, rebase, merge",
-  },
-  {
-    picture: "https://jwt.io/img/favicon/favicon-32x32.png",
-    name: "JWT",
-    description: "Понимаю процесс авторизации по JWT",
+    name: "Git",
+    description: "Понимаю git-flow, знаю основные необходимые команды git, cherry pick, stash, rebase, merge.",
   },
   {
     picture: "https://nodejs.org/static/images/favicons/favicon.png",
     name: "Бэкэнд: node.js, nest, postgres, mySQL, JWT",
-    description: "Опыт более года",
-  },
-  {
-    picture: "",
-    name: "Websockets",
-    description: "Опыт как со стороны backend, так и со стороны frontend",
+    description: "Опыт более года.",
   },
   {
     picture: "",
     name: "API",
-    description: "Работал с разными API, например GAPI (google)",
+    description: "Работал с разными API, например GAPI (google).",
   },
 ];
 
@@ -168,17 +159,38 @@ export const Cube = ({
               <div style={{ background: `center / contain url('${backgroundImage}')` }} className="local-background" />
 
               <div className="main">
-                {windowWidth < 500 ? null : (
+                {windowWidth < 800 ? null : (
                   <div className="main_info">
                     <Row>
                       <Col style={{ width: "100%" }}>
                         <Card title="Frontend-разработчик React" bordered={false} hoverable>
-                          <span className="common-text">
-                            <a target="_blank" href="https://t.me/pashac13" rel="noreferrer">
-                              telegram
-                            </a>{" "}
-                            - предпочитаемый способ связи
-                          </span>
+                          <Space>
+                            <a href="https://t.me/pashac13" target="_blank" rel="noreferrer">
+                              <Card size="small" hoverable>
+                                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                                  <FaTelegram size={20} color="#229ED9" /> Telegram
+                                </div>
+                              </Card>
+                            </a>
+                            <a href="https://github.com/9lpasha" target="_blank" rel="noreferrer">
+                              <Card size="small" hoverable>
+                                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                                  <FaGithub size={20} /> GitHub
+                                </div>
+                              </Card>
+                            </a>
+                            <a
+                              href="https://www.linkedin.com/in/%D0%BF%D0%B0%D0%B2%D0%B5%D0%BB-%D1%87%D1%83%D1%80%D0%B0%D0%BA%D0%BE%D0%B2-1a6989296/"
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              <Card size="small" hoverable>
+                                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                                  <FaLinkedin size={20} style={{ color: "#0A66C2" }} /> LinkedIn
+                                </div>
+                              </Card>
+                            </a>
+                          </Space>
                         </Card>
                       </Col>
                     </Row>
@@ -192,13 +204,34 @@ export const Cube = ({
                     cover={<img alt="example" src={photo} onLoad={setPageLoaded} />}
                   >
                     <Meta title="Чураков Павел Сергеевич" style={{ width: "fit-content" }} />
-                    {windowWidth < 500 ? (
-                      <>
-                        <a target="_blank" href="https://t.me/pashac13" rel="noreferrer">
-                          telegram
-                        </a>{" "}
-                        - предпочитаемый способ связи
-                      </>
+                    {windowWidth < 800 ? (
+                      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+                        <a href="https://t.me/pashac13" target="_blank" rel="noreferrer">
+                          <Card size="small" hoverable>
+                            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                              <FaTelegram size={20} color="#229ED9" /> Telegram
+                            </div>
+                          </Card>
+                        </a>
+                        <a href="https://github.com/9lpasha" target="_blank" rel="noreferrer">
+                          <Card size="small" hoverable>
+                            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                              <FaGithub size={20} /> GitHub
+                            </div>
+                          </Card>
+                        </a>
+                        <a
+                          href="https://www.linkedin.com/in/%D0%BF%D0%B0%D0%B2%D0%B5%D0%BB-%D1%87%D1%83%D1%80%D0%B0%D0%BA%D0%BE%D0%B2-1a6989296/"
+                          target="_blank"
+                          rel="noreferrer"
+                        >
+                          <Card size="small" hoverable>
+                            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                              <FaLinkedin size={20} style={{ color: "#0A66C2" }} /> LinkedIn
+                            </div>
+                          </Card>
+                        </a>
+                      </div>
                     ) : null}
                   </Card>
                 </div>
@@ -235,12 +268,14 @@ export const Cube = ({
                                   </h2>
                                   <span className="common-text">
                                     <b>Что делал:</b> <br /> - переписывал монолитное банковское приложение на
-                                    микросервисное решение и встраивал в общее приложение, <br /> - много работы со
-                                    сложными формами на готовых UI компонентах, <br /> - также писал логику для
-                                    интеграции с монолитом,
-                                    <br /> - переносил библиотеки на новые версии, например сильно обновил UI kit, а для
-                                    этого нужно было также обновить несколько библиотек привязанных к другой команде
-                                    (проект куда мы встраивались по Module Federation),
+                                    микросервисное решение и встраивал в общее приложение, <br /> - много работы{" "}
+                                    <b>со сложными формами</b> на готовых UI компонентах, <br /> -{" "}
+                                    <b>улучшил конфигурацию webpack</b>, что ускорило сборку на 40%, <br /> - написал
+                                    несколько <b>плагинов для ESLint и webpack</b>, что снизило количество грязного кода
+                                    и ускорило разработку процентов на 15%, <br /> - переносил библиотеки на новые
+                                    версии, например сильно обновил UI kit, а для этого нужно было также обновить
+                                    несколько библиотек привязанных к другой команде (проект куда мы встраивались по
+                                    Module Federation),
                                     <br /> - часто приходилось верстать без дизайна.
                                     <br />
                                     <br />
@@ -375,30 +410,33 @@ export const Cube = ({
 
                       <div className="performance_flex">
                         <div className="performance_basic">
-                          - Свои проекты: <br />
+                          - Другие проекты: <br />
                           <span className="common-text mt10">
-                            &nbsp;&nbsp;&nbsp;- Библиотека для добавления задач, которые должны быть выполнены в
-                            браузере с заданным приоритетом;{" "}
-                            <a target="_blank" href="https://github.com/9lpasha/taskman-lib" rel="noreferrer">
-                              Ссылка
+                            &nbsp;&nbsp;&nbsp;- Создал виджет для{" "}
+                            <a href="https://dressie.ai/widget-demo" target="_blank" rel="noreferrer">
+                              Dressie.ai
                             </a>
-                            <br />
+                            , встраиваемый в любое веб-приложение с помощью {"<script />"} с кастомизацией, разными
+                            вариантами дизайна и функционала;
                           </span>
-                          <span className="common-text mt10">
-                            &nbsp;&nbsp;&nbsp;- Стартап, пишу фронт на next.js; <br />
-                          </span>
+                          <br />
                           <span className="common-text mt10">
                             &nbsp;&nbsp;&nbsp;- Сервис для разработки веб-приложений с помощью визуального
                             программирования (canvas + генерация кода);{" "}
                             <a target="_blank" href="https://github.com/9lpasha/web-pilot" rel="noreferrer">
                               Ссылка
                             </a>
-                            <br />{" "}
+                            <br />
                           </span>
                           <span className="common-text mt10">
-                            &nbsp;&nbsp;&nbsp;- создал виджет, встраиваемый в любое веб-приложение с помощью{" "}
-                            {"<script />"} с кастомизацией, разными вариантами дизайна и функционала.
+                            &nbsp;&nbsp;&nbsp;- Библиотека для добавления задач, которые должны быть выполнены в
+                            браузере с заданным приоритетом;{" "}
+                            <a target="_blank" href="https://github.com/9lpasha/taskman-lib" rel="noreferrer">
+                              Ссылка
+                            </a>
                           </span>
+                          <br />
+                          <span className="common-text mt10">&nbsp;&nbsp;&nbsp;- Стартап, пишу фронт на next.js.</span>
                           <br />
                           <br />
                         </div>
@@ -488,11 +526,11 @@ export const Cube = ({
                     <Card title="О себе" bordered={false} hoverable>
                       <div className="edu_flex">
                         <div className="edu_name2 common-text">
-                          - ищу проект и крутую команду, где смогу реализовать свой потенциал; <br />
-                          - я за чистый, переиспользуемый, понятный код и развитие продукта; <br />
-                          - быстро отвечаю и помогаю коллегам, со мной легко в коммуникации; <br />
-                          - энергичен, положительно отношусь к тяжёлым задачам; <br />
-                          - готов учиться и изучать необходимые технологии. <br />
+                          - Ищу проект и крутую команду, где смогу реализовать свой потенциал; <br />
+                          - Я за чистый, переиспользуемый, понятный код и развитие продукта; <br />
+                          - Быстро отвечаю и помогаю коллегам, со мной легко в коммуникации; <br />
+                          - Энергичен, положительно отношусь к тяжёлым задачам; <br />
+                          - Готов учиться и изучать необходимые технологии. <br />
                         </div>
                       </div>
                     </Card>

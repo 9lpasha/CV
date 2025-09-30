@@ -1,13 +1,12 @@
 body * {
   margin: 0;
-  font-family: 'Open Sans';
+  font-family: "Open Sans";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 #root {
@@ -60,15 +59,16 @@ code {
 }
 
 .ant-btn:focus-visible {
-  outline: unset!important;
+  outline: unset !important;
 }
 
 a {
   color: #4c9bff;
 }
 
-a:hover {
-  text-decoration: underline!important;
+.performance_flex a:hover,
+.performance a:hover {
+  text-decoration: underline !important;
 }
 
 .selected {
@@ -81,12 +81,12 @@ a:hover {
   justify-content: center;
   color: white;
   cursor: pointer;
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   font-size: 16px;
 }
 
 .not-selected {
-  transition: all .3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
   width: 20px;
   height: 20px;
@@ -115,20 +115,21 @@ a:hover {
   bottom: 20px;
   right: 20px;
   z-index: 100;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
-.ant-timeline-item-tail, .ant-timeline-item-head.ant-timeline-item-head-blue {
-  inset-inline-start: 86px!important;
+.ant-timeline-item-tail,
+.ant-timeline-item-head.ant-timeline-item-head-blue {
+  inset-inline-start: 86px !important;
 }
 
 .ant-timeline-item-label {
-  width: 70px!important;
+  width: 70px !important;
 }
 
 .ant-timeline-item-content {
   width: calc(100% - 110px) !important;
-  inset-inline-start: 80px!important;
+  inset-inline-start: 80px !important;
 }
 
 .common-text {
@@ -149,7 +150,7 @@ a:hover {
 }
 
 .demo-loadmore-list .slick-dots {
-  opacity: 0!important;
+  opacity: 0 !important;
 }
 
 .flex200 {
