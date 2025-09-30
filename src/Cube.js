@@ -207,7 +207,7 @@ export const Cube = ({
                       </div>
                     }
                   >
-                    <Meta title="Чураков Павел Сергеевич" style={{ width: "fit-content" }} />
+                    <Meta title="Чураков Павел Сергеевич" style={{ width: "100%", textAlign: "center" }} />
                     {windowWidth < 800 ? (
                       <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
                         <a href="https://t.me/pashac13" target="_blank" rel="noreferrer">

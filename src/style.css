@@ -266,14 +266,14 @@ body > div {
 
   .main_photo .ant-card-meta-title {
     white-space: unset !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 20px !important;
   }
 
   .main_photo {
     width: 100% !important;
   }
 
-  .main_photo .ant-card {
+  .main_photo > .ant-card {
     padding-top: 16px;
   }
 
