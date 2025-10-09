@@ -163,7 +163,7 @@ export const Cube = ({
                   <div className="main_info">
                     <Row>
                       <Col style={{ width: "100%" }}>
-                        <Card title="Frontend-разработчик React" bordered={false} hoverable>
+                        <Card title="Frontend-разработчик" bordered={false} hoverable>
                           <Space>
                             <a href="https://t.me/pashac13" target="_blank" rel="noreferrer">
                               <Card size="small" hoverable>
