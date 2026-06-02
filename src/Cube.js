@@ -19,12 +19,12 @@ const listSkills = [
   {
     picture: [htmlIcon, jsIcon, cssIcon],
     name: "html, css (scss, less) и js",
-    description: "Стараюсь исследовать функционал новых версий ES и CSS.",
+    description: "Стараюсь следить за новыми версиями ES и CSS.",
   },
   {
     picture: "https://nextjs.org/favicon.ico",
     name: <Tag color="purple">Next.js</Tag>,
-    description: "Опыт 3+ года. Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG, ISR.",
+    description: "Опыт 4+ года. Пишу свой большой проект на этом фреймворке. Авторизация, SSR, SSG, ISR.",
   },
   {
     picture: reactIcon,
@@ -34,28 +34,28 @@ const listSkills = [
   {
     picture: tsIcon,
     name: <Tag color="cyan">Typescript</Tag>,
-    description: "Опыт 3+ года.",
+    description: "Опыт 4+ года.",
   },
   {
     picture: reduxIcon,
     name: "Redux, redux-toolkit, mobx, zustand",
-    description: "Опыт 5+ лет.",
+    description: "Опыт 4+ года.",
   },
   {
     picture: ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
     name: "Сборка: webpack, rspack, vite, rollup",
-    description: "Есть практический опыт. Прошёл большой курс по сборке.",
+    description: "Есть практический опыт в нескольких проектах.",
   },
-  {
-    picture: "",
-    name: "База: алгоритмы/структуры данных, архитектура",
-    description: "Прошел курс Computer Science во frontend'е.",
-  },
+  // {
+  //   picture: "",
+  //   name: "База: алгоритмы/структуры данных, архитектура",
+  //   description: "Прошел курс Computer Science во frontend'е.",
+  // },
   {
     picture: "",
     name: "Инфраструктура frontend",
     description:
-      "Прошел курс Инфраструктура frontend: linux, git, пакетные менеджеры (npm, yarn, pnpm), линтеры, сборщики, gitlab CI, github actions, docker, kubernetes, nginx.",
+      "Работал с linux, большинством пакетных менеджеров (npm, yarn, pnpm), линтерами, сборщиками, gitlab CI, github actions, docker, kubernetes, nginx.",
   },
   {
     picture: [muiIcon, "https://tailwindcss.com/favicons/favicon.ico?v=3"],
@@ -82,15 +82,15 @@ const listSkills = [
     name: "GraphQL, Websockets",
     description: "Опыт как со стороны backend, так и со стороны frontend.",
   },
-  {
-    picture: "https://github.githubassets.com/favicons/favicon.png",
-    name: "Git",
-    description: "Понимаю git-flow, знаю основные необходимые команды git, cherry pick, stash, rebase, merge.",
-  },
+  // {
+  //   picture: "https://github.githubassets.com/favicons/favicon.png",
+  //   name: "Git",
+  //   description: "Понимаю git-flow, знаю основные необходимые команды git, cherry pick, stash, rebase, merge.",
+  // },
   {
     picture: "https://nodejs.org/static/images/favicons/favicon.png",
     name: "Бэкэнд: node.js, nest, postgres, mySQL, JWT",
-    description: "Опыт более года.",
+    description: "Коммерческий опыт более 2 лет.",
   },
   {
     picture: "",
@@ -250,7 +250,7 @@ export const Cube = ({
                           Привет! Я frontend-разработчик с 5 лет коммерческого опыта. Работал в командах 3-25 человек.
                           Специализируюсь на разработке SPA приложений, приложений с SSR (next.js, remix). Имею опыт
                           создания анимаций и 3D визуализаций в браузере (canvas, webgl, three.js). Активно развиваюсь
-                          как fullstack JS разработчик. Основным стеком предпочитаю React, Next, WEbpack. Также пару
+                          как fullstack JS разработчик. Основным стеком предпочитаю React, Next, Webpack. Также пару
                           слов обо мне: <br />
                           - Энергичен, положительно отношусь к тяжёлым задачам; <br />
                           - Быстро отвечаю и помогаю коллегам, со мной легко в коммуникации; <br />
@@ -467,7 +467,10 @@ export const Cube = ({
                             </a>
                           </span>
                           <br />
-                          <span className="common-text mt10">&nbsp;&nbsp;&nbsp;- Стартап, пишу фронт на next.js.</span>
+                          <span className="common-text mt10">
+                            &nbsp;&nbsp;&nbsp;- Написал мобильное приложение (react native) для бизнеса с онлайн-картой
+                            объектов, арендой и логистикой.
+                          </span>
                           <br />
                           <br />
                         </div>
