@@ -141,6 +141,10 @@ a {
   margin-bottom: 10px;
 }
 
+.mb10 b {
+  font-weight: 600;
+}
+
 .mt10 {
   margin: 10px 0 0;
 }
