@@ -1,13 +1,13 @@
-import {useEffect, useRef, useState} from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
-import { LoadingOutlined } from '@ant-design/icons';
-import {Spin} from "antd";
+import { LoadingOutlined } from "@ant-design/icons";
+import { Spin } from "antd";
 
-import {Cube} from "./Cube";
-import './style.css';
-import {makeShadow} from "./utils";
-import backgroundImage from './images/background.jpg';
-
+import { Cube } from "./Cube";
+import { LanguageToggle } from "./LanguageToggle";
+import "./style.css";
+import { makeShadow } from "./utils";
+import backgroundImage from "./images/background.jpg";
 
 function App() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
@@ -16,6 +16,11 @@ function App() {
   const [scrolledDownLeft, setScrolledDownLeft] = useState(false);
   const [scrolledDownRight, setScrolledDownRight] = useState(false);
   const [pageLoaded, setPageLoaded] = useState(false);
+  const [lang, setLang] = useState(() => localStorage.getItem("cv-lang") || "ru");
+
+  useEffect(() => {
+    localStorage.setItem("cv-lang", lang);
+  }, [lang]);
 
   const cubeContentLeftRef = useRef(null);
   const cubeContentRightRef = useRef(null);
@@ -30,28 +35,28 @@ function App() {
       setWindowWidth(e.target.innerWidth);
     };
 
-    window.addEventListener('resize', onResize);
+    window.addEventListener("resize", onResize);
 
     return () => {
-      window.removeEventListener('resize', onResize)
-    }
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   const leftButtonClick = (e) => {
     makeShadow(e);
 
     if (!ifFirstPage) {
-      setPageForContent(prev => prev - 1);
+      setPageForContent((prev) => prev - 1);
     }
-  }
+  };
 
   const rightButtonClick = (e) => {
     makeShadow(e);
 
     if (ifFirstPage) {
-      setPageForContent(prev => prev + 1);
+      setPageForContent((prev) => prev + 1);
     }
-  }
+  };
 
   const cubeScroll = (e, ifTouch = false) => {
     let tempRef = ifFirstPage ? cubeContentLeftRef : cubeContentRightRef;
@@ -64,75 +69,100 @@ function App() {
     } else {
       ifFirstPage ? setScrolledDownLeft(false) : setScrolledDownRight(false);
     }
-  }
+  };
 
-  const antIcon = <LoadingOutlined style={{ fontSize: 54, color: '#00a600' }} spin />;
+  const antIcon = <LoadingOutlined style={{ fontSize: 54, color: "#00a600" }} spin />;
 
   return (
     <>
-      <div
-        className="App"
-        onWheel={cubeScroll}
-        style={{transition: 'all .5s ease'}}
-      >
-      <div style={{
-        width: '100%', height: '100%',
-        background: `center / contain url('${backgroundImage}')`,
-        position: 'fixed',
-        zIndex: '-1'
-      }}/>
-      <div style={{display: 'flex', gap: '10px', alignItems: 'center', marginBottom: '20px', height: '40px'}}>
-        <div className={'selected' + (!ifFirstPage ? ' not-selected' : '')} onClick={leftButtonClick}>
-          {ifFirstPage ? 1 : null}
+      <div className="App" onWheel={cubeScroll} style={{ transition: "all .5s ease" }}>
+        <div
+          style={{
+            width: "100%",
+            height: "100%",
+            background: `center / contain url('${backgroundImage}')`,
+            position: "fixed",
+            zIndex: "-1",
+          }}
+        />
+        <div
+          style={{
+            display: "flex",
+            gap: "20px",
+            alignItems: "center",
+            marginBottom: "20px",
+            height: "40px",
+            width: "100%",
+            justifyContent: "center",
+            position: "relative",
+          }}
+        >
+          <div style={{ display: "flex", gap: "10px", alignItems: "center", height: "40px" }}>
+            <div className={"selected" + (!ifFirstPage ? " not-selected" : "")} onClick={leftButtonClick}>
+              {ifFirstPage ? 1 : null}
+            </div>
+            <div style={{ width: "20px", height: "1px", background: "rgb(81 122 62)" }} />
+            <div className={"selected" + (ifFirstPage ? " not-selected" : "")} onClick={rightButtonClick}>
+              {!ifFirstPage ? 2 : null}
+            </div>
+          </div>
+          <div style={{ position: "absolute", right: 20, top: "50%", transform: "translateY(-50%)" }}>
+            <LanguageToggle lang={lang} setLang={setLang} />
+          </div>
         </div>
-        <div style={{width: '20px', height: '1px', background: 'rgb(81 122 62)'}}/>
-        <div className={'selected' + (ifFirstPage ? ' not-selected' : '')} onClick={rightButtonClick}>
-          {!ifFirstPage ? 2 : null}
-        </div>
-      </div>
-          <div onClick={() => {
+        <div
+          onClick={() => {
             ifFirstPage ? setScrolledDownLeft(false) : setScrolledDownRight(false);
             let tempRef = ifFirstPage ? cubeContentLeftRef : cubeContentRightRef;
             tempRef.current.scroll({
               top: 0,
               left: 0,
-              behavior: 'smooth'
+              behavior: "smooth",
             });
-          }} className='selected scroll-circle'
-               style={{opacity: ifFirstPage ? (scrolledDownLeft ? 1 : 0) : (scrolledDownRight ? 1 : 0)}}>
-            <div className='arrow arrow-bottom'/>
-          </div>
+          }}
+          className="selected scroll-circle"
+          style={{ opacity: ifFirstPage ? (scrolledDownLeft ? 1 : 0) : scrolledDownRight ? 1 : 0 }}
+        >
+          <div className="arrow arrow-bottom" />
+        </div>
 
-      <Cube
-        windowWidth={windowWidth}
-        windowHeight={windowHeight}
-        pageForContent={pageForContent}
-        reff={cubeContentLeftRef}
-        reff2={cubeContentRightRef}
-        reffSlider={reffSlider}
-        onScroll={(e) => cubeScroll(e, true)}
-        setPageLoaded={() => {
-          setTimeout(() => {
-            setPageLoaded(true);
+        <Cube
+          windowWidth={windowWidth}
+          windowHeight={windowHeight}
+          pageForContent={pageForContent}
+          reff={cubeContentLeftRef}
+          reff2={cubeContentRightRef}
+          reffSlider={reffSlider}
+          onScroll={(e) => cubeScroll(e, true)}
+          lang={lang}
+          setPageLoaded={() => {
             setTimeout(() => {
-              loaderRef.current.style.zIndex = '-1';
+              setPageLoaded(true);
+              setTimeout(() => {
+                loaderRef.current.style.zIndex = "-1";
+              }, 500);
             }, 500);
-          }, 500)
-        }}
-      />
-    </div>
-
-      <div ref={loaderRef} style={{
-        width: '100%', height: '100%',
-        display: 'flex', justifyContent: 'center',
-        alignItems: 'center', position: 'fixed',
-        top: '0', background: 'rgb(12, 19, 9)',
-        opacity: pageLoaded ? 0 : 1,
-        transition: 'all .5s ease',
-      }}>
-        <Spin indicator={antIcon} />
+          }}
+        />
       </div>
 
+      <div
+        ref={loaderRef}
+        style={{
+          width: "100%",
+          height: "100%",
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "fixed",
+          top: "0",
+          background: "rgb(12, 19, 9)",
+          opacity: pageLoaded ? 0 : 1,
+          transition: "all .5s ease",
+        }}
+      >
+        <Spin indicator={antIcon} />
+      </div>
     </>
   );
 }
