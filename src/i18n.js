@@ -1,16 +1,17 @@
 export const translations = {
   ru: {
     name: "Чураков Павел Сергеевич",
-    position: "Frontend-разработчик",
+    position: "Creative Frontend Разработчик",
     about: "О себе",
-    aboutText: `<b>Frontend Engineer с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений
+    aboutText: `<b>Frontend инженер с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений
 на React и TypeScript. Работал над высоконагруженными системами и интерфейсами, требующими
 эффективной работы с большими объёмами данных. Специализируюсь на frontend-архитектуре,
 производительности и разработке сложных пользовательских сценариев. Имею опыт взаимодействия с
 backend-командами при проектировании API-контрактов и технических решений. Дополнительно
-работал с Node.js, WebGL и Three.js.
+работал с Node.js, WebGL и Three.js. Сейчас увлекаюсь областью разработки <b>3D интерфейсов и визуализации данных</b>
+в браузере с использованием Three.js/WebGL/WebGPU и активно развиваюсь в ней.
 <br /><br />
-<b>Основная экспертиза:</b> React, TypeScript, Next.js, frontend архитектура и оптимизация
+<b>Основная экспертиза:</b> React, TypeScript, Next.js, Three.js/WebGL/WebGPU, frontend архитектура и оптимизация
 производительности.
 <br />
 <b>Дополнительный опыт:</b> Node.js, NestJS, PostgreSQL, REST API, Docker.`,
@@ -133,15 +134,16 @@ backend-командами при проектировании API-контра�
 
   en: {
     name: "Pavel Churakov",
-    position: "Frontend Developer",
+    position: "Creative Frontend Developer",
     about: "About Me",
     aboutText: `<b>Frontend Engineer with 5+ years of commercial experience</b> developing complex web applications
 with React and TypeScript. Worked on high-load systems and interfaces requiring efficient handling
 of large volumes of data. Specialized in frontend architecture, performance, and development of
 complex user scenarios. Experienced in collaborating with backend teams on API contracts and
-technical solutions. Also worked with Node.js, WebGL, and Three.js.
+technical solutions. Also worked with Node.js, WebGL, and Three.js. Currently,
+I’m passionate about the field of developing <b>3D interfaces and data visualization</b> in the browser using Three.js/WebGL/WebGPU, and I’m actively developing in this area.
 <br /><br />
-<b>Core expertise:</b> React, TypeScript, Next.js, frontend architecture and performance optimization.
+<b>Core expertise:</b> React, TypeScript, Next.js, Three.js/WebGL/WebGPU, frontend architecture and performance optimization.
 <br />
 <b>Additional experience:</b> Node.js, NestJS, PostgreSQL, REST API, Docker.`,
 
