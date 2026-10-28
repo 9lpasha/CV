@@ -19,6 +19,7 @@ function App() {
 
   useEffect(() => {
     localStorage.setItem("cv-lang", lang);
+    document.documentElement.lang = lang;
   }, [lang]);
 
   const cubeContentLeftRef = useRef(null);

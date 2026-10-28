@@ -9,18 +9,19 @@ import reduxIcon from "./images/icons/icons8-redux-an-open-source-javascript-lib
 import backgroundImage from "./images/background.jpg";
 import photo from "./images/CV-avatar.jpg";
 import { FaTelegram, FaGithub, FaLinkedin } from "react-icons/fa";
-import { translations, getYearsName, getMonthsName } from "./i18n";
+import { translations, formatDuration } from "./i18n";
 
 const { Meta } = Card;
 
 const getTimePerformance = (year, month, yearEnd, monthEnd) => {
-  const endDate = yearEnd ? new Date(yearEnd, monthEnd, 1, 0, 0, 0, 0) : new Date();
-  const diff = endDate - new Date(year, month, 1, 0, 0, 0, 0);
-  const days = diff / 1000 / 60 / 60 / 24;
+  // months are 1-based (9 = September); no end date means "until now"
+  const now = new Date();
+  const end = yearEnd ? yearEnd * 12 + monthEnd : now.getFullYear() * 12 + now.getMonth() + 1;
+  const total = end - (year * 12 + month);
 
   return {
-    years: Math.floor(days / 365),
-    months: Math.floor(((days / 365) % 1) * 12),
+    years: Math.floor(total / 12),
+    months: total % 12,
   };
 };
 
@@ -176,9 +177,7 @@ export const Cube = ({
                 <Row>
                   <Col style={{ width: "100%" }}>
                     <Card
-                      title={`${t.experience} ${timePerformance.years} ${getYearsName(timePerformance.years, lang)} ${
-                        timePerformance.months
-                      } ${getMonthsName(timePerformance.months, lang)}`}
+                      title={`${t.experience} ${formatDuration(timePerformance, lang)}`}
                       bordered={false}
                       hoverable
                     >
@@ -189,10 +188,9 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>2023-12</b>
+                                  <b>12.2023 — {t.present}</b>
                                   <div>
-                                    {timePerformance4.years} {getYearsName(timePerformance4.years, lang)}{" "}
-                                    {timePerformance4.months} {getMonthsName(timePerformance4.months, lang)}
+                                    {formatDuration(timePerformance4, lang)}
                                   </div>
                                 </div>
                               ),
@@ -206,7 +204,7 @@ export const Cube = ({
                                     {jobs[0].project1Description}
                                   </h2>
                                   <span className="common-text">
-                                    <b>{t.whatDid}</b> <br />
+                                    <b>{t.whatDid}:</b> <br />
                                     {jobs[0].project1Tasks.map((task, i) => (
                                       <span key={i}>
                                         - {task}
@@ -221,7 +219,7 @@ export const Cube = ({
                                     <br />
                                   </h2>
                                   <span className="common-text">
-                                    <b>{t.whatDid}</b> <br />
+                                    <b>{t.whatDid}:</b> <br />
                                     {jobs[0].project2Tasks.map((task, i) => (
                                       <span key={i} dangerouslySetInnerHTML={{ __html: `- ${task}<br />` }} />
                                     ))}
@@ -234,10 +232,9 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>2023-02</b>
+                                  <b>02.2023 — 12.2023</b>
                                   <div>
-                                    {timePerformance3.years} {getYearsName(timePerformance3.years, lang)}{" "}
-                                    {timePerformance3.months} {getMonthsName(timePerformance3.months, lang)}
+                                    {formatDuration(timePerformance3, lang)}
                                   </div>
                                 </div>
                               ),
@@ -253,7 +250,7 @@ export const Cube = ({
                                     {jobs[1].project1Description}
                                   </h2>
                                   <span className="common-text">
-                                    <b>{t.whatDid}</b> <br />
+                                    <b>{t.whatDid}:</b> <br />
                                     {jobs[1].project1Tasks.map((task, i) => (
                                       <span key={i} dangerouslySetInnerHTML={{ __html: `- ${task}<br />` }} />
                                     ))}
@@ -266,10 +263,9 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>2021-06</b>
+                                  <b>06.2021 — 02.2023</b>
                                   <div>
-                                    {timePerformance2.years} {getYearsName(timePerformance2.years, lang)}{" "}
-                                    {timePerformance2.months} {getMonthsName(timePerformance2.months, lang)}
+                                    {formatDuration(timePerformance2, lang)}
                                   </div>
                                 </div>
                               ),
@@ -297,10 +293,9 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>2020-09</b>
+                                  <b>09.2020 — 06.2021</b>
                                   <div>
-                                    {timePerformance1.years} {getYearsName(timePerformance1.years, lang)}{" "}
-                                    {timePerformance1.months} {getMonthsName(timePerformance1.months, lang)}
+                                    {formatDuration(timePerformance1, lang)}
                                   </div>
                                 </div>
                               ),
