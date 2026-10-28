@@ -63,15 +63,13 @@ export const translations = {
     visualProgramming:
       "Сервис для создания веб-приложений с помощью визуального программирования (canvas + генерация кода)",
     taskmanLib: "Библиотека для выполнения задач в браузере с заданным приоритетом",
-    reactNativeApp:
-      "Мобильное приложение на React Native для бизнеса: онлайн-карта объектов, аренда и логистика",
+    reactNativeApp: "Мобильное приложение на React Native для бизнеса: онлайн-карта объектов, аренда и логистика",
 
     jobs: [
       {
         company: "Иннотех (ВТБ)",
         project1: "Sfera.Код",
-        project1Description:
-          "Внутренняя платформа управления Git-репозиториями, рассчитанная на 500+ разработчиков.",
+        project1Description: "Внутренняя платформа управления Git-репозиториями, рассчитанная на 5000+ разработчиков.",
         project1Tasks: [
           "разработал просмотр файловой системы репозиториев с тысячами файлов, каталогов и строк кода",
           "реализовал построчное сравнение кода в коммитах (diff)",
@@ -103,7 +101,8 @@ export const translations = {
           "участвовал в переводе проекта на современный стек с сохранением работоспособности legacy-кода",
           "решал проблемы гидрации при SSR в Next.js и Remix",
         ],
-        stack: "TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets",
+        stack:
+          "TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets",
       },
       {
         company: "ООО ЭРА",
@@ -116,7 +115,8 @@ export const translations = {
           "front — React, TypeScript, Redux, Storybook; back — NestJS, TypeORM, PostgreSQL, Nginx, Docker, WebSockets",
       },
       {
-        company: "Учебно-исследовательская лаборатория функциональной безопасности космических аппаратов и систем МИЭМ НИУ ВШЭ",
+        company:
+          "Учебно-исследовательская лаборатория функциональной безопасности космических аппаратов и систем МИЭМ НИУ ВШЭ",
         project1: "Виртуальный космос",
         project1Description: "Веб-приложение для визуализации полёта космического аппарата и расчётов.",
         project1Tasks: [
@@ -193,14 +193,13 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
       "Widget for Dressie.ai: embeds into any web application via <script />, customizable, with several design and feature options",
     visualProgramming: "Service for building web applications through visual programming (canvas + code generation)",
     taskmanLib: "Library for running tasks in the browser with a given priority",
-    reactNativeApp:
-      "React Native mobile app for a business: online map of objects, rentals and logistics",
+    reactNativeApp: "React Native mobile app for a business: online map of objects, rentals and logistics",
 
     jobs: [
       {
         company: "Innotech (VTB)",
         project1: "Sfera.Kod",
-        project1Description: "Internal Git repository management platform built for 500+ developers.",
+        project1Description: "Internal Git repository management platform built for 5000+ developers.",
         project1Tasks: [
           "built a file system viewer for repositories with thousands of files, directories and lines of code",
           "implemented line-by-line code diffs for commits",
@@ -232,7 +231,8 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "took part in migrating the project to a modern stack while keeping the legacy code working",
           "solved SSR hydration issues in Next.js and Remix",
         ],
-        stack: "TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets",
+        stack:
+          "TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets",
       },
       {
         company: "OOO ERA",
