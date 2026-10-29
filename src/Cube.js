@@ -208,11 +208,7 @@ export const Cube = ({
               <div className="performance">
                 <Row>
                   <Col style={{ width: "100%" }}>
-                    <Card
-                      title={`${t.experience} ${formatDuration(timePerformance, lang)}`}
-                      bordered={false}
-                      hoverable
-                    >
+                    <Card title={`${t.experience} ${formatDuration(timePerformance, lang)}`} bordered={false} hoverable>
                       <div className="performance_flex">
                         <Timeline
                           mode="left"
@@ -221,9 +217,7 @@ export const Cube = ({
                               label: (
                                 <div>
                                   <b>12.2023 — {t.present}</b>
-                                  <div>
-                                    {formatDuration(timePerformance4, lang)}
-                                  </div>
+                                  <div>{formatDuration(timePerformance4, lang)}</div>
                                 </div>
                               ),
                               children: (
@@ -265,9 +259,7 @@ export const Cube = ({
                               label: (
                                 <div>
                                   <b>02.2023 — 12.2023</b>
-                                  <div>
-                                    {formatDuration(timePerformance3, lang)}
-                                  </div>
+                                  <div>{formatDuration(timePerformance3, lang)}</div>
                                 </div>
                               ),
                               children: (
@@ -296,9 +288,7 @@ export const Cube = ({
                               label: (
                                 <div>
                                   <b>06.2021 — 02.2023</b>
-                                  <div>
-                                    {formatDuration(timePerformance2, lang)}
-                                  </div>
+                                  <div>{formatDuration(timePerformance2, lang)}</div>
                                 </div>
                               ),
                               children: (
@@ -326,9 +316,7 @@ export const Cube = ({
                               label: (
                                 <div>
                                   <b>09.2020 — 06.2021</b>
-                                  <div>
-                                    {formatDuration(timePerformance1, lang)}
-                                  </div>
+                                  <div>{formatDuration(timePerformance1, lang)}</div>
                                 </div>
                               ),
                               children: (
@@ -364,7 +352,7 @@ export const Cube = ({
                           {t.otherProjects} <br />
                           <span className="common-text mt10">
                             &nbsp;&nbsp;&nbsp;- {t.dressieWidget}&nbsp;
-                            <a href="https://dressie.ai/widget-demo" target="_blank" rel="noreferrer">
+                            <a href="https://dressie.ai/" target="_blank" rel="noreferrer">
                               Dressie.ai
                             </a>
                           </span>
