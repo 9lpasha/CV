@@ -65,6 +65,16 @@ export const translations = {
     taskmanLib: "Библиотека для выполнения задач в браузере с заданным приоритетом",
     reactNativeApp: "Мобильное приложение на React Native для бизнеса: онлайн-карта объектов, аренда и логистика",
 
+    ownProduct: "Собственный продукт",
+    vibeemStatus: "бета",
+    vibeemDescription: "Интерактивные 3D-пространства с lo-fi музыкой для фокуса и отдыха",
+    vibeemTasks: [
+      "3D-сцены на Three.js, Blender, с анимациями камеры и интерактивными объектами",
+      "встроенные активности для фокуса и вайба",
+      "backend на NestJS: JWT-аутентификация, PostgreSQL + TypeORM; десктоп-версия на Electron",
+    ],
+    vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; NestJS, TypeORM, PostgreSQL; Electron",
+
     jobs: [
       {
         company: "Иннотех (ВТБ)",
@@ -194,6 +204,16 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
     visualProgramming: "Service for building web applications through visual programming (canvas + code generation)",
     taskmanLib: "Library for running tasks in the browser with a given priority",
     reactNativeApp: "React Native mobile app for a business: online map of objects, rentals and logistics",
+
+    ownProduct: "Own product",
+    vibeemStatus: "beta",
+    vibeemDescription: "Interactive 3D spaces with lo-fi music for focus and rest",
+    vibeemTasks: [
+      "3D scenes in Three.js and Blender, with camera animations and interactive objects",
+      "built-in activities for focus and vibe",
+      "backend on NestJS: JWT authentication, PostgreSQL + TypeORM; desktop version on Electron",
+    ],
+    vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; NestJS, TypeORM, PostgreSQL; Electron",
 
     jobs: [
       {

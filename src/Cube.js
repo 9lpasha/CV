@@ -8,6 +8,7 @@ import reduxIcon from "./images/icons/icons8-redux-an-open-source-javascript-lib
 
 import backgroundImage from "./images/background.jpg";
 import photo from "./images/CV-avatar.jpg";
+import vibeemDemo from "./images/demo-cv.gif";
 import { FaTelegram, FaGithub, FaLinkedin } from "react-icons/fa";
 import { translations, formatDuration } from "./i18n";
 
@@ -168,6 +169,37 @@ export const Cube = ({
                       <div className="edu_flex">
                         <div className="edu_name2 common-text" dangerouslySetInnerHTML={{ __html: t.aboutText }} />
                       </div>
+                    </Card>
+                  </Col>
+                </Row>
+              </div>
+
+              <div className="projects">
+                <Row>
+                  <Col style={{ width: "100%" }}>
+                    <Card title={t.ownProduct} bordered={false} hoverable>
+                      <h2 className="mb10">
+                        <a href="https://vibeem.space" target="_blank" rel="noreferrer">
+                          <b>vibeem.space</b>
+                        </a>{" "}
+                        <span className="product-badge">{t.vibeemStatus}</span>
+                        <br />
+                        {t.vibeemDescription}
+                      </h2>
+                      <a href="https://vibeem.space" target="_blank" rel="noreferrer">
+                        <img className="product-demo" src={vibeemDemo} alt="vibeem.space demo" loading="lazy" />
+                      </a>
+                      <span className="common-text">
+                        <b>{t.whatDid}:</b> <br />
+                        {t.vibeemTasks.map((task, i) => (
+                          <span key={i}>
+                            - {task}
+                            <br />
+                          </span>
+                        ))}
+                        <br />
+                        <b>{t.stack}:</b> {t.vibeemStack}
+                      </span>
                     </Card>
                   </Col>
                 </Row>

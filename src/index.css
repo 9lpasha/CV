@@ -183,6 +183,27 @@ a {
   width: 0;
 }
 
+.product-demo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  background: #1b1730;
+}
+
+.product-badge {
+  display: inline-block;
+  padding: 0 8px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 12px;
+  line-height: 20px;
+  vertical-align: middle;
+}
+
 .lang-toggle {
   cursor: pointer;
   user-select: none;
