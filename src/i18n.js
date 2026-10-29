@@ -2,6 +2,7 @@ export const translations = {
   ru: {
     name: "Чураков Павел Сергеевич",
     position: "Frontend-разработчик · React, TypeScript, Three.js",
+    downloadCV: "Скачать PDF",
     about: "О себе",
     aboutText: `<b>Frontend-инженер с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений
 на React и TypeScript. Работал над высоконагруженными системами и интерфейсами, которые обрабатывают
@@ -145,6 +146,7 @@ export const translations = {
   en: {
     name: "Pavel Churakov",
     position: "Frontend Engineer · React, TypeScript, Three.js",
+    downloadCV: "Download PDF (RU)",
     about: "About Me",
     aboutText: `<b>Frontend Engineer with 5+ years of commercial experience</b> building complex web applications
 with React and TypeScript. Worked on high-load systems and interfaces that handle large volumes of data.

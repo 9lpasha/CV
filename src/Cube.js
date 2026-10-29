@@ -9,10 +9,12 @@ import reduxIcon from "./images/icons/icons8-redux-an-open-source-javascript-lib
 import backgroundImage from "./images/background.jpg";
 import photo from "./images/CV-avatar.jpg";
 import vibeemDemo from "./images/demo-cv.gif";
-import { FaTelegram, FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaTelegram, FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
 import { translations, formatDuration } from "./i18n";
 
 const { Meta } = Card;
+
+const cvPdfUrl = `${process.env.PUBLIC_URL}/Churakov_Pavel_Frontend.pdf`;
 
 const getTimePerformance = (year, month, yearEnd, monthEnd) => {
   // months are 1-based (9 = September); no end date means "until now"
@@ -85,7 +87,7 @@ export const Cube = ({
                     <Row>
                       <Col style={{ width: "100%" }}>
                         <Card title={t.position} bordered={false} hoverable>
-                          <Space>
+                          <Space wrap>
                             <a href="https://t.me/pashac13" target="_blank" rel="noreferrer">
                               <Card size="small" hoverable>
                                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
@@ -108,6 +110,13 @@ export const Cube = ({
                               <Card size="small" hoverable>
                                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                                   <FaLinkedin size={20} style={{ color: "#0A66C2" }} /> LinkedIn
+                                </div>
+                              </Card>
+                            </a>
+                            <a href={cvPdfUrl} download>
+                              <Card size="small" hoverable>
+                                <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                                  <FaFilePdf size={20} color="#E53935" /> <span style={{ whiteSpace: "nowrap" }}>{t.downloadCV}</span>
                                 </div>
                               </Card>
                             </a>
@@ -153,6 +162,13 @@ export const Cube = ({
                           <Card size="small" hoverable>
                             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                               <FaLinkedin size={20} style={{ color: "#0A66C2" }} /> LinkedIn
+                            </div>
+                          </Card>
+                        </a>
+                        <a href={cvPdfUrl} download>
+                          <Card size="small" hoverable>
+                            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
+                              <FaFilePdf size={20} color="#E53935" /> <span style={{ whiteSpace: "nowrap" }}>{t.downloadCV}</span>
                             </div>
                           </Card>
                         </a>
