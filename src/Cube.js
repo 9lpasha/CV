@@ -103,7 +103,7 @@ export const Cube = ({
                               </Card>
                             </a>
                             <a
-                              href="https://www.linkedin.com/in/%D0%BF%D0%B0%D0%B2%D0%B5%D0%BB-%D1%87%D1%83%D1%80%D0%B0%D0%BA%D0%BE%D0%B2-1a6989296/"
+                              href="https://www.linkedin.com/in/pavel-churakov/"
                               target="_blank"
                               rel="noreferrer"
                             >
@@ -155,7 +155,7 @@ export const Cube = ({
                           </Card>
                         </a>
                         <a
-                          href="https://www.linkedin.com/in/%D0%BF%D0%B0%D0%B2%D0%B5%D0%BB-%D1%87%D1%83%D1%80%D0%B0%D0%BA%D0%BE%D0%B2-1a6989296/"
+                          href="https://www.linkedin.com/in/pavel-churakov/"
                           target="_blank"
                           rel="noreferrer"
                         >
