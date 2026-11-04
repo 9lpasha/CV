@@ -153,7 +153,7 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
         project1Tasks: [
           "работал full-stack: frontend на React и Three.js, backend на Go",
           "<b>главная задача:</b> разработал систему 3D-визуализации в реальном времени на React и Three.js, которая отображает телеметрию и расчётные данные",
-          "разработал на <b>Go</b> gRPC-сервис, который получал данные из расчётного C++-модуля и передавал их во frontend",
+          "разработал на <b>Go</b> gRPC-сервис, который рассчитывает параметры полёта и передаёт телеметрию и расчётные данные во frontend",
         ],
         stack: "React, Three.js; Go, gRPC, Protobuf",
       },
@@ -314,7 +314,7 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         project1Tasks: [
           "worked full-stack: frontend in React and Three.js, backend in Go",
           "<b>key work:</b> built a real-time 3D visualization system with React and Three.js that displays telemetry and calculated data",
-          "built a <b>Go</b> gRPC service that received data from the C++ calculation module and delivered it to the frontend",
+          "built a <b>Go</b> gRPC service that calculates flight parameters and streams telemetry and calculated data to the frontend",
         ],
         stack: "React, Three.js; Go, gRPC, Protobuf",
       },
