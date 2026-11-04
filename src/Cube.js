@@ -10,9 +10,47 @@ import backgroundImage from "./images/background.jpg";
 import photo from "./images/CV-avatar.jpg";
 import vibeemDemo from "./images/demo-cv.gif";
 import { FaTelegram, FaGithub, FaLinkedin, FaFilePdf } from "react-icons/fa";
+import { SiApachekafka, SiDocker, SiNestjs, SiPostgresql } from "react-icons/si";
 import { translations, formatDuration } from "./i18n";
 
 const { Meta } = Card;
+
+// Skill icon by key: an image URL, a list of URLs (shown as a carousel), a React icon, or "" for a plain circle.
+const skillIcons = {
+  core: [tsIcon, jsIcon, reactIcon, "https://nextjs.org/favicon.ico"],
+  arch: "",
+  state: [reduxIcon],
+  build: ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
+  testing: "https://testing-library.com/img/octopus-32x32.png",
+  three: "https://threejs.org/files/favicon.ico",
+  go: "https://go.dev/images/favicon-gopher.svg",
+  node: <SiNestjs size={26} color="#e0234e" />,
+  db: <SiPostgresql size={26} color="#336791" />,
+  messaging: <SiApachekafka size={26} color="#231f20" />,
+  backArch: "",
+  infra: <SiDocker size={28} color="#2496ed" />,
+};
+
+const SkillIcon = ({ picture }) => {
+  if (Array.isArray(picture)) {
+    return (
+      <Carousel effect="fade" autoplay style={{ height: "30px", width: "30px" }}>
+        {picture.map((src) => (
+          <div key={src}>
+            <img style={{ width: "30px" }} src={src} alt="" />
+          </div>
+        ))}
+      </Carousel>
+    );
+  }
+  if (React.isValidElement(picture)) {
+    return <div className="skill-icon">{picture}</div>;
+  }
+  if (picture) {
+    return <img src={picture} style={{ width: "30px" }} alt="" />;
+  }
+  return <div className="skill-icon skill-icon--empty" />;
+};
 
 const cvPdfUrl = `${process.env.PUBLIC_URL}/Churakov_Pavel_Frontend.pdf`;
 
@@ -45,21 +83,6 @@ export const Cube = ({
   const timePerformance2 = useMemo(() => getTimePerformance(2021, 6, 2023, 2), []);
   const timePerformance3 = useMemo(() => getTimePerformance(2023, 2, 2023, 12), []);
   const timePerformance4 = useMemo(() => getTimePerformance(2023, 12), []);
-
-  const listSkills = t.skillsList.map((skill, idx) => {
-    const icons = [
-      [tsIcon, jsIcon, reactIcon, "https://nextjs.org/favicon.ico"],
-      "",
-      [reduxIcon],
-      ["https://webpack.js.org/favicon.a3dd58d3142f7566.ico", "https://vitejs.dev/logo.svg"],
-      "https://testing-library.com/img/octopus-32x32.png",
-      "https://threejs.org/files/favicon.ico",
-    ];
-    return {
-      ...skill,
-      picture: icons[idx],
-    };
-  });
 
   const jobs = t.jobs;
 
@@ -416,7 +439,7 @@ export const Cube = ({
           </div>
 
           <div
-            style={{ width: "50%", height: "fit-content" }}
+            style={{ width: "50%", height: "100%" }}
             className="container-page"
             ref={reff2}
             onScroll={onScroll}
@@ -430,41 +453,25 @@ export const Cube = ({
                     <Card title={t.skills} bordered={false} hoverable>
                       <div className="edu_flex">
                         <div style={{ width: "100%" }} className="common-text">
-                          <List
-                            className="demo-loadmore-list"
-                            itemLayout="horizontal"
-                            dataSource={listSkills}
-                            renderItem={(item) => (
-                              <List.Item key={item.name}>
-                                <List.Item.Meta
-                                  avatar={
-                                    Array.isArray(item.picture) ? (
-                                      <Carousel effect="fade" autoplay style={{ height: "30px", width: "30px" }}>
-                                        {item.picture.map((el) => (
-                                          <div>
-                                            <img style={{ width: "30px" }} src={el} alt="" />
-                                          </div>
-                                        ))}
-                                      </Carousel>
-                                    ) : item.picture ? (
-                                      <img src={item.picture} style={{ width: "30px" }} alt="" />
-                                    ) : (
-                                      <div
-                                        style={{
-                                          width: "30px",
-                                          height: "30px",
-                                          borderRadius: "50%",
-                                          background: "rgba(189, 189, 189, 0.6)",
-                                        }}
-                                      />
-                                    )
-                                  }
-                                  title={<div>{item.name}</div>}
-                                  description={item.description}
-                                />
-                              </List.Item>
-                            )}
-                          />
+                          {t.skillGroups.map((group) => (
+                            <div key={group.title} className="skills-group">
+                              <h3 className="skills-group-title">{group.title}</h3>
+                              <List
+                                className="demo-loadmore-list"
+                                itemLayout="horizontal"
+                                dataSource={group.items}
+                                renderItem={(item) => (
+                                  <List.Item key={item.name}>
+                                    <List.Item.Meta
+                                      avatar={<SkillIcon picture={skillIcons[item.icon]} />}
+                                      title={<div>{item.name}</div>}
+                                      description={item.description}
+                                    />
+                                  </List.Item>
+                                )}
+                              />
+                            </div>
+                          ))}
                         </div>
                       </div>
                     </Card>

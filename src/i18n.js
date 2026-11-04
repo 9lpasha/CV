@@ -1,20 +1,20 @@
 export const translations = {
   ru: {
     name: "Чураков Павел Сергеевич",
-    position: "Frontend-разработчик · React, TypeScript, Three.js",
+    position: "Full-stack разработчик · React, Three.js, Nest · Golang",
     downloadCV: "Скачать PDF",
     about: "О себе",
-    aboutText: `<b>Frontend-инженер с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений
-на React и TypeScript. Работал над высоконагруженными системами и интерфейсами, которые обрабатывают
-большие объёмы данных. Специализируюсь на frontend-архитектуре, производительности и сложных
-пользовательских сценариях. Проектирую API-контракты и технические решения вместе с backend-командами.
-Также работал с Node.js, WebGL и Three.js. Сейчас развиваюсь в разработке <b>3D-интерфейсов и визуализации данных</b>
-в браузере на Three.js / WebGL / WebGPU.
+    aboutText: `<b>Full-stack разработчик с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений:
+frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). Работал над высоконагруженными системами
+и интерфейсами, которые обрабатывают большие объёмы данных. На frontend специализируюсь на архитектуре,
+производительности и сложных пользовательских сценариях, на backend разрабатываю REST- и gRPC-сервисы
+и работаю с PostgreSQL, Redis и Kafka. Проектирую API-контракты и технические решения на стыке frontend и backend.
+Сейчас развиваюсь в разработке <b>3D-интерфейсов и визуализации данных</b> в браузере на Three.js / WebGL / WebGPU.
 <br /><br />
-<b>Основная экспертиза:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend-архитектура и оптимизация
+<b>Frontend:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend-архитектура и оптимизация
 производительности.
 <br />
-<b>Дополнительный опыт:</b> Node.js, NestJS, PostgreSQL, REST API, Docker.`,
+<b>Backend:</b> Go, Node.js / NestJS, REST, gRPC, PostgreSQL, ClickHouse, Redis, Kafka, Docker, Kubernetes, Linux.`,
 
     experience: "Опыт",
     years: "лет",
@@ -31,30 +31,50 @@ export const translations = {
 
     skills: "Знания и навыки",
 
-    skillsList: [
+    skillGroups: [
       {
-        name: "База",
-        description: "TypeScript, JavaScript, React, Next.js",
+        title: "Frontend",
+        items: [
+          { icon: "core", name: "База", description: "TypeScript, JavaScript, React, Next.js" },
+          {
+            icon: "arch",
+            name: "Архитектура и производительность",
+            description:
+              "Frontend-архитектура, оптимизация производительности, SSR/SSG/ISR, виртуализация, lazy loading",
+          },
+          {
+            icon: "state",
+            name: "Данные и стейт",
+            description: "Redux Toolkit, Zustand, React Query, SWR, REST API, WebSockets, GraphQL",
+          },
+          { icon: "build", name: "Сборка", description: "Webpack, Rspack, Vite, Rollup, Module Federation" },
+          { icon: "testing", name: "Тестирование", description: "Jest, React Testing Library, Playwright, Cypress" },
+          {
+            icon: "three",
+            name: "3D в браузере",
+            description: "Three.js, WebGL, WebGPU, визуализация данных в реальном времени",
+          },
+        ],
       },
       {
-        name: "Архитектура и производительность",
-        description: "Frontend-архитектура, оптимизация производительности, SSR/SSG/ISR, виртуализация, lazy loading",
-      },
-      {
-        name: "Данные и стейт",
-        description: "Redux Toolkit, Zustand, React Query, SWR, REST API, WebSockets, GraphQL",
-      },
-      {
-        name: "Сборка и инфраструктура",
-        description: "Webpack, Rspack, Vite, Rollup, Module Federation, GitLab CI/CD, Docker",
-      },
-      {
-        name: "Тестирование",
-        description: "Jest, React Testing Library, Playwright, Cypress",
-      },
-      {
-        name: "3D в браузере",
-        description: "Three.js, WebGL, WebGPU, визуализация данных в реальном времени",
+        title: "Backend",
+        items: [
+          { icon: "go", name: "Go", description: "Go, goroutines и channels, context, REST API, gRPC-сервисы" },
+          { icon: "node", name: "Node.js", description: "Node.js, NestJS, REST API, WebSockets" },
+          { icon: "db", name: "Базы данных и кэш", description: "PostgreSQL, ClickHouse, Redis, SQL" },
+          {
+            icon: "messaging",
+            name: "Взаимодействие сервисов",
+            description: "gRPC, Protobuf, Kafka, REST, WebSockets",
+          },
+          {
+            icon: "backArch",
+            name: "Архитектура и доступ",
+            description:
+              "Микросервисы, проектирование API-контрактов, JWT-аутентификация, ролевая модель доступа",
+          },
+          { icon: "infra", name: "Инфраструктура", description: "Docker, Kubernetes, Nginx, GitLab CI/CD, GitHub Actions, уверенное владение Linux" },
+        ],
       },
     ],
 
@@ -72,9 +92,9 @@ export const translations = {
     vibeemTasks: [
       "3D-сцены на Three.js, Blender, с анимациями камеры и интерактивными объектами",
       "встроенные активности для фокуса и вайба",
-      "backend на NestJS: JWT-аутентификация, PostgreSQL + TypeORM; десктоп-версия на Electron",
+      "backend на Go: REST API, JWT-аутентификация, PostgreSQL; десктоп-версия на Electron",
     ],
-    vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; NestJS, TypeORM, PostgreSQL; Electron",
+    vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; Go, PostgreSQL; Electron",
 
     jobs: [
       {
@@ -120,10 +140,10 @@ export const translations = {
         project1: "Корпоративная IT-система для строительной компании",
         project1Tasks: [
           "разработал на NestJS REST API (монолит) с JWT-аутентификацией, ролевой моделью доступа, фильтрацией, сортировкой и пагинацией; система постепенно заменила часть модулей 1С",
+          "разрабатывал backend-сервисы на Go: REST API, работа с PostgreSQL, конкурентная обработка данных на goroutines и channels, сборка и запуск в Docker",
           "разработал на React и TypeScript интерфейсные модули для согласований, управления складом и внутреннего чата",
         ],
-        stack:
-          "front — React, TypeScript, Redux, Storybook; back — NestJS, TypeORM, PostgreSQL, Nginx, Docker, WebSockets",
+        stack: "front — React, TypeScript, Redux, Storybook; back — Go, NestJS, PostgreSQL, Nginx, Docker, WebSockets",
       },
       {
         company:
@@ -131,10 +151,11 @@ export const translations = {
         project1: "Виртуальный космос",
         project1Description: "Веб-приложение для визуализации полёта космического аппарата и расчётов.",
         project1Tasks: [
-          "разрабатывал frontend веб-приложения",
-          "<b>главная задача:</b> разработал систему 3D-визуализации в реальном времени на React и Three.js, которая отображает телеметрию и расчётные данные, получаемые из C++-сервиса через gRPC",
+          "работал full-stack: frontend на React и Three.js, backend на Go",
+          "<b>главная задача:</b> разработал систему 3D-визуализации в реальном времени на React и Three.js, которая отображает телеметрию и расчётные данные",
+          "разработал на <b>Go</b> gRPC-сервис, который получал данные из расчётного C++-модуля и передавал их во frontend",
         ],
-        stack: "React, Three.js, gRPC",
+        stack: "React, Three.js; Go, gRPC, Protobuf",
       },
     ],
 
@@ -145,18 +166,19 @@ export const translations = {
 
   en: {
     name: "Pavel Churakov",
-    position: "Frontend Engineer · React, TypeScript, Three.js",
+    position: "Full-stack Developer · React, Three.js, Nest · Golang",
     downloadCV: "Download PDF (RU)",
     about: "About Me",
-    aboutText: `<b>Frontend Engineer with 5+ years of commercial experience</b> building complex web applications
-with React and TypeScript. Worked on high-load systems and interfaces that handle large volumes of data.
-Specialized in frontend architecture, performance, and complex user flows. Design API contracts and
-technical solutions together with backend teams. Also worked with Node.js, WebGL, and Three.js.
+    aboutText: `<b>Full-stack Developer with 5+ years of commercial experience</b> building complex web applications:
+frontend with React and TypeScript, backend with <b>Go</b> and Node.js (NestJS). Worked on high-load systems and
+interfaces that handle large volumes of data. On the frontend I specialize in architecture, performance, and
+complex user flows; on the backend I build REST and gRPC services and work with PostgreSQL, Redis, and Kafka.
+Design API contracts and technical solutions where frontend and backend meet.
 Currently focused on <b>3D interfaces and data visualization</b> in the browser with Three.js / WebGL / WebGPU.
 <br /><br />
-<b>Core expertise:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend architecture and performance optimization.
+<b>Frontend:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend architecture and performance optimization.
 <br />
-<b>Additional experience:</b> Node.js, NestJS, PostgreSQL, REST API, Docker.`,
+<b>Backend:</b> Go, Node.js / NestJS, REST, gRPC, PostgreSQL, ClickHouse, Redis, Kafka, Docker, Kubernetes, Linux.`,
 
     experience: "Experience",
     years: "years",
@@ -173,30 +195,49 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
 
     skills: "Knowledge and Skills",
 
-    skillsList: [
+    skillGroups: [
       {
-        name: "Core",
-        description: "TypeScript, JavaScript, React, Next.js",
+        title: "Frontend",
+        items: [
+          { icon: "core", name: "Core", description: "TypeScript, JavaScript, React, Next.js" },
+          {
+            icon: "arch",
+            name: "Architecture & Performance",
+            description: "Frontend architecture, performance optimization, SSR/SSG/ISR, virtualization, lazy loading",
+          },
+          {
+            icon: "state",
+            name: "State & Data",
+            description: "Redux Toolkit, Zustand, React Query, SWR, REST API, WebSockets, GraphQL",
+          },
+          { icon: "build", name: "Build", description: "Webpack, Rspack, Vite, Rollup, Module Federation" },
+          { icon: "testing", name: "Testing", description: "Jest, React Testing Library, Playwright, Cypress" },
+          {
+            icon: "three",
+            name: "3D in the browser",
+            description: "Three.js, WebGL, WebGPU, real-time data visualization",
+          },
+        ],
       },
       {
-        name: "Architecture & Performance",
-        description: "Frontend architecture, performance optimization, SSR/SSG/ISR, virtualization, lazy loading",
-      },
-      {
-        name: "State & Data",
-        description: "Redux Toolkit, Zustand, React Query, SWR, REST API, WebSockets, GraphQL",
-      },
-      {
-        name: "Build & Infrastructure",
-        description: "Webpack, Rspack, Vite, Rollup, Module Federation, GitLab CI/CD, Docker",
-      },
-      {
-        name: "Testing",
-        description: "Jest, React Testing Library, Playwright, Cypress",
-      },
-      {
-        name: "3D in the browser",
-        description: "Three.js, WebGL, WebGPU, real-time data visualization",
+        title: "Backend",
+        items: [
+          { icon: "go", name: "Go", description: "Go, goroutines and channels, context, REST APIs, gRPC services" },
+          { icon: "node", name: "Node.js", description: "Node.js, NestJS, REST API, WebSockets" },
+          { icon: "db", name: "Databases & Caching", description: "PostgreSQL, ClickHouse, Redis, SQL" },
+          {
+            icon: "messaging",
+            name: "Service Communication",
+            description: "gRPC, Protobuf, Kafka, REST, WebSockets",
+          },
+          {
+            icon: "backArch",
+            name: "Architecture & Access",
+            description:
+              "Microservices, API contract design, JWT authentication, role-based access control",
+          },
+          { icon: "infra", name: "Infrastructure", description: "Docker, Kubernetes, Nginx, GitLab CI/CD, GitHub Actions, proficient in Linux" },
+        ],
       },
     ],
 
@@ -213,9 +254,9 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
     vibeemTasks: [
       "3D scenes in Three.js and Blender, with camera animations and interactive objects",
       "built-in activities for focus and vibe",
-      "backend on NestJS: JWT authentication, PostgreSQL + TypeORM; desktop version on Electron",
+      "backend in Go: REST API, JWT authentication, PostgreSQL; desktop version on Electron",
     ],
-    vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; NestJS, TypeORM, PostgreSQL; Electron",
+    vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; Go, PostgreSQL; Electron",
 
     jobs: [
       {
@@ -261,20 +302,21 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         project1: "Corporate IT system for a construction company",
         project1Tasks: [
           "built a NestJS REST API (monolith) with JWT authentication, role-based access control, filtering, sorting and pagination; the system gradually replaced several 1C modules",
+          "built backend services in Go: REST APIs, PostgreSQL data access, concurrent data processing with goroutines and channels, packaged and run in Docker",
           "built React and TypeScript UI modules for approvals, warehouse management and internal chat",
         ],
-        stack:
-          "front — React, TypeScript, Redux, Storybook; back — NestJS, TypeORM, PostgreSQL, Nginx, Docker, WebSockets",
+        stack: "front — React, TypeScript, Redux, Storybook; back — Go, NestJS, PostgreSQL, Nginx, Docker, WebSockets",
       },
       {
         company: "Research Laboratory of Functional Safety of Spacecraft and Systems, MIEM HSE",
         project1: "Virtual Space",
         project1Description: "Web application for spacecraft flight visualization and calculations.",
         project1Tasks: [
-          "developed the web application frontend",
-          "<b>key work:</b> built a real-time 3D visualization system with React and Three.js that displays telemetry and calculated data received from a C++ service via gRPC",
+          "worked full-stack: frontend in React and Three.js, backend in Go",
+          "<b>key work:</b> built a real-time 3D visualization system with React and Three.js that displays telemetry and calculated data",
+          "built a <b>Go</b> gRPC service that received data from the C++ calculation module and delivered it to the frontend",
         ],
-        stack: "React, Three.js, gRPC",
+        stack: "React, Three.js; Go, gRPC, Protobuf",
       },
     ],
 

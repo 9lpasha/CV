@@ -339,3 +339,189 @@ body > div {
   transform: scale(1.02, 1);
   z-index: 100;
 }
+
+/* Page loader: React <-> Go */
+.loader {
+  --loader-react: #149eca;
+  --loader-go: #00a3cc;
+  --loader-cycle: 1.6s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+}
+
+.loader-row {
+  display: flex;
+  align-items: center;
+}
+
+.loader-node {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  background: #fff;
+}
+
+.loader-node--react {
+  color: var(--loader-react);
+  animation: loader-hit-react var(--loader-cycle) ease-in-out infinite;
+}
+
+.loader-node--go {
+  color: var(--loader-go);
+  animation: loader-hit-go var(--loader-cycle) ease-in-out infinite;
+}
+
+.loader-react-icon {
+  animation: loader-spin 4s linear infinite;
+}
+
+.loader-wire {
+  position: relative;
+  width: 110px;
+  height: 2px;
+  margin: 0 6px;
+  background: repeating-linear-gradient(90deg, rgba(0, 166, 0, 0.5) 0 6px, transparent 6px 12px);
+}
+
+.loader-packet {
+  position: absolute;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.loader-packet--req {
+  background: var(--loader-react);
+  box-shadow: 0 0 8px var(--loader-react);
+  animation: loader-req var(--loader-cycle) ease-in-out infinite;
+}
+
+.loader-packet--res {
+  background: var(--loader-go);
+  box-shadow: 0 0 8px var(--loader-go);
+  animation: loader-res var(--loader-cycle) ease-in-out infinite;
+}
+
+@keyframes loader-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* request: React -> Go during the first half of the cycle */
+@keyframes loader-req {
+  0% {
+    left: 0;
+    opacity: 0;
+  }
+  8% {
+    opacity: 1;
+  }
+  42% {
+    left: calc(100% - 8px);
+    opacity: 1;
+  }
+  50%,
+  100% {
+    left: calc(100% - 8px);
+    opacity: 0;
+  }
+}
+
+/* response: Go -> React during the second half */
+@keyframes loader-res {
+  0%,
+  50% {
+    left: calc(100% - 8px);
+    opacity: 0;
+  }
+  58% {
+    opacity: 1;
+  }
+  92% {
+    left: 0;
+    opacity: 1;
+  }
+  100% {
+    left: 0;
+    opacity: 0;
+  }
+}
+
+/* each node glows when a packet reaches it */
+@keyframes loader-hit-go {
+  0%,
+  35%,
+  65%,
+  100% {
+    box-shadow: 0 0 0 rgba(0, 163, 204, 0);
+  }
+  48% {
+    box-shadow: 0 0 22px rgba(0, 163, 204, 0.45);
+  }
+}
+
+@keyframes loader-hit-react {
+  0%,
+  10%,
+  85% {
+    box-shadow: 0 0 0 rgba(20, 158, 202, 0);
+  }
+  97% {
+    box-shadow: 0 0 22px rgba(20, 158, 202, 0.45);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .loader *,
+  .loader-node {
+    animation: none !important;
+  }
+
+  .loader-packet {
+    opacity: 1;
+  }
+
+  .loader-packet--req {
+    left: 30%;
+  }
+
+  .loader-packet--res {
+    left: 60%;
+  }
+}
+
+/* Skills: Frontend / Backend groups */
+.skills-group + .skills-group {
+  margin-top: 24px;
+}
+
+.skills-group-title {
+  margin: 0 0 4px;
+  padding-bottom: 6px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2e7d32;
+  border-bottom: 2px solid rgba(0, 166, 0, 0.35);
+}
+
+.skill-icon {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.skill-icon--empty {
+  border-radius: 50%;
+  background: rgba(189, 189, 189, 0.6);
+}

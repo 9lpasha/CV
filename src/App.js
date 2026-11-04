@@ -1,9 +1,8 @@
 import { useEffect, useRef, useState } from "react";
-import { LoadingOutlined } from "@ant-design/icons";
-import { Spin } from "antd";
 
 import { Cube } from "./Cube";
 import { LanguageToggle } from "./LanguageToggle";
+import { Loader } from "./Loader";
 import "./style.css";
 import { makeShadow } from "./utils";
 import backgroundImage from "./images/background.jpg";
@@ -71,6 +70,7 @@ function App() {
   const cubeContentRightRef = useRef(null);
   const loaderRef = useRef(null);
   const reffSlider = useRef(null);
+  const loaderShownAt = useRef(performance.now());
 
   const ifFirstPage = pageForContent % 2 === 0;
 
@@ -138,8 +138,6 @@ function App() {
     ifFirstPage ? setScrolledDownLeft(scrolled) : setScrolledDownRight(scrolled);
   };
 
-  const antIcon = <LoadingOutlined style={{ fontSize: 54, color: "#00a600" }} spin />;
-
   return (
     <>
       <div className="App" ref={appRef} style={{ transition: "all .5s ease" }}>
@@ -203,12 +201,14 @@ function App() {
           onScroll={onPageScroll}
           lang={lang}
           setPageLoaded={() => {
+            // keep the loader on screen for at least 1.5s, and never less than 0.5s after the content loads
+            const elapsed = performance.now() - loaderShownAt.current;
             setTimeout(() => {
               setPageLoaded(true);
               setTimeout(() => {
                 loaderRef.current.style.zIndex = "-1";
               }, 500);
-            }, 500);
+            }, Math.max(500, 1500 - elapsed));
           }}
         />
       </div>
@@ -223,12 +223,12 @@ function App() {
           alignItems: "center",
           position: "fixed",
           top: "0",
-          background: "rgb(12, 19, 9)",
+          background: "#f9f9f9",
           opacity: pageLoaded ? 0 : 1,
           transition: "all .5s ease",
         }}
       >
-        <Spin indicator={antIcon} />
+        <Loader />
       </div>
     </>
   );
