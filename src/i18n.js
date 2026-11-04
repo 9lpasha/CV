@@ -131,9 +131,14 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
           "реализовал чат в реальном времени на WebSockets",
           "участвовал в переводе проекта на современный стек с сохранением работоспособности legacy-кода",
           "решал проблемы гидрации при SSR в Next.js и Remix",
+          "разработал на <b>Go</b> WebSocket-сервер для чата поддержки: управление подключениями операторов и клиентов, рассылка сообщений через goroutines и channels, хранение истории в PostgreSQL, graceful shutdown без потери сообщений",
+          "разработал на Go API базы знаний: дерево разделов и статей с пагинацией и поиском, кэширование популярных статей в Redis",
+          "разработал на Go сервис уведомлений: читает из Kafka события об изменении заявок и отправляет email и push-уведомления, с ретраями и идемпотентной обработкой",
+          "вынес аналитику по заявкам (время ответа, соблюдение SLA, нагрузка на операторов) в ClickHouse и написал на Go сервис формирования отчётов",
+          "упаковал сервисы в Docker и настроил деплой в Kubernetes через GitLab CI/CD",
         ],
         stack:
-          "TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets",
+          "front — TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back — Go, PostgreSQL, Redis, Kafka, ClickHouse, Docker, Kubernetes",
       },
       {
         company: "ООО ЭРА",
@@ -293,9 +298,14 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "implemented a real-time chat with WebSockets",
           "took part in migrating the project to a modern stack while keeping the legacy code working",
           "solved SSR hydration issues in Next.js and Remix",
+          "built a <b>Go</b> WebSocket server for the support chat: managing operator and customer connections, broadcasting messages with goroutines and channels, storing history in PostgreSQL, graceful shutdown without losing messages",
+          "built the knowledge base API in Go: a tree of sections and articles with pagination and search, caching popular articles in Redis",
+          "built a notification service in Go that consumes ticket change events from Kafka and sends email and push notifications, with retries and idempotent processing",
+          "moved ticket analytics (response time, SLA compliance, operator load) to ClickHouse and built a Go reporting service on top of it",
+          "packaged the services in Docker and set up deployment to Kubernetes via GitLab CI/CD",
         ],
         stack:
-          "TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets",
+          "front — TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back — Go, PostgreSQL, Redis, Kafka, ClickHouse, Docker, Kubernetes",
       },
       {
         company: "OOO ERA",
