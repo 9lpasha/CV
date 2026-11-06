@@ -52,7 +52,7 @@ const SkillIcon = ({ picture }) => {
   return <div className="skill-icon skill-icon--empty" />;
 };
 
-const cvPdfUrl = `${process.env.PUBLIC_URL}/Churakov_Pavel_Frontend.pdf`;
+const cvPdfUrl = `${process.env.PUBLIC_URL}/Fullstack.pdf`;
 
 const getTimePerformance = (year, month, yearEnd, monthEnd) => {
   // months are 1-based (9 = September); no end date means "until now"
@@ -125,11 +125,7 @@ export const Cube = ({
                                 </div>
                               </Card>
                             </a>
-                            <a
-                              href="https://www.linkedin.com/in/pavel-churakov/"
-                              target="_blank"
-                              rel="noreferrer"
-                            >
+                            <a href="https://www.linkedin.com/in/pavel-churakov/" target="_blank" rel="noreferrer">
                               <Card size="small" hoverable>
                                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                                   <FaLinkedin size={20} style={{ color: "#0A66C2" }} /> LinkedIn
@@ -139,7 +135,8 @@ export const Cube = ({
                             <a href={cvPdfUrl} download>
                               <Card size="small" hoverable>
                                 <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                                  <FaFilePdf size={20} color="#E53935" /> <span style={{ whiteSpace: "nowrap" }}>{t.downloadCV}</span>
+                                  <FaFilePdf size={20} color="#E53935" />{" "}
+                                  <span style={{ whiteSpace: "nowrap" }}>{t.downloadCV}</span>
                                 </div>
                               </Card>
                             </a>
@@ -177,11 +174,7 @@ export const Cube = ({
                             </div>
                           </Card>
                         </a>
-                        <a
-                          href="https://www.linkedin.com/in/pavel-churakov/"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
+                        <a href="https://www.linkedin.com/in/pavel-churakov/" target="_blank" rel="noreferrer">
                           <Card size="small" hoverable>
                             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
                               <FaLinkedin size={20} style={{ color: "#0A66C2" }} /> LinkedIn
@@ -191,7 +184,8 @@ export const Cube = ({
                         <a href={cvPdfUrl} download>
                           <Card size="small" hoverable>
                             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-                              <FaFilePdf size={20} color="#E53935" /> <span style={{ whiteSpace: "nowrap" }}>{t.downloadCV}</span>
+                              <FaFilePdf size={20} color="#E53935" />{" "}
+                              <span style={{ whiteSpace: "nowrap" }}>{t.downloadCV}</span>
                             </div>
                           </Card>
                         </a>
@@ -438,12 +432,7 @@ export const Cube = ({
             </div>
           </div>
 
-          <div
-            style={{ width: "50%", height: "100%" }}
-            className="container-page"
-            ref={reff2}
-            onScroll={onScroll}
-          >
+          <div style={{ width: "50%", height: "100%" }} className="container-page" ref={reff2} onScroll={onScroll}>
             <div style={{ position: "relative" }}>
               <div style={{ background: `center / contain url('${backgroundImage}')` }} className="local-background" />
 
