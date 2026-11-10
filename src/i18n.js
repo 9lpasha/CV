@@ -26,8 +26,8 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
     present: "н.в.",
 
     education: "Образование",
-    bachelor: "Высшее образование (бакалавриат) — НИУ ВШЭ — Информатика и вычислительная техника",
-    master: "Высшее образование (магистратура) — РУТ МИИТ — Программная инженерия",
+    bachelor: "Высшее образование (бакалавриат) - НИУ ВШЭ - Информатика и вычислительная техника",
+    master: "Высшее образование (магистратура) - РУТ МИИТ - Программная инженерия",
 
     skills: "Знания и навыки",
 
@@ -70,10 +70,13 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
           {
             icon: "backArch",
             name: "Архитектура и доступ",
-            description:
-              "Микросервисы, проектирование API-контрактов, JWT-аутентификация, ролевая модель доступа",
+            description: "Микросервисы, проектирование API-контрактов, JWT-аутентификация, ролевая модель доступа",
           },
-          { icon: "infra", name: "Инфраструктура", description: "Docker, Kubernetes, Nginx, GitLab CI/CD, GitHub Actions, уверенное владение Linux" },
+          {
+            icon: "infra",
+            name: "Инфраструктура",
+            description: "Docker, Kubernetes, Nginx, GitLab CI/CD, GitHub Actions, уверенное владение Linux",
+          },
         ],
       },
     ],
@@ -106,6 +109,7 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
           "реализовал построчное сравнение кода в коммитах (diff)",
           "сделал виртуальный список файлов для папок с тысячами элементов и кастомный рендерер подсветки синтаксиса на основе Monaco Editor с ленивой подгрузкой",
           "спроектировал вместе с backend-командой API-контракты для получения файлов и папок репозитория исходя из пользовательских сценариев, что сократило объём передаваемых данных и время загрузки",
+          "разработал BFF-слой на NestJS: он собирает данные из нескольких backend-сервисов (файлы, коммиты, права доступа) в один ответ под конкретный экран, что сократило число запросов с клиента и упростило логику на frontend",
         ],
         project2: "Единый реестр простых векселей",
         project2Tasks: [
@@ -116,7 +120,8 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
           "координировал обновление UI Kit и связанных frontend-зависимостей между несколькими командами в окружении с Module Federation",
           "самостоятельно проектировал UI-решения при отсутствии дизайн-макетов",
         ],
-        stack: "TypeScript, React, Formik, Yup, styled-components, Webpack, Module Federation, Monaco Editor",
+        stack:
+          "TypeScript, React, Formik, Yup, styled-components, Webpack, Module Federation, Monaco Editor; BFF - Node.js, NestJS",
       },
       {
         company: "ISS",
@@ -132,13 +137,10 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
           "участвовал в переводе проекта на современный стек с сохранением работоспособности legacy-кода",
           "решал проблемы гидрации при SSR в Next.js и Remix",
           "разработал на <b>Go</b> WebSocket-сервер для чата поддержки: управление подключениями операторов и клиентов, рассылка сообщений через goroutines и channels, хранение истории в PostgreSQL, graceful shutdown без потери сообщений",
-          "разработал на Go API базы знаний: дерево разделов и статей с пагинацией и поиском, кэширование популярных статей в Redis",
-          "разработал на Go сервис уведомлений: читает из Kafka события об изменении заявок и отправляет email и push-уведомления, с ретраями и идемпотентной обработкой",
-          "вынес аналитику по заявкам (время ответа, соблюдение SLA, нагрузка на операторов) в ClickHouse и написал на Go сервис формирования отчётов",
-          "упаковал сервисы в Docker и настроил деплой в Kubernetes через GitLab CI/CD",
+          "разработал на <b>Go</b> REST API для базы знаний: дерево разделов и статей с пагинацией и поиском, кэширование популярных статей в Redis",
         ],
         stack:
-          "front — TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back — Go, PostgreSQL, Redis, Kafka, ClickHouse, Docker, Kubernetes",
+          "front - TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back - Go, PostgreSQL, Redis, Docker",
       },
       {
         company: "ООО ЭРА",
@@ -148,7 +150,7 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
           "разрабатывал backend-сервисы на Go: REST API, работа с PostgreSQL, конкурентная обработка данных на goroutines и channels, сборка и запуск в Docker",
           "разработал на React и TypeScript интерфейсные модули для согласований, управления складом и внутреннего чата",
         ],
-        stack: "front — React, TypeScript, Redux, Storybook; back — Go, NestJS, PostgreSQL, Nginx, Docker, WebSockets",
+        stack: "front - React, TypeScript, Redux, Storybook; back - Go, NestJS, PostgreSQL, Nginx, Docker, WebSockets",
       },
       {
         company:
@@ -195,8 +197,8 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
     present: "present",
 
     education: "Education",
-    bachelor: "Bachelor's degree — HSE University — Computer Science and Engineering",
-    master: "Master's degree — RUT MIIT — Software Engineering",
+    bachelor: "Bachelor's degree - HSE University - Computer Science and Engineering",
+    master: "Master's degree - RUT MIIT - Software Engineering",
 
     skills: "Knowledge and Skills",
 
@@ -238,10 +240,13 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           {
             icon: "backArch",
             name: "Architecture & Access",
-            description:
-              "Microservices, API contract design, JWT authentication, role-based access control",
+            description: "Microservices, API contract design, JWT authentication, role-based access control",
           },
-          { icon: "infra", name: "Infrastructure", description: "Docker, Kubernetes, Nginx, GitLab CI/CD, GitHub Actions, proficient in Linux" },
+          {
+            icon: "infra",
+            name: "Infrastructure",
+            description: "Docker, Kubernetes, Nginx, GitLab CI/CD, GitHub Actions, proficient in Linux",
+          },
         ],
       },
     ],
@@ -273,6 +278,7 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "implemented line-by-line code diffs for commits",
           "built a virtualized file list for folders with thousands of items and a custom syntax highlighting renderer based on Monaco Editor with lazy loading",
           "designed API contracts with the backend team for fetching repository files and folders based on user flows, reducing payload size and load time",
+          "built a NestJS BFF layer that combines data from several backend services (files, commits, access rights) into a single response per screen, reducing client requests and simplifying frontend logic",
         ],
         project2: "Unified Register of Promissory Notes",
         project2Tasks: [
@@ -283,7 +289,8 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "coordinated UI Kit and related frontend dependency upgrades across several teams in a Module Federation setup",
           "designed UI solutions independently when no design mockups were available",
         ],
-        stack: "TypeScript, React, Formik, Yup, styled-components, Webpack, Module Federation, Monaco Editor",
+        stack:
+          "TypeScript, React, Formik, Yup, styled-components, Webpack, Module Federation, Monaco Editor; BFF - Node.js, NestJS",
       },
       {
         company: "ISS",
@@ -299,13 +306,10 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "took part in migrating the project to a modern stack while keeping the legacy code working",
           "solved SSR hydration issues in Next.js and Remix",
           "built a <b>Go</b> WebSocket server for the support chat: managing operator and customer connections, broadcasting messages with goroutines and channels, storing history in PostgreSQL, graceful shutdown without losing messages",
-          "built the knowledge base API in Go: a tree of sections and articles with pagination and search, caching popular articles in Redis",
-          "built a notification service in Go that consumes ticket change events from Kafka and sends email and push notifications, with retries and idempotent processing",
-          "moved ticket analytics (response time, SLA compliance, operator load) to ClickHouse and built a Go reporting service on top of it",
-          "packaged the services in Docker and set up deployment to Kubernetes via GitLab CI/CD",
+          "built a <b>Go</b> REST API for the knowledge base: a tree of sections and articles with pagination and search, caching popular articles in Redis",
         ],
         stack:
-          "front — TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back — Go, PostgreSQL, Redis, Kafka, ClickHouse, Docker, Kubernetes",
+          "front - TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back - Go, PostgreSQL, Redis, Docker",
       },
       {
         company: "OOO ERA",
@@ -315,7 +319,7 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "built backend services in Go: REST APIs, PostgreSQL data access, concurrent data processing with goroutines and channels, packaged and run in Docker",
           "built React and TypeScript UI modules for approvals, warehouse management and internal chat",
         ],
-        stack: "front — React, TypeScript, Redux, Storybook; back — Go, NestJS, PostgreSQL, Nginx, Docker, WebSockets",
+        stack: "front - React, TypeScript, Redux, Storybook; back - Go, NestJS, PostgreSQL, Nginx, Docker, WebSockets",
       },
       {
         company: "Research Laboratory of Functional Safety of Spacecraft and Systems, MIEM HSE",

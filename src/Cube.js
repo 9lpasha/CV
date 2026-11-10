@@ -249,7 +249,7 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>12.2023 — {t.present}</b>
+                                  <b>12.2023 - {t.present}</b>
                                   <div>{formatDuration(timePerformance4, lang)}</div>
                                 </div>
                               ),
@@ -291,7 +291,7 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>02.2023 — 12.2023</b>
+                                  <b>02.2023 - 12.2023</b>
                                   <div>{formatDuration(timePerformance3, lang)}</div>
                                 </div>
                               ),
@@ -320,7 +320,7 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>06.2021 — 02.2023</b>
+                                  <b>06.2021 - 02.2023</b>
                                   <div>{formatDuration(timePerformance2, lang)}</div>
                                 </div>
                               ),
@@ -348,7 +348,7 @@ export const Cube = ({
                             {
                               label: (
                                 <div>
-                                  <b>09.2020 — 06.2021</b>
+                                  <b>09.2020 - 06.2021</b>
                                   <div>{formatDuration(timePerformance1, lang)}</div>
                                 </div>
                               ),
