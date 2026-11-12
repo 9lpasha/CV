@@ -5,7 +5,7 @@ export const translations = {
     downloadCV: "Скачать PDF",
     about: "О себе",
     aboutText: `<b>Full-stack разработчик с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений:
-frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). Работал над высоконагруженными системами
+frontend на React и TypeScript, backend на Go и Node.js (NestJS). Работал над высоконагруженными системами
 и интерфейсами, которые обрабатывают большие объёмы данных. На frontend специализируюсь на архитектуре,
 производительности и сложных пользовательских сценариях, на backend разрабатываю REST- и gRPC-сервисы
 и работаю с PostgreSQL, Redis и Kafka. Проектирую API-контракты и технические решения на стыке frontend и backend.
@@ -106,18 +106,18 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
         project1Description: "Внутренняя платформа управления Git-репозиториями, рассчитанная на 5000+ разработчиков.",
         project1Tasks: [
           "обрабатывал и подготавливал данные для просмотра файловой системы репозиториев с тысячами файлов, каталогов и строк кода",
-          "разработал граф коммитов для каждого файла: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
-          "сделал виртуальный список файлов для папок с тысячами элементов и кастомный рендерер подсветки синтаксиса на основе Monaco Editor с ленивой подгрузкой",
-          "спроектировал вместе с backend-командой API-контракты для получения файлов, коммитов репозитория исходя из пользовательских сценариев, что сократило объём передаваемых данных и время загрузки",
-          "разработал BFF-слой на NestJS: он собирает данные из нескольких backend-сервисов (файлы, коммиты, права доступа) в один ответ под конкретный экран, что сократило число запросов с клиента и упростило логику на frontend",
+          "<b>разработал граф коммитов для каждого файла</b>: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
+          "сделал <b>виртуальный список файлов</b> для папок с тысячами элементов и <b>кастомный рендерер подсветки синтаксиса</b> на основе Monaco Editor с ленивой подгрузкой",
+          "спроектировал вместе с backend-командой API-контракты для получения файлов, коммитов репозитория исходя из пользовательских сценариев, что <b>сократило объём передаваемых данных и время загрузки</b>",
+          "разработал <b>BFF-слой на NestJS</b>: он собирает данные из нескольких backend-сервисов (файлы, коммиты, права доступа) в один ответ под конкретный экран, что сократило число запросов с клиента и упростило логику на frontend",
         ],
         project2: "Единый реестр простых векселей",
         project2Tasks: [
-          "перевёл монолитное банковское приложение на микрофронтенды и встроил его в общее приложение",
+          "обновлял монолитное банковское приложение <b>современными микрофронтендами</b>",
           "разработал <b>сложные многошаговые формы</b> с валидацией на базе корпоративного UI Kit",
           "<b>оптимизировал конфигурацию webpack</b> и сократил время сборки проекта с 9 до 5,5 минут",
           "разработал внутренние <b>плагины ESLint и Webpack</b> для автоматической проверки и стандартизации кода, что, по оценке команды, сократило время разработки примерно на 15%",
-          "координировал обновление UI Kit и связанных frontend-зависимостей между несколькими командами в окружении с Module Federation",
+          "<b>координировал обновление UI Kit</b> и связанных frontend-зависимостей между несколькими командами в окружении с Module Federation",
           "самостоятельно проектировал UI-решения при отсутствии дизайн-макетов",
         ],
         stack:
@@ -129,15 +129,15 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
         project1Description: "Helpdesk-система для поддержки клиентов и сотрудников.",
         project1Tasks: [
           "разработал раздел «Редактор статей базы знаний» и заменил текстовый редактор на TinyMCE, что ускорило и упростило работу со статьями",
-          "написал древовидный компонент с бесконечной вложенностью для перемещения статей между разделами через Drag'n'drop на любой уровень",
-          "разработал отдельное приложение «База знаний», рассчитанное на вывод большого количества статей и разделов",
-          "нашёл и устранил утечку памяти в приложении",
+          "написал <b>древовидный компонент с бесконечной вложенностью</b> для перемещения статей между разделами через Drag'n'drop на любой уровень",
+          "разработал <b>отдельное приложение «База знаний»</b>, рассчитанное на вывод большого количества статей и разделов, настроил маршрутизацию по статьям и разделам",
+          "<b>нашёл и устранил утечку памяти</b> в приложении",
           "разработал встраиваемый через iframe компонент и протокол обмена сообщениями с основным окном (postMessage)",
-          "реализовал чат в реальном времени на WebSockets",
+          "добавил новые функции для <b>чата в реальном времени на WebSockets</b>: индикатор набора текста, статусы доставки и прочтения сообщений, отправку файлов и изображений",
           "участвовал в переводе проекта на современный стек с сохранением работоспособности legacy-кода",
-          "решал проблемы гидрации при SSR в Next.js и Remix",
-          "разработал на <b>Go</b> WebSocket-сервер для чата поддержки: управление подключениями операторов и клиентов, рассылка сообщений через goroutines и channels, хранение истории в PostgreSQL, graceful shutdown без потери сообщений",
-          "разработал на <b>Go</b> REST API для базы знаний: дерево разделов и статей с пагинацией и поиском, кэширование популярных статей в Redis",
+          "решал <b>проблемы гидрации при SSR</b> в Next.js и Remix",
+          "разработал на Go <b>WebSocket-сервер для чата поддержки</b>: управление подключениями операторов и клиентов, рассылка сообщений через goroutines и channels, хранение истории в PostgreSQL, graceful shutdown без потери сообщений",
+          "разработал на Go REST API для базы знаний: дерево разделов и статей с пагинацией и поиском, кэширование популярных статей в Redis",
         ],
         stack:
           "front - TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back - Go, PostgreSQL, Redis, Docker",
@@ -146,7 +146,7 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
         company: "ООО ЭРА",
         project1: "Корпоративная IT-система для строительной компании",
         project1Tasks: [
-          "разработал на NestJS REST API (монолит) с JWT-аутентификацией, ролевой моделью доступа, фильтрацией, сортировкой и пагинацией; система постепенно заменила часть модулей 1С",
+          "разработал на NestJS REST API (монолит) с JWT-аутентификацией, ролевой моделью доступа, фильтрацией, сортировкой и пагинацией; <b>система постепенно заменила часть модулей 1С</b>",
           "разрабатывал backend-сервисы на Go: REST API, работа с PostgreSQL, конкурентная обработка данных на goroutines и channels, сборка и запуск в Docker",
           "разработал на React и TypeScript интерфейсные модули для согласований, управления складом и внутреннего чата",
         ],
@@ -159,8 +159,8 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
         project1Description: "Веб-приложение для визуализации полёта космического аппарата и расчётов.",
         project1Tasks: [
           "работал full-stack: frontend на React и Three.js, backend на Go",
-          "<b>главная задача:</b> разработал систему 3D-визуализации в реальном времени на React и Three.js, которая отображает телеметрию и расчётные данные",
-          "разработал на <b>Go</b> gRPC-сервис, который рассчитывает параметры полёта и передаёт телеметрию и расчётные данные во frontend",
+          "<b>главная задача:</b> разработал <b>систему 3D-визуализации в реальном времени</b> на React и Three.js, которая отображает телеметрию и расчётные данные",
+          "разработал на Go <b>gRPC-сервис, который рассчитывает параметры полёта</b> и передаёт телеметрию и расчётные данные во frontend",
         ],
         stack: "React, Three.js; Go, gRPC, Protobuf",
       },
@@ -177,7 +177,7 @@ frontend на React и TypeScript, backend на <b>Go</b> и Node.js (NestJS). �
     downloadCV: "Download PDF (RU)",
     about: "About Me",
     aboutText: `<b>Full-stack Developer with 5+ years of commercial experience</b> building complex web applications:
-frontend with React and TypeScript, backend with <b>Go</b> and Node.js (NestJS). Worked on high-load systems and
+frontend with React and TypeScript, backend with Go and Node.js (NestJS). Worked on high-load systems and
 interfaces that handle large volumes of data. On the frontend I specialize in architecture, performance, and
 complex user flows; on the backend I build REST and gRPC services and work with PostgreSQL, Redis, and Kafka.
 Design API contracts and technical solutions where frontend and backend meet.
@@ -275,18 +275,18 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         project1Description: "Internal Git repository management platform built for 5000+ developers.",
         project1Tasks: [
           "processed and prepared data for the file system viewer of repositories with thousands of files, directories and lines of code",
-          "built a per-file commit graph: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
-          "built a virtualized file list for folders with thousands of items and a custom syntax highlighting renderer based on Monaco Editor with lazy loading",
-          "designed API contracts with the backend team for fetching repository files and commits based on user flows, reducing payload size and load time",
-          "built a NestJS BFF layer that combines data from several backend services (files, commits, access rights) into a single response per screen, reducing client requests and simplifying frontend logic",
+          "<b>built a per-file commit graph</b>: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
+          "built a <b>virtualized file list</b> for folders with thousands of items and a <b>custom syntax highlighting renderer</b> based on Monaco Editor with lazy loading",
+          "designed API contracts with the backend team for fetching repository files and commits based on user flows, <b>reducing payload size and load time</b>",
+          "built a <b>NestJS BFF layer</b> that combines data from several backend services (files, commits, access rights) into a single response per screen, reducing client requests and simplifying frontend logic",
         ],
         project2: "Unified Register of Promissory Notes",
         project2Tasks: [
-          "migrated a monolithic banking application to micro-frontends and embedded it into the main application",
+          "modernized a monolithic banking application <b>with micro-frontends</b>",
           "built <b>complex multi-step forms</b> with validation on top of the corporate UI Kit",
           "<b>optimized the webpack configuration</b>, cutting build time from 9 to 5.5 minutes",
           "built internal <b>ESLint and Webpack plugins</b> for automated code checks and standardization, which reduced development time by about 15% according to team estimates",
-          "coordinated UI Kit and related frontend dependency upgrades across several teams in a Module Federation setup",
+          "<b>coordinated UI Kit and related frontend dependency upgrades</b> across several teams in a Module Federation setup",
           "designed UI solutions independently when no design mockups were available",
         ],
         stack:
@@ -298,15 +298,15 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         project1Description: "Helpdesk system for customer and employee support.",
         project1Tasks: [
           "built the knowledge base article editor and replaced the text editor with TinyMCE, making work with articles faster and easier",
-          "built a tree component with unlimited nesting for moving articles between sections via drag'n'drop to any level",
-          "built a standalone Knowledge Base application designed to render large numbers of articles and sections",
-          "found and fixed a memory leak in the application",
+          "built a <b>tree component with unlimited nesting</b> for moving articles between sections via drag'n'drop to any level",
+          "built a <b>standalone Knowledge Base application</b> designed to render large numbers of articles and sections, and set up routing for articles and sections",
+          "<b>found and fixed a memory leak</b> in the application",
           "built an iframe-embedded component and a messaging protocol with the host window (postMessage)",
-          "implemented a real-time chat with WebSockets",
+          "added new features to the <b>real-time WebSocket chat</b>: typing indicator, message delivery and read receipts, file and image sharing",
           "took part in migrating the project to a modern stack while keeping the legacy code working",
-          "solved SSR hydration issues in Next.js and Remix",
-          "built a <b>Go</b> WebSocket server for the support chat: managing operator and customer connections, broadcasting messages with goroutines and channels, storing history in PostgreSQL, graceful shutdown without losing messages",
-          "built a <b>Go</b> REST API for the knowledge base: a tree of sections and articles with pagination and search, caching popular articles in Redis",
+          "solved <b>SSR hydration issues</b> in Next.js and Remix",
+          "built a Go <b>WebSocket server for the support chat</b>: managing operator and customer connections, broadcasting messages with goroutines and channels, storing history in PostgreSQL, graceful shutdown without losing messages",
+          "built a Go REST API for the knowledge base: a tree of sections and articles with pagination and search, caching popular articles in Redis",
         ],
         stack:
           "front - TypeScript, React, Next.js, Remix, Redux Toolkit, React Hook Form, Vite, MUI, Tailwind, FSD, WebSockets; back - Go, PostgreSQL, Redis, Docker",
@@ -315,7 +315,7 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         company: "OOO ERA",
         project1: "Corporate IT system for a construction company",
         project1Tasks: [
-          "built a NestJS REST API (monolith) with JWT authentication, role-based access control, filtering, sorting and pagination; the system gradually replaced several 1C modules",
+          "built a NestJS REST API (monolith) with JWT authentication, role-based access control, filtering, sorting and pagination; <b>the system gradually replaced several 1C modules</b>",
           "built backend services in Go: REST APIs, PostgreSQL data access, concurrent data processing with goroutines and channels, packaged and run in Docker",
           "built React and TypeScript UI modules for approvals, warehouse management and internal chat",
         ],
@@ -327,8 +327,8 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         project1Description: "Web application for spacecraft flight visualization and calculations.",
         project1Tasks: [
           "worked full-stack: frontend in React and Three.js, backend in Go",
-          "<b>key work:</b> built a real-time 3D visualization system with React and Three.js that displays telemetry and calculated data",
-          "built a <b>Go</b> gRPC service that calculates flight parameters and streams telemetry and calculated data to the frontend",
+          "<b>key work:</b> built a <b>real-time 3D visualization system</b> with React and Three.js that displays telemetry and calculated data",
+          "built a Go <b>gRPC service that calculates flight parameters</b> and streams telemetry and calculated data to the frontend",
         ],
         stack: "React, Three.js; Go, gRPC, Protobuf",
       },

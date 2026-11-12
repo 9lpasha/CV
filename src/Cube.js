@@ -265,10 +265,7 @@ export const Cube = ({
                                   <span className="common-text">
                                     <b>{t.whatDid}:</b> <br />
                                     {jobs[0].project1Tasks.map((task, i) => (
-                                      <span key={i}>
-                                        - {task}
-                                        <br />
-                                      </span>
+                                      <span key={i} dangerouslySetInnerHTML={{ __html: `- ${task}<br />` }} />
                                     ))}
                                   </span>
 
@@ -334,10 +331,7 @@ export const Cube = ({
                                     <b>{t.whatDid}:</b>
                                     <br />
                                     {jobs[2].project1Tasks.map((task, i) => (
-                                      <span key={i}>
-                                        - {task}
-                                        <br />
-                                      </span>
+                                      <span key={i} dangerouslySetInnerHTML={{ __html: `- ${task}<br />` }} />
                                     ))}
                                     <br />
                                     <b>{t.stack}:</b> {jobs[2].stack}
