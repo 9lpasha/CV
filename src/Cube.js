@@ -66,6 +66,12 @@ const getTimePerformance = (year, month, yearEnd, monthEnd) => {
   };
 };
 
+// "с 6 годами" / "с 21 годом" in RU, "6 years" in EN
+const formatExperienceYears = (years, lang) => {
+  if (lang !== "ru") return `${years} years`;
+  return `${years} ${years % 10 === 1 && years % 100 !== 11 ? "годом" : "годами"}`;
+};
+
 export const Cube = ({
   windowWidth,
   windowHeight,
@@ -200,7 +206,9 @@ export const Cube = ({
                   <Col style={{ width: "100%" }}>
                     <Card title={t.about} bordered={false} hoverable>
                       <div className="edu_flex">
-                        <div className="edu_name2 common-text" dangerouslySetInnerHTML={{ __html: t.aboutText }} />
+                        <div className="edu_name2 common-text" dangerouslySetInnerHTML={{
+                            __html: t.aboutText.replace("{years}", formatExperienceYears(timePerformance.years, lang)),
+                          }} />
                       </div>
                     </Card>
                   </Col>

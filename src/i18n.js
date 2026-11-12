@@ -4,12 +4,13 @@ export const translations = {
     position: "Full-stack разработчик · React, Three.js, Nest · Golang",
     downloadCV: "Скачать PDF",
     about: "О себе",
-    aboutText: `<b>Full-stack разработчик с 5+ годами коммерческого опыта</b> в разработке сложных веб-приложений:
-frontend на React и TypeScript, backend на Go и Node.js (NestJS). Работал над высоконагруженными системами
-и интерфейсами, которые обрабатывают большие объёмы данных. На frontend специализируюсь на архитектуре,
-производительности и сложных пользовательских сценариях, на backend разрабатываю REST- и gRPC-сервисы
-и работаю с PostgreSQL, Redis и Kafka. Проектирую API-контракты и технические решения на стыке frontend и backend.
-Сейчас развиваюсь в разработке <b>3D-интерфейсов и визуализации данных</b> в браузере на Three.js / WebGL / WebGPU.
+    aboutText: `<b>Full-stack разработчик с {years} коммерческого опыта</b> в разработке сложных веб-приложений:
+frontend на React и TypeScript, backend на Go и Node.js (NestJS). В Иннотех (ВТБ) делаю Git-платформу
+Sfera.Код для 5000+ разработчиков: просмотр репозиториев с тысячами файлов, граф коммитов, BFF на NestJS.
+Также работал в продуктовой компании ISS над helpdesk-системой HappyDesk. На frontend отвечаю за все аспекты
+веб-приложения, включая архитектуру, производительность, сборку, тесты и другое. На backend пишу REST-
+и gRPC-сервисы на Go, работаю с PostgreSQL, Redis и Kafka. Также нравится развиваться в разработке
+<b>3D-интерфейсов и визуализации данных</b> в браузере на Three.js / WebGL / WebGPU.
 <br /><br />
 <b>Frontend:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend-архитектура и оптимизация
 производительности.
@@ -95,7 +96,7 @@ frontend на React и TypeScript, backend на Go и Node.js (NestJS). Рабо
     vibeemTasks: [
       "3D-сцены на Three.js, Blender, с анимациями камеры и интерактивными объектами",
       "встроенные активности для фокуса и вайба",
-      "backend на Go: REST API, JWT-аутентификация, PostgreSQL; десктоп-версия на Electron",
+      "backend на Go: REST API, JWT-аутентификация, PostgreSQL",
     ],
     vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; Go, PostgreSQL; Electron",
 
@@ -106,15 +107,15 @@ frontend на React и TypeScript, backend на Go и Node.js (NestJS). Рабо
         project1Description: "Внутренняя платформа управления Git-репозиториями, рассчитанная на 5000+ разработчиков.",
         project1Tasks: [
           "обрабатывал и подготавливал данные для просмотра файловой системы репозиториев с тысячами файлов, каталогов и строк кода",
-          "<b>разработал граф коммитов для каждого файла</b>: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
-          "сделал <b>виртуальный список файлов</b> для папок с тысячами элементов и <b>кастомный рендерер подсветки синтаксиса</b> на основе Monaco Editor с ленивой подгрузкой",
+          "<b>разработал граф коммитов для файлов</b>: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
+          "сделал <b>виртуальный список файлов</b> для папок с тысячами элементов",
           "спроектировал вместе с backend-командой API-контракты для получения файлов, коммитов репозитория исходя из пользовательских сценариев, что <b>сократило объём передаваемых данных и время загрузки</b>",
           "разработал <b>BFF-слой на NestJS</b>: он собирает данные из нескольких backend-сервисов (файлы, коммиты, права доступа) в один ответ под конкретный экран, что сократило число запросов с клиента и упростило логику на frontend",
         ],
         project2: "Единый реестр простых векселей",
         project2Tasks: [
           "обновлял монолитное банковское приложение <b>современными микрофронтендами</b>",
-          "разработал <b>сложные многошаговые формы</b> с валидацией на базе корпоративного UI Kit",
+          "разработал <b>сложные многошаговые формы</b> с валидацией на базе корпоративного UI Kit и Formik",
           "<b>оптимизировал конфигурацию webpack</b> и сократил время сборки проекта с 9 до 5,5 минут",
           "разработал внутренние <b>плагины ESLint и Webpack</b> для автоматической проверки и стандартизации кода, что, по оценке команды, сократило время разработки примерно на 15%",
           "<b>координировал обновление UI Kit</b> и связанных frontend-зависимостей между несколькими командами в окружении с Module Federation",
@@ -134,9 +135,7 @@ frontend на React и TypeScript, backend на Go и Node.js (NestJS). Рабо
           "<b>нашёл и устранил утечку памяти</b> в приложении",
           "разработал встраиваемый через iframe компонент и протокол обмена сообщениями с основным окном (postMessage)",
           "добавил новые функции для <b>чата в реальном времени на WebSockets</b>: индикатор набора текста, статусы доставки и прочтения сообщений, отправку файлов и изображений",
-          "участвовал в переводе проекта на современный стек с сохранением работоспособности legacy-кода",
           "решал <b>проблемы гидрации при SSR</b> в Next.js и Remix",
-          "разработал на Go <b>WebSocket-сервер для чата поддержки</b>: управление подключениями операторов и клиентов, рассылка сообщений через goroutines и channels, хранение истории в PostgreSQL, graceful shutdown без потери сообщений",
           "разработал на Go REST API для базы знаний: дерево разделов и статей с пагинацией и поиском, кэширование популярных статей в Redis",
         ],
         stack:
@@ -176,12 +175,13 @@ frontend на React и TypeScript, backend на Go и Node.js (NestJS). Рабо
     position: "Full-stack Developer · React, Three.js, Nest · Golang",
     downloadCV: "Download PDF (RU)",
     about: "About Me",
-    aboutText: `<b>Full-stack Developer with 5+ years of commercial experience</b> building complex web applications:
-frontend with React and TypeScript, backend with Go and Node.js (NestJS). Worked on high-load systems and
-interfaces that handle large volumes of data. On the frontend I specialize in architecture, performance, and
-complex user flows; on the backend I build REST and gRPC services and work with PostgreSQL, Redis, and Kafka.
-Design API contracts and technical solutions where frontend and backend meet.
-Currently focused on <b>3D interfaces and data visualization</b> in the browser with Three.js / WebGL / WebGPU.
+    aboutText: `<b>Full-stack Developer with {years} of commercial experience</b> building complex web applications:
+frontend with React and TypeScript, backend with Go and Node.js (NestJS). At Innotech (VTB) I build
+Sfera.Kod, a Git platform for 5000+ developers: browsing repositories with thousands of files, a commit graph,
+a NestJS BFF. I also worked at the product company ISS on the HappyDesk helpdesk system. On the frontend I own
+every aspect of a web application, including architecture, performance, build, tests and more. On the backend
+I build REST and gRPC services in Go and work with PostgreSQL, Redis, and Kafka. I also enjoy growing in
+<b>3D interfaces and data visualization</b> in the browser with Three.js / WebGL / WebGPU.
 <br /><br />
 <b>Frontend:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend architecture and performance optimization.
 <br />
@@ -264,7 +264,7 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
     vibeemTasks: [
       "3D scenes in Three.js and Blender, with camera animations and interactive objects",
       "built-in activities for focus and vibe",
-      "backend in Go: REST API, JWT authentication, PostgreSQL; desktop version on Electron",
+      "backend in Go: REST API, JWT authentication, PostgreSQL",
     ],
     vibeemStack: "TypeScript, React 19, Three.js, Blender, Vite, React Router, Vitest; Go, PostgreSQL; Electron",
 
@@ -275,15 +275,15 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
         project1Description: "Internal Git repository management platform built for 5000+ developers.",
         project1Tasks: [
           "processed and prepared data for the file system viewer of repositories with thousands of files, directories and lines of code",
-          "<b>built a per-file commit graph</b>: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
-          "built a <b>virtualized file list</b> for folders with thousands of items and a <b>custom syntax highlighting renderer</b> based on Monaco Editor with lazy loading",
+          "<b>built a commit graph for files</b>: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
+          "built a <b>virtualized file list</b> for folders with thousands of items",
           "designed API contracts with the backend team for fetching repository files and commits based on user flows, <b>reducing payload size and load time</b>",
           "built a <b>NestJS BFF layer</b> that combines data from several backend services (files, commits, access rights) into a single response per screen, reducing client requests and simplifying frontend logic",
         ],
         project2: "Unified Register of Promissory Notes",
         project2Tasks: [
           "modernized a monolithic banking application <b>with micro-frontends</b>",
-          "built <b>complex multi-step forms</b> with validation on top of the corporate UI Kit",
+          "built <b>complex multi-step forms</b> with validation on top of the corporate UI Kit and Formik",
           "<b>optimized the webpack configuration</b>, cutting build time from 9 to 5.5 minutes",
           "built internal <b>ESLint and Webpack plugins</b> for automated code checks and standardization, which reduced development time by about 15% according to team estimates",
           "<b>coordinated UI Kit and related frontend dependency upgrades</b> across several teams in a Module Federation setup",
@@ -303,9 +303,7 @@ Currently focused on <b>3D interfaces and data visualization</b> in the browser 
           "<b>found and fixed a memory leak</b> in the application",
           "built an iframe-embedded component and a messaging protocol with the host window (postMessage)",
           "added new features to the <b>real-time WebSocket chat</b>: typing indicator, message delivery and read receipts, file and image sharing",
-          "took part in migrating the project to a modern stack while keeping the legacy code working",
           "solved <b>SSR hydration issues</b> in Next.js and Remix",
-          "built a Go <b>WebSocket server for the support chat</b>: managing operator and customer connections, broadcasting messages with goroutines and channels, storing history in PostgreSQL, graceful shutdown without losing messages",
           "built a Go REST API for the knowledge base: a tree of sections and articles with pagination and search, caching popular articles in Redis",
         ],
         stack:
