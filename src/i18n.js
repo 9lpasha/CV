@@ -6,7 +6,7 @@ export const translations = {
     about: "О себе",
     aboutText: `<b>Full-stack разработчик с {years} коммерческого опыта</b> в разработке сложных веб-приложений:
 frontend на React и TypeScript, backend на Go и Node.js (NestJS). В Иннотех (ВТБ) делаю Git-платформу
-Sfera.Код для 5000+ разработчиков: просмотр репозиториев с тысячами файлов, граф коммитов, BFF на NestJS.
+Sfera.Код: просмотр репозиториев с тысячами файлов, граф коммитов, BFF на NestJS.
 Также работал в продуктовой компании ISS над helpdesk-системой HappyDesk. На frontend отвечаю за все аспекты
 веб-приложения, включая архитектуру, производительность, сборку, тесты и другое. На backend пишу REST-
 и gRPC-сервисы на Go, работаю с PostgreSQL, Redis и Kafka. Также нравится развиваться в разработке
@@ -109,7 +109,7 @@ skills и субагентов. Агенты берут на себя рутин
       {
         company: "Иннотех (ВТБ)",
         project1: "Sfera.Код",
-        project1Description: "Внутренняя платформа управления Git-репозиториями, рассчитанная на 5000+ разработчиков.",
+        project1Description: "Внутренняя платформа управления Git-репозиториями.",
         project1Tasks: [
           "обрабатывал и подготавливал данные для просмотра файловой системы репозиториев с тысячами файлов, каталогов и строк кода",
           "<b>разработал граф коммитов для файлов</b>: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
@@ -182,7 +182,7 @@ skills и субагентов. Агенты берут на себя рутин
     about: "About Me",
     aboutText: `<b>Full-stack Developer with {years} of commercial experience</b> building complex web applications:
 frontend with React and TypeScript, backend with Go and Node.js (NestJS). At Innotech (VTB) I build
-Sfera.Kod, a Git platform for 5000+ developers: browsing repositories with thousands of files, a commit graph,
+Sfera.Kod, a Git platform: browsing repositories with thousands of files, a commit graph,
 a NestJS BFF. I also worked at the product company ISS on the HappyDesk helpdesk system. On the frontend I own
 every aspect of a web application, including architecture, performance, build, tests and more. On the backend
 I build REST and gRPC services in Go and work with PostgreSQL, Redis, and Kafka. I also enjoy growing in
@@ -282,7 +282,7 @@ take care of routine work, while I own architecture, code review and code qualit
       {
         company: "Innotech (VTB)",
         project1: "Sfera.Kod",
-        project1Description: "Internal Git repository management platform built for 5000+ developers.",
+        project1Description: "Internal Git repository management platform.",
         project1Tasks: [
           "processed and prepared data for the file system viewer of repositories with thousands of files, directories and lines of code",
           "<b>built a commit graph for files</b>: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
