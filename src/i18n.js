@@ -12,6 +12,11 @@ Sfera.Код для 5000+ разработчиков: просмотр репо�
 и gRPC-сервисы на Go, работаю с PostgreSQL, Redis и Kafka. Также нравится развиваться в разработке
 <b>3D-интерфейсов и визуализации данных</b> в браузере на Three.js / WebGL / WebGPU.
 <br /><br />
+В ежедневной работе активно использую <b>ИИ-агентов</b> (Claude Code, Codex) и выстраиваю вокруг
+них процесс разработки: веду CLAUDE.md / AGENTS.md с правилами и контекстом проекта, описываю изменения
+через спецификации в <b>OpenSpec</b>, настраиваю MCP-серверы, кастомные команды,
+skills и субагентов. Агенты берут на себя рутину, а я отвечаю за архитектуру, ревью и качество кода.
+<br /><br />
 <b>Frontend:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend-архитектура и оптимизация
 производительности.
 <br />
@@ -182,6 +187,11 @@ a NestJS BFF. I also worked at the product company ISS on the HappyDesk helpdesk
 every aspect of a web application, including architecture, performance, build, tests and more. On the backend
 I build REST and gRPC services in Go and work with PostgreSQL, Redis, and Kafka. I also enjoy growing in
 <b>3D interfaces and data visualization</b> in the browser with Three.js / WebGL / WebGPU.
+<br /><br />
+In my daily work I actively use <b>AI agents</b> (Claude Code, Codex) and build the development process
+around them: I maintain CLAUDE.md / AGENTS.md with project rules and context, describe changes as specs in
+<b>OpenSpec</b>, and set up MCP servers, custom commands, skills and subagents. Agents
+take care of routine work, while I own architecture, code review and code quality.
 <br /><br />
 <b>Frontend:</b> React, TypeScript, Next.js, Three.js / WebGL / WebGPU, frontend architecture and performance optimization.
 <br />
