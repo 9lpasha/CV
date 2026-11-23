@@ -112,7 +112,7 @@ skills и субагентов. Агенты берут на себя рутин
         project1Description: "Внутренняя платформа управления Git-репозиториями.",
         project1Tasks: [
           "обрабатывал и подготавливал данные для просмотра файловой системы репозиториев с тысячами файлов, каталогов и строк кода",
-          "<b>разработал граф коммитов для файлов</b>: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
+          "<b>разработал граф коммитов</b>: раскладку веток и merge-коммитов по колонкам и отрисовку графа синхронно со списком коммитов",
           "сделал <b>виртуальный список файлов</b> для папок с тысячами элементов",
           "спроектировал вместе с backend-командой API-контракты для получения файлов, коммитов репозитория исходя из пользовательских сценариев, что <b>сократило объём передаваемых данных и время загрузки</b>",
           "разработал <b>BFF-слой на NestJS</b>: он собирает данные из нескольких backend-сервисов (файлы, коммиты, права доступа) в один ответ под конкретный экран, что сократило число запросов с клиента и упростило логику на frontend",
@@ -285,7 +285,7 @@ take care of routine work, while I own architecture, code review and code qualit
         project1Description: "Internal Git repository management platform.",
         project1Tasks: [
           "processed and prepared data for the file system viewer of repositories with thousands of files, directories and lines of code",
-          "<b>built a commit graph for files</b>: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
+          "<b>built a commit graph</b>: laying out branches and merge commits into columns and rendering the graph in sync with the commit list",
           "built a <b>virtualized file list</b> for folders with thousands of items",
           "designed API contracts with the backend team for fetching repository files and commits based on user flows, <b>reducing payload size and load time</b>",
           "built a <b>NestJS BFF layer</b> that combines data from several backend services (files, commits, access rights) into a single response per screen, reducing client requests and simplifying frontend logic",
